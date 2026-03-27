@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>À Propos | ARIC Solutions - Expertise Technique & Ingénierie</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                colors: {
+                  primary: {
+                    DEFAULT: "#006193",
+                    50: "#f0f8ff",
+                    100: "#e0f0ff",
+                    200: "#bae1ff",
+                    300: "#7cc8ff",
+                    400: "#36abff",
+                    500: "#0088ff",
+                    600: "#006193",
+                    700: "#004b73",
+                    800: "#003b5c",
+                    900: "#00314d",
+                  },
+                  accent: "#92ccff",
+                  dark: "#0d1b37",
+                  surface: "#faf8ff",
+                },
+                fontFamily: {
+                  sans: ["Inter", "sans-serif"],
+                  display: ["Plus Jakarta Sans", "sans-serif"],
+                }
+              },
+            },
+          }
+        </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #faf8ff; color: #0d1b37; }
+        .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-nav { 
+            background: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0d1b37 0%, #006193 100%);
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 4rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(13, 27, 55, 0.05);
+            transform: translateX(-50%);
+        }
+        .bento-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(13, 27, 55, 0.08);
+        }
+        .mesh-bg {
+            background-color: #faf8ff;
+            background-image: 
+                radial-gradient(at 0% 100%, hsla(202, 100%, 85%, 0.2) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(210, 100%, 90%, 0.2) 0, transparent 50%);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-[100] glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
+                    <span class="material-symbols-rounded text-white text-2xl">bolt</span>
+                </div>
+                <span class="text-xl font-display font-extrabold tracking-tight text-dark">ARIC<span class="text-primary">.</span></span>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-10">
+                <a href="accueil.html" class="text-sm font-semibold text-dark/70 hover:text-primary transition-colors">Accueil</a>
+                <a href="nosservices.html" class="text-sm font-semibold text-dark/70 hover:text-primary transition-colors">Nos Services</a>
+                <a href="nossolutions.html" class="text-sm font-semibold text-dark/70 hover:text-primary transition-colors">Expertise</a>
+                <a href="apropos.html" class="text-sm font-semibold text-primary transition-colors">À propos</a>
+                <a href="actualite.html" class="text-sm font-semibold text-dark/70 hover:text-primary transition-colors">Actualités</a>
+                <a href="recrutement.html" class="text-sm font-semibold text-dark/70 hover:text-primary transition-colors">Recrutement</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="contactv2.html" class="bg-dark text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-primary transition-all shadow-lg shadow-dark/10 active:scale-95">
+                    Nous contacter
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-44 pb-32 hero-gradient overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAepGrks23XH4beHMQQ1zInFbHJC34K3srkHwp-xHmXhET7m2DM_JSi3FMXv3ugUhhwFfySyGD94ovludND4BkFQFgxdL4QrniicPpTfE1UGhtXJMYFzFS1jXDvpu4XLfa9_Sxonw-jB-nUeIi1PXBOOQhHuMWlXYXZIxiS3nCR5I2mVsEp-WFxFAevS55bKWtLLzsb-LPJ2UFHmVaQgKvjdnvk1_gjfwWmsj_Ex3nM9GsrblU_7Mg2MmgL8V_rRR8tHqQBHFDP-gQj" 
+                 class="w-full h-full object-cover grayscale mix-blend-overlay" alt="Expertise ingénierie">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="max-w-3xl space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-widest">
+                    L'Excellence Technique
+                </div>
+                <h1 class="text-6xl lg:text-8xl font-display font-extrabold text-white tracking-tighter leading-[0.9] italic">
+                    Bâtir l'avenir de <span class="text-accent underline decoration-4 underline-offset-8">l'ingénierie</span>.
+                </h1>
+                <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
+                    Depuis sa création, ARIC Solutions s'impose comme le partenaire de confiance pour les infrastructures critiques et les bâtiments intelligents.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="mesh-bg">
+        <!-- History Section -->
+        <section class="py-32 px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-24">
+                    <h2 class="text-sm font-black tracking-[0.3em] text-primary uppercase mb-4">Notre Histoire</h2>
+                    <h3 class="text-4xl lg:text-6xl font-display font-extrabold text-dark tracking-tight">Plus d'une décennie d'innovation.</h3>
+                </div>
+
+                <div class="space-y-0 relative">
+                    <!-- 2010 -->
+                    <div class="timeline-item flex flex-col md:flex-row items-center gap-12 group">
+                        <div class="w-full md:w-1/2 md:text-right">
+                            <h4 class="text-7xl font-display font-black text-primary/10 group-hover:text-primary/20 transition-colors">2010</h4>
+                            <h5 class="text-2xl font-display font-black text-dark mb-2">Fondation</h5>
+                            <p class="text-dark/50 leading-relaxed">Lancement d'ARIC avec une vision claire : révolutionner le génie climatique industriel avec une approche centrée sur l'excellence technique.</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-white border-4 border-primary shadow-xl z-20 flex-shrink-0"></div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+
+                    <!-- 2015 -->
+                    <div class="timeline-item flex flex-col md:flex-row items-center gap-12 group">
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="w-12 h-12 rounded-full bg-white border-4 border-primary shadow-xl z-20 flex-shrink-0"></div>
+                        <div class="w-full md:w-1/2">
+                            <h4 class="text-7xl font-display font-black text-primary/10 group-hover:text-primary/20 transition-colors">2015</h4>
+                            <h5 class="text-2xl font-display font-black text-dark mb-2">Expansion Nationale</h5>
+                            <p class="text-dark/50 leading-relaxed">Ouverture de bureaux stratégiques dans les pôles technologiques majeurs en France, renforçant notre maillage territorial.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2023 -->
+                    <div class="timeline-item flex flex-col md:flex-row items-center gap-12 group border-none">
+                        <div class="w-full md:w-1/2 md:text-right">
+                            <h4 class="text-7xl font-display font-black text-primary/10 group-hover:text-primary/20 transition-colors">2023</h4>
+                            <h5 class="text-2xl font-display font-black text-dark mb-2">Leader Smart Building</h5>
+                            <p class="text-dark/50 leading-relaxed">Intégration de solutions IA avancées pour l'optimisation énergétique en temps réel et la maintenance prédictive.</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-primary border-4 border-white shadow-xl z-20 flex-shrink-0"></div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Values (Bento Grid) -->
+        <section class="py-32 px-6 bg-dark text-white rounded-[4rem] mx-6 mb-32 overflow-hidden relative">
+            <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px]"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-center mb-24">
+                    <div class="lg:col-span-12 text-center max-w-3xl mx-auto space-y-6">
+                        <h2 class="text-sm font-bold tracking-[0.3em] text-primary uppercase">Notre Mission</h2>
+                        <h3 class="text-4xl lg:text-7xl font-display font-extrabold tracking-tight italic leading-[0.95]">Façonner des environnements performants & durables.</h3>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bento-card p-10 bg-white/5 border border-white/10 rounded-[2.5rem] space-y-6 group hover:bg-white transition-all">
+                        <div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                            <span class="material-symbols-rounded text-3xl">precision_manufacturing</span>
+                        </div>
+                        <h4 class="text-2xl font-display font-black tracking-tight group-hover:text-dark">Innovation Technique</h4>
+                        <p class="text-white/50 text-sm leading-relaxed group-hover:text-dark/60">Pousser les limites de la technologie pour offrir des solutions de pointe en CVC et efficacité énergétique.</p>
+                    </div>
+
+                    <div class="bento-card p-10 bg-white/5 border border-white/10 rounded-[2.5rem] space-y-6 group hover:bg-white transition-all">
+                        <div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                            <span class="material-symbols-rounded text-3xl">eco</span>
+                        </div>
+                        <h4 class="text-2xl font-display font-black tracking-tight group-hover:text-dark">Responsabilité</h4>
+                        <p class="text-white/50 text-sm leading-relaxed group-hover:text-dark/60">Réduire l'empreinte carbone grâce à une ingénierie de précision et des processus de maintenance optimisés.</p>
+                    </div>
+
+                    <div class="bento-card p-10 bg-white/5 border border-white/10 rounded-[2.5rem] space-y-6 group hover:bg-white transition-all">
+                        <div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                            <span class="material-symbols-rounded text-3xl">handshake</span>
+                        </div>
+                        <h4 class="text-2xl font-display font-black tracking-tight group-hover:text-dark">Partenariat</h4>
+                        <p class="text-white/50 text-sm leading-relaxed group-hover:text-dark/60">Accompagner nos clients avec transparence, réactivité et un engagement total sur les résultats.</p>
+                    </div>
+
+                    <div class="bento-card p-10 bg-white/5 border border-white/10 rounded-[2.5rem] space-y-6 group hover:bg-white transition-all">
+                        <div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                            <span class="material-symbols-rounded text-3xl">security</span>
+                        </div>
+                        <h4 class="text-2xl font-display font-black tracking-tight group-hover:text-dark">Fiabilité</h4>
+                        <p class="text-white/50 text-sm leading-relaxed group-hover:text-dark/60">Garantir la continuité de service pour les infrastructures les plus critiques et exigeantes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Governance / Team -->
+        <section class="py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-24">
+                    <h2 class="text-sm font-black tracking-[0.3em] text-primary uppercase mb-4">La Gouvernance</h2>
+                    <h3 class="text-4xl lg:text-5xl font-display font-extrabold text-dark tracking-tight italic">Une direction visionnaire & engagée.</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Member 1 -->
+                    <div class="group">
+                        <div class="relative mb-6 rounded-[2.5rem] overflow-hidden aspect-[4/5] shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu_Zt2ECGQKGpnX9kmUqeQCAJ9BiRGCnqGA_qXRbxCobpET0cYqgQMK2IYR_E03eZlPtrUmIeyU6KWyi_pXVh5cgvCpXcek71PgMjtwslUvEjLXnKVeu2T_McJNS0PsWzZlUV7zkI4JRhfGRbtFtSL0r6ETO9PM5cRiqgenfbEmVnQDMXZX4SmzFiXJcwjFJ2FQXS2gzRxhmQdNfXANby4AzrKh-ZU1z-RoPz-TSeYAqxcEJoF8sxLqU2TzxBexxlBqlVtJrxUs8X7" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="JDG ARIC">
+                        </div>
+                        <h4 class="text-xl font-display font-black text-dark">Jean-Marc Aubert</h4>
+                        <p class="text-primary font-bold text-sm uppercase tracking-widest">Président Directeur Général</p>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="group">
+                        <div class="relative mb-6 rounded-[2.5rem] overflow-hidden aspect-[4/5] shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX2e4XxZNH7VVHSa1TMvrEEjtS8LFn_G2qgGY8HDu1MbQees36_xOw4jwhHg0L9QM0xox4yFqrGcf7q-0KAVxNGb-B2qYbXN4zrWD77pCeLnA0br3epygJpLXEPzBrX6-QtfwPoWzpWUkqCebExoFq3pv8oSpK9jrJjBCSgRYUljKDlGhAb8fas2qv8f9TLPuTA39hx5ZS6gZpP1BTNd3hLijolMMrU4Ux2QFFYatvwjUdPOaXoMbHq_kwfE50vU9Ca5CobJ2VCMr7" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="DT ARIC">
+                        </div>
+                        <h4 class="text-xl font-display font-black text-dark">Sarah Belkacem</h4>
+                        <p class="text-primary font-bold text-sm uppercase tracking-widest">Directrice Technique</p>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="group">
+                        <div class="relative mb-6 rounded-[2.5rem] overflow-hidden aspect-[4/5] shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_uMMojc63ipRkDwy8Z5LzmriL122TNtUkGqeKxOSfD1VueMOgQErVJTVVWd6bcUo0DgYMESHmFGLy67Fg0WiGLDlEyw4_OmfFd_8uHcFCX1lbM6AhnXDM2w5W3J_cbfYWBggKbTO2YB-gMdozFEtQSmQitRCHoTWrIgeRz6W5kPlWMLvhFBfk6_2J6n_o8rAgSorkutw06vngd4xECk-aqlYzcYj2q3wqc5lLwrbm7uhy12NcmXjwztnVSMkRS7SsnO1FPyYNCtBp" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="DO ARIC">
+                        </div>
+                        <h4 class="text-xl font-display font-black text-dark">Marc Dupont</h4>
+                        <p class="text-primary font-bold text-sm uppercase tracking-widest">Directeur des Opérations</p>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="group">
+                        <div class="relative mb-6 rounded-[2.5rem] overflow-hidden aspect-[4/5] shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR-gqQQV3ORF5paCCsit4fwbmauJczjJg8EloM9uNvt5AWMqiv5FIkn_wiDaklcDz9uYK7-EoMHmehj8PCaEjel2ve3wtb0ANZBhBoxd_NWeFExHuZCZ8_0H72VcvC8YcZiVWWXFYDlET6OOsi-6jz16qYc6fWLo_oDORLj7CDhtGlnAMVpOmpxZjtMrY6fXfjB_kCtDuRngPO6L8cshHHKxA0jVeIVP9TEndw2kSqbYpl4ELkI8-qY1Wrg34-4U9uMy0uY0rg2DKg" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="DRSE ARIC">
+                        </div>
+                        <h4 class="text-xl font-display font-black text-dark">Hélène Girard</h4>
+                        <p class="text-primary font-bold text-sm uppercase tracking-widest">Directrice RSE</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Presence Regionale -->
+        <section class="py-32 px-6 bg-surface border-y border-dark/5">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-12 text-center mb-16 space-y-6">
+                    <h2 class="text-sm font-bold tracking-[0.3em] text-primary uppercase">Maillage Territorial</h2>
+                    <h3 class="text-4xl lg:text-7xl font-display font-black tracking-tighter italic">Une présence agile, partout.</h3>
+                </div>
+                <div class="lg:col-span-5 space-y-8">
+                    <p class="text-xl text-dark/70 leading-relaxed">
+                        Nos 12 agences régionales disposent de leurs propres bureaux d'études et équipes mobiles, garantissant une réactivité optimale quel que soit votre site.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="p-6 rounded-3xl bg-white border border-dark/5 flex gap-4 shadow-xl shadow-dark/5 hover:bg-primary hover:text-white transition-all group">
+                            <span class="material-symbols-rounded text-primary group-hover:text-accent">location_on</span>
+                            <div>
+                                <h4 class="font-display font-black">Siège Social - Paris</h4>
+                                <p class="text-sm opacity-60">12 Avenue des Sciences, 75013 Paris</p>
+                            </div>
+                        </div>
+                        <div class="p-6 rounded-3xl bg-white border border-dark/5 flex gap-4 shadow-xl shadow-dark/5 hover:bg-primary hover:text-white transition-all group">
+                            <span class="material-symbols-rounded text-primary group-hover:text-accent">location_on</span>
+                            <div>
+                                <h4 class="font-display font-black">Antenne Lyon</h4>
+                                <p class="text-sm opacity-60">Pôle Tech Nord, 69000 Lyon</p>
+                            </div>
+                        </div>
+                        <div class="p-6 rounded-3xl bg-white border border-dark/5 flex gap-4 shadow-xl shadow-dark/5 hover:bg-primary hover:text-white transition-all group">
+                            <span class="material-symbols-rounded text-primary group-hover:text-accent">location_on</span>
+                            <div>
+                                <h4 class="font-display font-black">Antenne Bordeaux</h4>
+                                <p class="text-sm opacity-60">Zone Industrielle Ouest, 33000 Bordeaux</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 bg-white rounded-[3rem] p-4 shadow-2xl overflow-hidden aspect-[16/10] relative grayscale hover:grayscale-0 transition-all duration-1000">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu8MeHIzzlNcGb2Cb49hP8vfWP1EYqs89U35l4mc0o6_PdRCy4XrLvu7S7gChE6fGux_haTMueJPW3qbsnWkyh2PQhiRgrqVv_uRmG8lbpDYL9pzIRez2k7Jbm96vrig-JMzL_fEtGEbIFyF3DU0FxBMdC8f40Yo1KIZUcMV-3n_Ndsw5ujCewVJ71yHs6szAavQm7ONvBWTxHoz1tuAQReQR3hohOpHmdtnsdUrhO5IOn417tcCKY5GntqdCLmVnKbQpy4dN620Ux" 
+                         class="w-full h-full object-cover rounded-[2rem]" alt="Map Presence ARIC">
+                    <div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standards -->
+        <section class="py-24 px-6">
+            <div class="max-w-7xl mx-auto text-center space-y-12">
+                <p class="text-xs font-black tracking-[0.3em] text-dark/30 uppercase">Certifications & Standards</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-opacity">
+                    <span class="text-xl font-display font-black">ISO 9001</span>
+                    <span class="text-xl font-display font-black">ISO 14001</span>
+                    <span class="text-xl font-display font-black">BREEAM</span>
+                    <span class="text-xl font-display font-black">RGE QUALIBAT</span>
+                    <span class="text-xl font-display font-black">OPQIBI</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-24 pb-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
+                <div class="md:col-span-4 space-y-8">
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-rounded text-white text-2xl">bolt</span>
+                        </div>
+                        <span class="text-2xl font-display font-black tracking-tight text-white">ARIC<span class="text-primary">.</span></span>
+                    </div>
+                    <p class="text-white/50 leading-relaxed text-sm">
+                        L'excellence technique au service de l'ingénierie multitechnique. Pionnier des solutions énergétiques durables depuis 2010.
+                    </p>
+                </div>
+                <div class="md:col-span-2 space-y-6">
+                    <h4 class="font-bold text-lg">Expertise</h4>
+                    <ul class="space-y-4 text-white/50 text-sm">
+                        <li><a href="nosservices.html" class="hover:text-primary transition-colors">CVC & Ventilation</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">BIM Modeling</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Smart Building</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Energy Audit</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2 space-y-6">
+                    <h4 class="font-bold text-lg">Société</h4>
+                    <ul class="space-y-4 text-white/50 text-sm">
+                        <li><a href="apropos.html" class="hover:text-primary transition-colors">À propos</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Histoire</a></li>
+                        <li><a href="recrutement.html" class="hover:text-primary transition-colors">Recrutement</a></li>
+                        <li><a href="contactv2.html" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-4 space-y-8">
+                    <h4 class="font-bold text-lg">Newsletter</h4>
+                    <p class="text-sm text-white/50">Restez informé de nos innovations techniques.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Votre email" class="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 flex-1 text-sm focus:outline-none focus:border-primary">
+                        <button class="bg-primary text-white p-4 rounded-2xl hover:bg-accent hover:text-dark transition-colors">
+                            <span class="material-symbols-rounded">send</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-white/30 text-xs">© 2024 ARIC Solutions. Excellence Technique en Ingénierie.</p>
+                <div class="flex gap-8 text-xs text-white/30 font-medium">
+                    <a href="#" class="hover:text-white transition-colors">Confidentialité</a>
+                    <a href="#" class="hover:text-white transition-colors">Mentions légales</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
