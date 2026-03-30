@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui sommes-nous | ARIC Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-navy': '#0a192f',
+                        'tech-cyan': '#00f0ff',
+                        'tech-blue': '#112240',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #0f172a;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .glass-dark {
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0a192f 0%, #1e3a8a 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-light {
+            background: linear-gradient(135deg, #00f0ff 0%, #ffffff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .grid-pattern {
+            background-image: radial-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .video-overlay {
+            background: linear-gradient(to bottom, rgba(10, 25, 47, 0.8) 0%, rgba(10, 25, 47, 0.6) 100%);
+        }
+
+        .btn-assistance {
+            background: #ef0032;
+            box-shadow: 0 10px 25px -5px rgba(239, 0, 50, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-['Plus_Jakarta_Sans'] text-slate-900 overflow-x-hidden pt-20 relative">
+    <div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1] bg-repeat" style="background-image: url('bg-waves.svg'); background-size: 800px;"></div>
+
+    <!-- Header / Navbar -->
+    <nav class="sticky top-0 z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-3 shrink-0">
+                <div class="w-10 h-10 bg-tech-cyan p-2 rounded-xl neon-glow">
+                    <svg viewBox="0 0 24 24" fill="none" class="text-white">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor" />
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tighter text-white">ARIC<span class="text-tech-cyan">.</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8 font-bold text-[12px] uppercase tracking-wider">
+                <a href="index.html" class="text-slate-400 hover:text-white transition-colors">Accueil</a>
+                <a href="about.html" class="text-tech-cyan border-b-2 border-tech-cyan">Qui sommes-nous</a>
+                
+                <!-- Expertise Dropdown -->
+                <div class="relative group cursor-pointer flex items-center py-4">
+                    <span class="text-slate-400 group-hover:text-white transition-colors">Notre Expertise</span>
+                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 ml-1 text-slate-500 group-hover:rotate-180 transition-transform"></i>
+                    <div class="absolute top-full -left-4 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+                        <div class="glass-dark p-4 rounded-2xl w-72 space-y-2 shadow-2xl">
+                            <a href="expertise-industrie.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-tech-cyan transition-all text-slate-300 italic">Froid Commercial & Industriel</a>
+                            <a href="expertise-tertiaire.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-tech-cyan transition-all text-slate-300 italic">Génie Climatique (CVC)</a>
+                            <a href="expertise-efficacite.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-tech-cyan transition-all text-slate-300 italic">Efficacité Énergétique</a>
+                            <div class="h-px bg-white/10 my-2"></div>
+                            <a href="expertise.html" class="block px-4 py-3 rounded-xl bg-tech-cyan/10 text-tech-cyan font-black text-center">Voir l'expertise complète</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="services.html" class="text-slate-400 hover:text-white transition-colors">Services</a>
+                <a href="actualites.html" class="text-slate-400 hover:text-white transition-colors whitespace-nowrap">Références & Actus</a>
+                <a href="recrutement.html" class="text-slate-400 hover:text-white transition-colors">Recrutement</a>
+                <a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <!-- Utilities -->
+            <div class="flex items-center space-x-6">
+                <a href="#" class="text-slate-400 hover:text-tech-cyan transition-colors">
+                    <i data-lucide="user-round" class="w-5 h-5"></i>
+                </a>
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2 hover:bg-white/10 rounded-xl transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-[60] glass-dark opacity-0 pointer-events-none transition-all duration-300 lg:hidden">
+            <div class="flex flex-col h-full p-8">
+                <div class="flex justify-between items-center mb-12">
+                    <span class="text-2xl font-extrabold tracking-tighter text-white">ARIC<span class="text-tech-cyan">.</span></span>
+                    <button id="close-menu-btn" class="text-white p-2 hover:bg-white/10 rounded-xl transition-colors">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-6 text-xl font-bold text-white uppercase tracking-widest">
+                    <a href="index.html" class="hover:text-tech-cyan transition-colors">Accueil</a>
+                    <a href="about.html" class="text-tech-cyan">Qui sommes-nous</a>
+                    <a href="expertise.html" class="hover:text-tech-cyan transition-colors">Nos Expertises</a>
+                    <a href="services.html" class="hover:text-tech-cyan transition-colors">Services</a>
+                    <a href="actualites.html" class="hover:text-tech-cyan transition-colors">Références</a>
+                    <a href="recrutement.html" class="hover:text-tech-cyan transition-colors">Recrutement</a>
+                    <a href="contact.html" class="hover:text-tech-cyan transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Secondary Hero Banner -->
+    <header class="relative h-[50vh] flex items-center overflow-hidden text-white">
+        <!-- Video/Image Background -->
+        <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+            <source src="Vidéo_sur_la_Côte_d_Ivoire_Générée.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 video-overlay backdrop-blur-[2px]"></div>
+        <div class="absolute inset-0 grid-pattern opacity-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full pt-10">
+            <div data-aos="fade-up">
+                <div class="text-tech-cyan font-bold text-xs uppercase tracking-[0.3em] mb-4">À propos d'ARIC</div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+                    Expertise & Performance <span class="text-gradient-light">Durable</span>.
+                </h1>
+                <div class="flex items-center space-x-4 text-sm text-slate-300 font-medium">
+                    <a href="index.html" class="hover:text-tech-cyan transition-colors">Accueil</a>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+                    <span class="text-white">Qui sommes-nous</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Separator -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg class="relative block w-[calc(100%+1.3px)] h-[60px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-extrabold text-tech-navy mb-8 leading-tight">
+                        Plus de 25 ans d'excellence en <span class="text-tech-cyan">génie thermique</span> et multitechnique.
+                    </h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">
+                        Depuis sa création en 1996, ARIC est un acteur majeur du génie climatique et de la réfrigération industrielle en Afrique de l'Ouest. Filiale du Groupe Conergies.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-tech-cyan/10 rounded-xl flex items-center justify-center shrink-0">
+                                <i data-lucide="check-circle-2" class="w-6 h-6 text-tech-cyan"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-tech-navy">Maîtrise technologique</h4>
+                                <p class="text-sm text-slate-500">Expertise pointue en Froid, CVC et Solaire.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-tech-cyan/10 rounded-xl flex items-center justify-center shrink-0">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-tech-cyan"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-tech-navy">Engagement Qualité</h4>
+                                <p class="text-sm text-slate-500">Certification ISO 50001 et normes internationales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <div class="absolute -inset-4 bg-tech-cyan/20 blur-3xl rounded-full opacity-30"></div>
+                    <img src="hero-fallback.png" alt="ARIC Team" class="relative rounded-3xl shadow-2xl border border-white/40">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-24 bg-tech-navy text-white relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-extrabold mb-4">Notre Histoire</h2>
+                <div class="w-20 h-1 bg-tech-cyan mx-auto"></div>
+            </div>            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 1996 -->
+                <div class="relative p-8 glass-dark rounded-3xl border-l-4 border-tech-cyan" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-tech-cyan font-black text-2xl mb-4">1996</div>
+                    <h4 class="font-bold mb-2 uppercase text-xs tracking-wider">Lancement</h4>
+                    <p class="text-sm text-slate-400">Fondation d'ARIC à Abidjan, début de l'aventure dans le froid industriel.</p>
+                </div>
+                <!-- 2012 -->
+                <div class="relative p-8 glass-dark rounded-3xl border-l-4 border-tech-cyan" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-tech-cyan font-black text-2xl mb-4">2012</div>
+                    <h4 class="font-bold mb-2 uppercase text-xs tracking-wider">Synergie</h4>
+                    <p class="text-sm text-slate-400">Intégration au Groupe Conergies, renforçant notre présence en Afrique de l'Ouest.</p>
+                </div>
+                <!-- 2024 -->
+                <div class="relative p-8 glass-dark rounded-3xl border-l-4 border-tech-cyan" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-tech-cyan font-black text-2xl mb-4">Aujourd'hui</div>
+                    <h4 class="font-bold mb-2 uppercase text-xs tracking-wider">Leadership</h4>
+                    <p class="text-sm text-slate-400">Référence régionale avec plus de 100 experts au service de la performance.</p>
+                </div>
+            </div>
+</div>
+            </div>
+        </div>
+    </section>
+    <!-- Values Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-tech-navy">Nos Valeurs</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="glass p-8 rounded-3xl text-center border border-white/40">
+                    <div class="text-tech-cyan mb-4 flex justify-center"><i data-lucide="award" class="w-10 h-10"></i></div>
+                    <h4 class="font-bold text-tech-navy uppercase text-xs tracking-widest mb-3">Excellence technique</h4>
+                    <p class="text-[11px] text-slate-500 font-medium">L'engagement d'une expertise sans compromis.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center border border-white/40">
+                    <div class="text-tech-cyan mb-4 flex justify-center"><i data-lucide="zap" class="w-10 h-10"></i></div>
+                    <h4 class="font-bold text-tech-navy uppercase text-xs tracking-widest mb-3">Réactivité & Proximité</h4>
+                    <p class="text-[11px] text-slate-500 font-medium">Intervention rapide et présence locale forte.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center border border-white/40">
+                    <div class="text-tech-cyan mb-4 flex justify-center"><i data-lucide="leaf" class="w-10 h-10"></i></div>
+                    <h4 class="font-bold text-tech-navy uppercase text-xs tracking-widest mb-3">Innovation durable</h4>
+                    <p class="text-[11px] text-slate-500 font-medium">Solutions tournées vers l'avenir énergétique.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center border border-white/40">
+                    <div class="text-tech-cyan mb-4 flex justify-center"><i data-lucide="heart" class="w-10 h-10"></i></div>
+                    <h4 class="font-bold text-tech-navy uppercase text-xs tracking-widest mb-3">Engagement client</h4>
+                    <p class="text-[11px] text-slate-500 font-medium">Votre satisfaction est notre priorité absolue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white/40 border-t border-black/5 py-20 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div>
+                    <div class="text-2xl font-extrabold tracking-tighter text-tech-navy mb-8">ARIC<span class="text-tech-cyan">.</span></div>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                        Leader multitechnique en Afrique de l'Ouest. Filiale du Groupe Conergies. Innovation, Performance & Durabilité.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:text-tech-cyan transition-colors shadow-sm"><i data-lucide="linkedin" class="w-5 h-5 text-slate-600"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:text-tech-cyan transition-colors shadow-sm"><i data-lucide="facebook" class="w-5 h-5 text-slate-600"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-8 text-tech-navy uppercase text-xs tracking-widest">Nos Filiales</h5>
+                    <ul class="space-y-4 text-sm text-slate-500 font-semibold">
+                        <li>
+                            <a href="#" class="group block">
+                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Côte d'Ivoire</span>
+                                <span class="block text-[10px] text-slate-400 uppercase">Abidjan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group block">
+                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Mali</span>
+                                <span class="block text-[10px] text-slate-400 uppercase">Bamako</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group block">
+                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Cameroun</span>
+                                <span class="block text-[10px] text-slate-400 uppercase">Yaoundé</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group block">
+                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Bénin</span>
+                                <span class="block text-[10px] text-slate-400 uppercase">Cotonou</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-8 text-tech-navy uppercase text-xs tracking-widest">Expertises</h5>
+                    <ul class="space-y-4 text-sm text-slate-500 font-semibold">
+                        <li><a href="expertise-tertiaire.html" class="hover:text-tech-cyan transition-colors">Génie Climatique</a></li>
+                        <li><a href="expertise-industrie.html" class="hover:text-tech-cyan transition-colors">Froid Industriel</a></li>
+                        <li><a href="expertise.html" class="hover:text-tech-cyan transition-colors">Smart Monitoring GTB</a></li>
+                        <li><a href="services.html" class="hover:text-tech-cyan transition-colors">Maintenance Multitechnique</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-8 text-tech-navy uppercase text-xs tracking-widest">Newsletter</h5>
+                    <p class="text-xs text-slate-400 mb-6 font-semibold">Recevez nos dernières innovations et études de cas.</p>
+                    <div class="flex p-1 rounded-xl glass shadow-sm">
+                        <input type="email" placeholder="Email" class="bg-transparent px-4 py-2 text-sm focus:outline-none w-full placeholder-slate-400 font-semibold">
+                        <button class="bg-tech-cyan text-white p-2 rounded-lg font-bold"><i data-lucide="send" class="w-4 h-4"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-400 font-bold uppercase tracking-widest">
+                <div>© 2026 ARIC Solutions. Tous droits réservés.</div>
+                <div class="flex space-x-8">
+                    <a href="#" class="hover:text-tech-navy transition-colors">Mentions Légales</a>
+                    <a href="#" class="hover:text-white transition-colors">Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Assistance -->
+    <div class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100]" data-aos="fade-left" data-aos-delay="1000">
+        <button class="btn-assistance group flex items-center gap-2 md:gap-4 px-4 py-3 md:px-6 md:py-4 rounded-full text-white transition-all hover:scale-105 active:scale-95 shadow-2xl">
+            <div class="p-2 bg-white/10 rounded-full group-hover:rotate-12 transition-transform">
+                <i data-lucide="headset" class="w-5 h-5 md:w-6 md:h-6"></i>
+            </div>
+            <span class="font-bold tracking-widest text-xs md:text-sm uppercase whitespace-nowrap hidden sm:inline">Assistance 24/7</span>
+            <span class="font-bold tracking-widest text-[10px] uppercase sm:hidden">SOS 24/7</span>
+        </button>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu(show) {
+            if (show) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = '';
+            }
+        }
+
+        menuBtn?.addEventListener('click', () => toggleMenu(true));
+        closeBtn?.addEventListener('click', () => toggleMenu(false));
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        AOS.init({ once: true, duration: 800 });
+    </script>
+</body>
+</html>

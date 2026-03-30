@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIC | Expert en Solutions Multitechniques & Énergétiques</title>
+    <meta name="description" content="Expert en Solutions Multitechniques : Froid Commercial, Industriel & Solaire, Génie Climatique et Efficacité Énergétique.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-navy': '#0a192f',
+                        'tech-cobalt': '#1e3a8a',
+                        'tech-cyan': '#0891b2',
+                        'tech-light': '#f8fafc',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(8, 145, 178, 0.1) 0%, transparent 70%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: #ffffff url('bg-waves.svg') repeat-y center top;
+            background-size: 100% auto;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .glass-dark {
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(8, 145, 178, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(8, 145, 178, 0.3);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0891b2 0%, #1e3a8a 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-light {
+            background: linear-gradient(135deg, #fff 0%, #0891b2 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .neon-glow {
+            box-shadow: 0 10px 20px -5px rgba(8, 145, 178, 0.3);
+        }
+
+        .grid-pattern {
+            background-image: linear-gradient(rgba(8, 145, 178, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(8, 145, 178, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .video-overlay {
+            background: linear-gradient(to bottom, rgba(10, 25, 47, 0.7) 0%, rgba(10, 25, 47, 0.4) 50%, rgba(10, 25, 47, 0.8) 100%);
+        }
+
+        .btn-assistance {
+            background: #ef0032;
+            box-shadow: 0 10px 25px -5px rgba(239, 0, 50, 0.4);
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="text-slate-900 font-sans selection:bg-tech-cyan selection:text-white overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="hidden lg:block bg-tech-navy border-b border-white/5 py-2">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-semibold text-slate-400">
+            <div class="flex items-center space-x-6">
+                <a href="tel:+2252720000000" class="flex items-center hover:text-tech-cyan transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4 mr-2 text-tech-cyan"></i>
+                    +225 27 20 00 00 00
+                </a>
+                <a href="mailto:contact@conergies.ci" class="flex items-center hover:text-tech-cyan transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4 mr-2 text-tech-cyan"></i>
+                    contact@conergies.ci
+                </a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-dark">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 shrink-0">
+                <div class="w-10 h-10 bg-tech-cyan p-2 rounded-xl neon-glow">
+                    <svg viewBox="0 0 24 24" fill="none" class="text-white">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor" />
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tighter text-white">ARIC<span class="text-tech-cyan">.</span></span>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8 font-bold text-[12px] uppercase tracking-wider">
+                <a href="index.html" class="text-tech-cyan border-b-2 border-tech-cyan">Accueil</a>
+                <a href="about.html" class="text-slate-400 hover:text-white transition-colors">Qui sommes-nous</a>
+                
+                <!-- Expertise Dropdown -->
+                <div class="relative group cursor-pointer flex items-center py-4">
+                    <span class="text-slate-400 group-hover:text-white transition-colors">Notre Expertise</span>
+                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 ml-1 text-slate-500 group-hover:rotate-180 transition-transform"></i>
+                    <div class="absolute top-full -left-4 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+                        <div class="glass-dark p-4 rounded-2xl w-72 space-y-2 shadow-2xl">
+                            <a href="expertise-industrie.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-tech-cyan transition-all text-slate-300 italic">Froid Commercial & Industriel</a>
+                            <a href="expertise-tertiaire.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-tech-cyan transition-all text-slate-300 italic">Génie Climatique (CVC)</a>
+                            <a href="expertise-efficacite.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-tech-cyan transition-all text-slate-300 italic">Efficacité Énergétique</a>
+                            <div class="h-px bg-white/10 my-2"></div>
+                            <a href="expertise.html" class="block px-4 py-3 rounded-xl bg-tech-cyan/10 text-tech-cyan font-black text-center">Voir l'expertise complète</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="services.html" class="text-slate-400 hover:text-white transition-colors">Services</a>
+                <a href="actualites.html" class="text-slate-400 hover:text-white transition-colors whitespace-nowrap">Références & Actus</a>
+                <a href="recrutement.html" class="text-slate-400 hover:text-white transition-colors">Recrutement</a>
+                <a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <!-- Utilities & CTAs -->
+            <div class="flex items-center space-x-4 xl:space-x-6">
+                <!-- User/Login -->
+                <a href="#" class="text-slate-400 hover:text-tech-cyan transition-colors">
+                    <i data-lucide="user-round" class="w-5 h-5"></i>
+                </a>
+
+                <!-- Language Switcher -->
+                <div class="relative group cursor-pointer py-4">
+                    <div class="flex items-center text-slate-400 group-hover:text-white transition-colors">
+                        <span class="font-bold text-[11px]">FR</span>
+                        <i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i>
+                    </div>
+                    <div class="absolute top-full right-0 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
+                        <div class="glass-dark p-2 rounded-xl w-32 shadow-xl">
+                            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-tech-cyan text-[11px] font-bold">Français</a>
+                            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-slate-400 text-[11px] font-bold">English</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2 hover:bg-white/10 rounded-xl transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-[60] glass-dark opacity-0 pointer-events-none transition-all duration-300 lg:hidden">
+            <div class="flex flex-col h-full p-8">
+                <div class="flex justify-between items-center mb-12">
+                    <span class="text-2xl font-extrabold tracking-tighter text-white">ARIC<span class="text-tech-cyan">.</span></span>
+                    <button id="close-menu-btn" class="text-white p-2 hover:bg-white/10 rounded-xl transition-colors">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-6 text-xl font-bold text-white uppercase tracking-widest">
+                    <a href="index.html" class="text-tech-cyan">Accueil</a>
+                    <a href="about.html" class="hover:text-tech-cyan transition-colors">Qui sommes-nous</a>
+                    <a href="expertise.html" class="hover:text-tech-cyan transition-colors">Nos Expertises</a>
+                    <a href="services.html" class="hover:text-tech-cyan transition-colors">Services</a>
+                    <a href="actualites.html" class="hover:text-tech-cyan transition-colors">Références</a>
+                    <a href="recrutement.html" class="hover:text-tech-cyan transition-colors">Recrutement</a>
+                    <a href="contact.html" class="hover:text-tech-cyan transition-colors">Contact</a>
+                </nav>
+                <div class="mt-auto pt-12 border-t border-white/10 space-y-6">
+                    <div class="flex items-center space-x-4 text-slate-400">
+                        <i data-lucide="phone" class="w-5 h-5 text-tech-cyan"></i>
+                        <span class="text-sm font-semibold">+225 27 20 00 00 00</span>
+                    </div>
+                    <div class="flex items-center space-x-4 text-slate-400">
+                        <i data-lucide="mail" class="w-5 h-5 text-tech-cyan"></i>
+                        <span class="text-sm font-semibold">contact@conergies.ci</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Bannière) -->
+    <header class="relative min-h-[95vh] flex items-center overflow-hidden text-white">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+            <source src="Vidéo_sur_la_Côte_d_Ivoire_Générée.mp4" type="video/mp4">
+            <img src="hero-fallback.png" alt="ARIC Tech Fallback" class="w-full h-full object-cover">
+        </video>
+
+        <!-- Overlays -->
+        <div class="absolute inset-0 video-overlay backdrop-blur-[1px]"></div>
+        <div class="absolute inset-0 grid-pattern opacity-10"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-tech-cyan/5 blur-[150px] rounded-full opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full mb-20">
+            <div class="max-w-3xl" data-aos="fade-up" data-aos-duration="1000">
+                <div class="inline-flex items-center px-4 py-2 rounded-full glass-dark mb-6 text-sm font-bold text-tech-cyan">
+                    <span class="relative flex h-2 w-2 mr-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tech-cyan opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-tech-cyan"></span>
+                    </span>
+                    SERVICE MAINTENANCE & PERFORMANCE
+                </div>
+                <h1 class="text-4xl sm:text-6xl lg:text-8xl font-extrabold leading-tight mb-8 text-white">
+                    Garantissez la <span class="text-gradient-light">continuité</span> de votre énergie.
+                </h1>
+                <p class="text-xl text-slate-200 mb-10 leading-relaxed font-medium">
+                    Expertise technique, réactivité immédiate et optimisation énergétique pour vos installations CVC et multitechniques.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="services.html" class="px-8 py-5 bg-tech-cyan text-tech-navy font-black rounded-2xl hover:scale-105 transition-transform text-center neon-glow">
+                        Nos Solutions
+                    </a>
+                    <a href="contact.html" class="px-8 py-5 glass-dark rounded-2xl font-bold hover:bg-white/10 transition-all text-center text-white border border-white/10">
+                        Contacter un expert
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Float Element -->
+        <div class="absolute right-0 bottom-40 hidden lg:block animate-float" data-aos="fade-left" data-aos-delay="500">
+            <div class="glass-dark p-8 rounded-l-[40px] border-r-0 backdrop-blur-3xl shadow-2xl">
+                <div class="flex items-center space-x-6">
+                    <div class="text-center px-6 border-r border-white/10">
+                        <div class="text-4xl font-extrabold text-tech-cyan">+25 Ans</div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">d'expérience</div>
+                    </div>
+                    <div class="text-center px-6 border-r border-white/10">
+                        <div class="text-4xl font-extrabold text-white">4</div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Filiales en Afrique</div>
+                    </div>
+                    <div class="text-center px-6 border-r border-white/10">
+                        <div class="text-4xl font-extrabold text-white">+100</div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Experts</div>
+                    </div>
+                    <div class="text-center px-6">
+                        <div class="text-4xl font-extrabold text-white">24h/7</div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Maintenance & SAV</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Transition Separator (Elton Style) -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg class="relative block w-[calc(100%+1.3px)] h-[80px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-sm font-black text-tech-cyan uppercase tracking-[0.2em] mb-4">Qui sommes-nous</h2>
+                    <h3 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
+                        Votre allié pour la performance durable.
+                    </h3>
+                    <p class="text-lg text-slate-500 mb-8 leading-relaxed">
+                        Depuis sa création en 1996, ARIC est un acteur majeur du génie climatique et de la réfrigération industrielle en Afrique de l'Ouest. Filiale du Groupe Conergies.
+                    </p>
+                    <ul class="space-y-4 font-semibold text-slate-700">
+                        <li class="flex items-center">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-tech-cyan mr-4"></i>
+                            Maîtrise technologique avancée
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-tech-cyan mr-4"></i>
+                            Accompagnement ISO 50001
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-tech-cyan mr-4"></i>
+                            Réactivité et proximité régionale
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <div class="aspect-square rounded-[60px] overflow-hidden glass p-4 rotate-3">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" alt="Tech" class="w-full h-full object-cover rounded-[50px]">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 glass p-8 rounded-3xl -rotate-3 hover:rotate-0 transition-transform shadow-xl">
+                        <div class="text-tech-cyan mb-2"><i data-lucide="zap" class="w-10 h-10 fill-tech-cyan/20"></i></div>
+                        <div class="text-2xl font-black text-tech-navy">Efficacité Boostée</div>
+                        <div class="text-sm text-slate-500">Réduction de la facture</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20" data-aos="fade-up">
+                <h2 class="text-sm font-black text-tech-cyan uppercase tracking-[0.2em] mb-4">Nos Services</h2>
+                <h3 class="text-4xl font-extrabold mb-6 text-tech-navy">Expertise à 360° pour vos infrastructures</h3>
+                <p class="text-slate-600 font-medium">De la maintenance préventive à l'audit énergétique, nous accompagnons vos installations sur toute leur durée de vie.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass p-10 rounded-[40px] hover-lift group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-2xl bg-tech-cyan/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-tech-cyan"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 text-tech-navy">Contrats de Maintenance (préventive et curative)</h4>
+                    <p class="text-slate-500 leading-relaxed mb-6">Plans préventifs et curatifs personnalisés pour maximiser la durée de vie de vos équipements et éviter les arrêts de production.</p>
+                    <a href="services.html" class="inline-flex items-center text-tech-cyan font-bold hover:translate-x-2 transition-transform">
+                        En savoir plus <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass p-10 rounded-[40px] border-tech-cyan/20 hover-lift group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 rounded-2xl bg-tech-cyan/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i data-lucide="wrench" class="w-8 h-8 text-tech-cyan"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 text-tech-navy">Installations & Travaux (conception et réalisation)</h4>
+                    <p class="text-slate-500 leading-relaxed mb-6">Expertise technique complète pour la mise en place de vos infrastructures neuves avec un suivi rigoureux.</p>
+                    <a href="expertise.html" class="inline-flex items-center text-tech-cyan font-bold hover:translate-x-2 transition-transform">
+                        Nos solutions <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass p-10 rounded-[40px] hover-lift group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 rounded-2xl bg-tech-cyan/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i data-lucide="bar-chart-3" class="w-8 h-8 text-tech-cyan"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 text-tech-navy">Audits et Conseil (optimisation des performances)</h4>
+                    <p class="text-slate-500 leading-relaxed mb-6">Analyse approfondie de vos consommations et préconisations de solutions pour réduire drastiquement votre empreinte carbone.</p>
+                    <a href="expertise-efficacite.html" class="inline-flex items-center text-tech-cyan font-bold hover:translate-x-2 transition-transform">
+                        Optimiser <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div class="max-w-xl" data-aos="fade-right">
+                    <h2 class="text-sm font-black text-tech-cyan uppercase tracking-[0.2em] mb-4">Notre Expertise</h2>
+                    <h3 class="text-4xl md:text-5xl font-extrabold">Maîtrise des environnements critiques.</h3>
+                </div>
+                <a href="#" class="px-8 py-4 glass rounded-2xl font-bold hover:bg-white/10 transition-all" data-aos="fade-left">Voir tout</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-black/5 rounded-[40px] overflow-hidden border border-black/5">
+                <!-- Expertise Item 1 -->
+                <div class="bg-white/40 p-12 hover:bg-white/60 transition-colors group">
+                    <div class="text-tech-cyan mb-8 opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="snowflake" class="w-12 h-12"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 text-tech-navy">Froid Commercial & Industriel</h4>
+                    <p class="text-slate-600">Conception et maintenance de systèmes frigorifiques pour la grande distribution et l'industrie agroalimentaire.</p>
+                </div>
+                <!-- Expertise Item 2 -->
+                <div class="bg-white/40 p-12 hover:bg-white/60 transition-colors group">
+                    <div class="text-tech-cyan mb-8 opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="wind" class="w-12 h-12"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 text-tech-navy">Génie Climatique (CVC)</h4>
+                    <p class="text-slate-600">Maîtrise de la température et de la qualité de l'air — de l'hôtellerie de luxe aux salles blanches industrielles.</p>
+                </div>
+                <!-- Expertise Item 3 -->
+                <div class="bg-white/40 p-12 hover:bg-white/60 transition-colors group">
+                    <div class="text-tech-cyan mb-8 opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="activity" class="w-12 h-12"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 text-tech-navy">Efficacité Énergétique</h4>
+                    <p class="text-slate-600">Audit, pilotage GTB et optimisation temps réel des consommations — accompagnement certification ISO 50001.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-32 relative overflow-hidden bg-tech-gradient">
+        <div class="absolute inset-0 grid-pattern opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-sm font-black text-tech-cyan uppercase tracking-[0.2em] mb-4">Références</h2>
+                <h3 class="text-4xl font-extrabold">Ils nous font confiance</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-gray-300 italic mb-8">"Grâce aux audits énergétiques de Conergies, nous avons réduit notre facture d'électricité de 20% sur notre site industriel d'Abidjan."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-tech-cobalt mr-4 overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="Avatar">
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">Jean-Luc Keffi</div>
+                            <div class="text-xs text-tech-cyan font-bold uppercase tracking-widest">Dir. Exploitation</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8 rounded-3xl border-tech-cyan/30" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-gray-300 italic mb-8">"La réactivité de l'assistance 24/7 est cruciale pour notre chaîne de froid. Leurs équipes interviennent rapidement même les jours fériés."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-tech-cobalt mr-4 overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?u=2" alt="Avatar">
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">Moussa Traoré</div>
+                            <div class="text-xs text-tech-cyan font-bold uppercase tracking-widest">Resp. Technique</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
+                    <p class="text-gray-300 italic mb-8">"Leur expertise en CVC nous a permis d'optimiser le confort de nos bureaux tout en diminuant drastiquement nos émissions carbone."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-tech-cobalt mr-4 overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?u=3" alt="Avatar">
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">Isabelle Durand</div>
+                            <div class="text-xs text-tech-cyan font-bold uppercase tracking-widest">DG Groupe Hôtelier</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="glass rounded-[60px] p-12 lg:p-20 overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-1/2 h-full bg-tech-cyan/5 -skew-x-12 translate-x-1/2"></div>
+                
+                <div class="grid lg:grid-cols-2 gap-20 relative z-10">
+                    <div data-aos="fade-right">
+                        <h2 class="text-4xl font-extrabold mb-8 text-tech-navy">Prêt à optimiser vos installations ?</h2>
+                        <p class="text-lg text-slate-600 mb-12 leading-relaxed">
+                            Contactez nos experts pour un audit gratuit ou une demande de devis. Nos équipes vous répondent sous 24h.
+                        </p>
+                        <div class="space-y-6 text-slate-700">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-2xl bg-tech-cyan/10 flex items-center justify-center mr-6 shrink-0">
+                                    <i data-lucide="map-pin" class="text-tech-cyan"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold mb-1">Siège Social</div>
+                                    <div class="text-slate-500">Zone 4C, Rue des Majorettes, Abidjan, Côte d'Ivoire</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-2xl bg-tech-cyan/10 flex items-center justify-center mr-6 shrink-0">
+                                    <i data-lucide="headphones" class="text-tech-cyan"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold mb-1">Direct Hotline</div>
+                                    <div class="text-slate-500">+225 27 21 21 00 00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="space-y-6" data-aos="fade-left">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Nom complet" class="w-full bg-white/60 border border-black/5 rounded-2xl px-6 py-4 focus:border-tech-cyan focus:outline-none transition-colors placeholder-slate-400">
+                            <input type="email" placeholder="Email professionnel" class="w-full bg-white/60 border border-black/5 rounded-2xl px-6 py-4 focus:border-tech-cyan focus:outline-none transition-colors placeholder-slate-400">
+                        </div>
+                        <input type="text" placeholder="Entreprise" class="w-full bg-white/60 border border-black/5 rounded-2xl px-6 py-4 focus:border-tech-cyan focus:outline-none transition-colors placeholder-slate-400">
+                        <textarea rows="4" placeholder="Votre message ou besoin technique" class="w-full bg-white/60 border border-black/5 rounded-2xl px-6 py-4 focus:border-tech-cyan focus:outline-none transition-colors placeholder-slate-400"></textarea>
+                        <button class="w-full py-5 bg-tech-cyan text-white font-black rounded-2xl hover:scale-[1.02] transition-transform neon-glow">
+                            Envoyer la demande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white/40 border-t border-black/5 py-20 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div>
+                    <div class="text-2xl font-extrabold tracking-tighter text-tech-navy mb-8">ARIC<span class="text-tech-cyan">.</span></div>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                        Leader multitechnique en Afrique de l'Ouest. Filiale du Groupe Conergies. Innovation, Performance & Durabilité.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:text-tech-cyan transition-colors shadow-sm"><i data-lucide="linkedin" class="w-5 h-5 text-slate-600"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:text-tech-cyan transition-colors shadow-sm"><i data-lucide="facebook" class="w-5 h-5 text-slate-600"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-8 text-tech-navy uppercase text-xs tracking-widest">Nos Filiales</h5>
+                    <ul class="space-y-4 text-sm text-slate-500 font-semibold">
+                        <li>
+                            <a href="#" class="group block">
+                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Côte d'Ivoire</span>
+                                <span class="block text-[10px] text-slate-400 uppercase">Abidjan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group block">
+                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Mali</span>
+                                <span class="block text-[10px] text-slate-400 uppercase">Bamako</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group block">
+                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Cameroun</span>
+                                <span class="block text-[10px] text-slate-400 uppercase">Yaoundé</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group block">
+                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Bénin</span>
+                                <span class="block text-[10px] text-slate-400 uppercase">Cotonou</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-8 text-tech-navy uppercase text-xs tracking-widest">Expertises</h5>
+                    <ul class="space-y-4 text-sm text-slate-500 font-semibold">
+                        <li><a href="expertise-tertiaire.html" class="hover:text-tech-cyan transition-colors">Génie Climatique</a></li>
+                        <li><a href="expertise-industrie.html" class="hover:text-tech-cyan transition-colors">Froid Industriel</a></li>
+                        <li><a href="expertise.html" class="hover:text-tech-cyan transition-colors">Smart Monitoring GTB</a></li>
+                        <li><a href="services.html" class="hover:text-tech-cyan transition-colors">Maintenance Multitechnique</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-8 text-tech-navy uppercase text-xs tracking-widest">Newsletter</h5>
+                    <p class="text-xs text-slate-400 mb-6 font-semibold">Recevez nos dernières innovations et études de cas.</p>
+                    <div class="flex p-1 rounded-xl glass shadow-sm">
+                        <input type="email" placeholder="Email" class="bg-transparent px-4 py-2 text-sm focus:outline-none w-full placeholder-slate-400 font-semibold">
+                        <button class="bg-tech-cyan text-white p-2 rounded-lg font-bold"><i data-lucide="send" class="w-4 h-4"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-400 font-bold uppercase tracking-widest">
+                <div>© 2026 ARIC Solutions. Tous droits réservés.</div>
+                <div class="flex space-x-8">
+                    <a href="#" class="hover:text-tech-navy transition-colors">Mentions Légales</a>
+                    <a href="#" class="hover:text-white transition-colors">Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Assistance -->
+    <div class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100]" data-aos="fade-left" data-aos-delay="1000">
+        <button class="btn-assistance group flex items-center gap-2 md:gap-4 px-4 py-3 md:px-6 md:py-4 rounded-full text-white transition-all hover:scale-105 active:scale-95 shadow-2xl">
+            <div class="p-2 bg-white/10 rounded-full group-hover:rotate-12 transition-transform">
+                <i data-lucide="headset" class="w-5 h-5 md:w-6 md:h-6"></i>
+            </div>
+            <span class="font-bold tracking-widest text-xs md:text-sm uppercase whitespace-nowrap hidden sm:inline">Assistance 24/7</span>
+            <span class="font-bold tracking-widest text-[10px] uppercase sm:hidden">SOS 24/7</span>
+        </button>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu(show) {
+            if (show) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = '';
+            }
+        }
+
+        menuBtn?.addEventListener('click', () => toggleMenu(true));
+        closeBtn?.addEventListener('click', () => toggleMenu(false));
+
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            mirror: false,
+            duration: 800
+        });
+    </script>
+</body>
+</html>
