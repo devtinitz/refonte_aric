@@ -106,7 +106,7 @@
                         <i data-lucide="user-round" class="w-5 h-5"></i>
                     </a>
                     <!-- Mobile Toggle -->
-                    <button id="mobile-menu-btn" class="lg:hidden text-tech-navy p-2 hover:bg-white/10 rounded-xl transition-colors">
+                    <button id="mobile-menu-btn" class="lg:hidden text-tech-navy p-2 hover:bg-slate-100 rounded-xl transition-colors focus:ring-2 focus:ring-tech-cyan/50 focus:outline-none">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -114,11 +114,11 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white shadow-2xl border-b border-slate-200 opacity-0 pointer-events-none transition-all duration-300 lg:hidden">
+        <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white/95 backdrop-blur-xl shadow-2xl border-b border-slate-200 opacity-0 pointer-events-none transition-all duration-300 lg:hidden">
             <div class="flex flex-col h-full p-8">
                 <div class="flex justify-between items-center mb-12">
-                    <span class="text-2xl font-extrabold tracking-tighter text-tech-navy">ARIC<span class="text-tech-cyan">.</span></span>
-                    <button id="close-menu-btn" class="text-tech-navy p-2 hover:bg-white/10 rounded-xl transition-colors">
+                    <img src="logo.png" alt="ARIC Solutions Logo" class="h-10 w-auto drop-shadow-sm">
+                    <button id="close-menu-btn" class="text-tech-navy p-2 hover:bg-slate-100 rounded-xl transition-colors focus:ring-2 focus:ring-tech-cyan/50 focus:outline-none">
                         <i data-lucide="x" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -135,7 +135,7 @@
     </nav>
 
     <!-- Secondary Hero Banner -->
-    <header class="relative h-[50vh] flex items-center overflow-hidden text-white">
+    <header class="relative min-h-[60vh] md:min-h-[50vh] flex items-center overflow-hidden text-white">
         <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
             <source src="Vidéo_sur_la_Côte_d_Ivoire_Générée.mp4" type="video/mp4">
         </video>
@@ -159,13 +159,13 @@
 
         <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
             <svg class="relative block w-[calc(100%+1.3px)] h-[60px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#f9fafb"></path>
             </svg>
         </div>
     </header>
 
     <!-- Content -->
-    <section class="py-24 relative">
+    <section class="py-16 md:py-24 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div data-aos="fade-up" class="max-w-3xl mb-20">
                 <h2 class="text-4xl font-extrabold text-tech-navy mb-8 leading-tight">Solaire Photovoltaïque & <span class="text-tech-cyan italic">Autoconsommation.</span></h2>
@@ -211,7 +211,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
                 <div>
-                    <div class="text-2xl font-extrabold tracking-tighter text-tech-navy mb-8">ARIC<span class="text-tech-cyan">.</span></div>
+                    <img src="logo.png" alt="ARIC Solutions Logo" class="h-14 w-auto mb-8 drop-shadow-sm">
                     <p class="text-slate-500 text-sm leading-relaxed mb-8">
                         Leader multitechnique en Afrique de l'Ouest. Filiale du Groupe Conergies. Innovation, Performance & Durabilité.
                     </p>
@@ -261,9 +261,9 @@
                 <div>
                     <h5 class="font-bold mb-8 text-tech-navy uppercase text-xs tracking-widest">Newsletter</h5>
                     <p class="text-xs text-slate-400 mb-6 font-semibold">Recevez nos dernières innovations et études de cas.</p>
-                    <div class="flex p-1 rounded-xl glass shadow-sm">
-                        <input type="email" placeholder="Email" class="bg-transparent px-4 py-2 text-sm focus:outline-none w-full placeholder-slate-400 font-semibold">
-                        <button class="bg-tech-cyan text-white p-2 rounded-lg font-bold"><i data-lucide="send" class="w-4 h-4"></i></button>
+                    <div class="flex p-1 rounded-xl glass shadow-sm focus-within:ring-2 focus-within:ring-tech-cyan/50 transition-all">
+                        <input type="email" placeholder="Email" class="bg-transparent px-4 py-2 text-sm focus:outline-none w-full placeholder-slate-400 font-semibold text-slate-800">
+                        <button class="bg-tech-cyan text-white p-2 rounded-lg font-bold hover:bg-tech-blue transition-colors focus:ring-2 focus:ring-offset-1 focus:ring-tech-cyan"><i data-lucide="send" class="w-4 h-4"></i></button>
                     </div>
                 </div>
             </div>
