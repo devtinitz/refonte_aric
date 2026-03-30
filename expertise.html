@@ -44,7 +44,7 @@
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
         }
 
-        .glass-dark {
+        .bg-white/95 backdrop-blur-md border-b border-slate-200 {
             background: rgba(10, 25, 47, 0.85);
             backdrop-filter: blur(24px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -75,7 +75,7 @@
     <div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1] bg-repeat" style="background-image: url('bg-waves.svg'); background-size: 800px;"></div>
 
     <!-- Header / Navbar -->
-    <nav class="sticky top-0 z-50 glass-dark">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <a href="./" class="flex items-center space-x-3 shrink-0">
                 <div class="w-10 h-10 bg-tech-cyan p-2 rounded-xl neon-glow">
@@ -84,34 +84,34 @@
                         <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
-                <span class="text-2xl font-extrabold tracking-tighter text-white">ARIC<span class="text-tech-cyan">.</span></span>
+                <span class="text-2xl font-extrabold tracking-tighter text-tech-navy">ARIC<span class="text-tech-cyan">.</span></span>
             </a>
 
             <div class="hidden lg:flex items-center space-x-4 xl:space-x-8 font-bold text-[12px] uppercase tracking-wider">
-                <a href="about.html" class="text-slate-400 hover:text-white transition-colors">Qui sommes-nous</a>
+                <a href="about.html" class="text-slate-600 hover:text-tech-cyan transition-colors">Qui sommes-nous</a>
                 <a href="expertise.html" class="text-tech-cyan border-b-2 border-tech-cyan font-black">Notre Expertise</a>
-                <a href="services.html" class="text-slate-400 hover:text-white transition-colors">Services</a>
-                <a href="actualites.html" class="text-slate-400 hover:text-white transition-colors">Références & Actus</a>
-                <a href="recrutement.html" class="text-slate-400 hover:text-white transition-colors">Recrutement</a>
-                <a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a>
+                <a href="services.html" class="text-slate-600 hover:text-tech-cyan transition-colors">Services</a>
+                <a href="actualites.html" class="text-slate-600 hover:text-tech-cyan transition-colors">Références & Actus</a>
+                <a href="recrutement.html" class="text-slate-600 hover:text-tech-cyan transition-colors">Recrutement</a>
+                <a href="contact.html" class="text-slate-600 hover:text-tech-cyan transition-colors">Contact</a>
             </div>
 
             <!-- Mobile Toggle -->
-            <button id="mobile-menu-btn" class="lg:hidden text-white p-2 hover:bg-white/10 rounded-xl transition-colors">
+            <button id="mobile-menu-btn" class="lg:hidden text-tech-navy p-2 hover:bg-white/10 rounded-xl transition-colors">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 z-[60] glass-dark opacity-0 pointer-events-none transition-all duration-300 lg:hidden">
+        <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white/95 backdrop-blur-md border-b border-slate-200 opacity-0 pointer-events-none transition-all duration-300 lg:hidden">
             <div class="flex flex-col h-full p-8">
                 <div class="flex justify-between items-center mb-12">
-                    <span class="text-2xl font-extrabold tracking-tighter text-white">ARIC<span class="text-tech-cyan">.</span></span>
-                    <button id="close-menu-btn" class="text-white p-2 hover:bg-white/10 rounded-xl transition-colors">
+                    <span class="text-2xl font-extrabold tracking-tighter text-tech-navy">ARIC<span class="text-tech-cyan">.</span></span>
+                    <button id="close-menu-btn" class="text-tech-navy p-2 hover:bg-white/10 rounded-xl transition-colors">
                         <i data-lucide="x" class="w-6 h-6"></i>
                     </button>
                 </div>
-                <nav class="flex flex-col space-y-6 text-xl font-bold text-white uppercase tracking-widest">
+                <nav class="flex flex-col space-y-6 text-xl font-bold text-tech-navy uppercase tracking-widest">
                     <a href="about.html" class="hover:text-tech-cyan transition-colors">Qui sommes-nous</a>
                     <a href="expertise.html" class="text-tech-cyan font-black border-b border-tech-cyan/30">Nos Expertises</a>
                     <a href="services.html" class="hover:text-tech-cyan transition-colors">Services</a>
