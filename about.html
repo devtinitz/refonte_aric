@@ -85,108 +85,6 @@
             background: #ef0032;
             box-shadow: 0 10px 25px -5px rgba(239, 0, 50, 0.4);
         }
-
-        /* ===== DARK NEON TIMELINE ===== */
-        .timeline-container-dark {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-        .timeline-container-dark::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, transparent 0%, rgba(54, 171, 255, 0.5) 15%, rgba(54, 171, 255, 0.5) 85%, transparent 100%);
-            transform: translateX(-50%);
-            box-shadow: 0 0 10px rgba(54, 171, 255, 0.3);
-            z-index: 1;
-        }
-        .tl-item-dark {
-            display: flex;
-            align-items: center;
-            margin-bottom: 4rem;
-            position: relative;
-            z-index: 2;
-        }
-        .tl-item-dark:nth-child(odd) { flex-direction: row; }
-        .tl-item-dark:nth-child(even) { flex-direction: row-reverse; }
-
-        .tl-card-dark {
-            flex: 1;
-            background: rgba(10, 25, 47, 0.6);
-            border: 1px solid rgba(54, 171, 255, 0.2);
-            backdrop-filter: blur(12px);
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            position: relative;
-            transition: all 0.4s ease;
-        }
-        .tl-card-dark:hover {
-            transform: translateY(-5px);
-            border-color: rgba(54, 171, 255, 0.6);
-            box-shadow: 0 10px 30px rgba(54, 171, 255, 0.15);
-        }
-        .tl-item-dark:nth-child(odd) .tl-card-dark { margin-right: 3rem; }
-        .tl-item-dark:nth-child(even) .tl-card-dark { margin-left: 3rem; }
-
-        .tl-year-dark {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 900;
-            color: transparent;
-            -webkit-text-stroke: 1.5px #36abff;
-            opacity: 0.9;
-            line-height: 1.1;
-            text-align: center;
-            text-shadow: 0 0 20px rgba(54, 171, 255, 0.2);
-        }
-
-        .tl-dot-col-dark {
-            width: 4rem;
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            position: relative;
-        }
-        .tl-dot-dark {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            background: #0a192f;
-            border: 2px solid #36abff;
-            box-shadow: 0 0 15px rgba(54, 171, 255, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 3;
-            transition: all 0.3s ease;
-        }
-        .tl-item-dark:hover .tl-dot-dark {
-            background: #36abff;
-            box-shadow: 0 0 25px rgba(54, 171, 255, 0.8);
-        }
-        .tl-item-dark:hover .tl-dot-dark svg { color: #0a192f !important; }
-        
-        .tl-dot-current-dark {
-            background: #36abff;
-            box-shadow: 0 0 30px rgba(54, 171, 255, 0.8);
-        }
-        .tl-dot-current-dark svg { color: #0a192f !important; }
-
-        @media (max-width: 768px) {
-            .timeline-container-dark::before { left: 1.5rem; transform: none; }
-            .tl-item-dark, .tl-item-dark:nth-child(even) { flex-direction: row; align-items: flex-start; gap: 1.5rem; }
-            .tl-year-dark { display: none; }
-            .tl-dot-col-dark { width: 3rem; }
-            .tl-dot-dark { width: 2.5rem; height: 2.5rem; }
-            .tl-card-dark, .tl-item-dark:nth-child(odd) .tl-card-dark, .tl-item-dark:nth-child(even) .tl-card-dark { margin: 0; flex: 1; padding: 1.5rem; }
-        }
     </style>
 </head>
 <body class="bg-gray-50 font-['Plus_Jakarta_Sans'] text-slate-900 overflow-x-hidden relative">
@@ -358,72 +256,122 @@
         </div>
     </section>
 
-    <!-- Timeline Section (Dark Neon) -->
-    <section class="py-24 bg-tech-navy text-white relative overflow-hidden">
-        <div class="absolute inset-0 grid-pattern opacity-10"></div>
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- History Section (Grid) -->
+    <section class="py-24 relative bg-gray-50 border-y border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-6">
             
-            <div class="text-center mb-20" data-aos="fade-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-tech-cyan/30 bg-tech-cyan/10 text-tech-cyan text-xs font-bold uppercase tracking-widest mb-6">
-                    <i data-lucide="history" class="w-4 h-4"></i>
+            <div class="text-center mb-24" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl lg:text-5xl font-extrabold text-tech-navy mb-6 tracking-tight">
                     Notre Histoire
-                </div>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-                    Une aventure <span class="text-gradient-light">industrielle.</span>
                 </h2>
-                <div class="w-20 h-1 bg-tech-cyan mx-auto neon-glow"></div>
+                <div class="w-16 h-1 bg-tech-cyan mx-auto rounded-full"></div>
             </div>
 
-            <div class="timeline-container-dark">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
                 
-                <!-- 1996 -->
-                <div class="tl-item-dark" data-aos="fade-up">
-                    <div class="tl-card-dark">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-tech-cyan/10 text-tech-cyan text-[10px] font-bold uppercase tracking-wider mb-4 border border-tech-cyan/20">
-                            <i data-lucide="rocket" class="w-3.5 h-3.5"></i> Fondation
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Lancement d'ARIC</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Fondation d'ARIC à Abidjan, début de l'aventure dans le froid industriel. Une vision claire : apporter l'excellence technique au cœur de la Côte d'Ivoire.</p>
+                <!-- 1970 -->
+                <div data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-20 h-20 rounded-full bg-tech-navy text-white flex items-center justify-center font-black text-xl tracking-[0.1em] shadow-lg mb-8 transition-transform hover:-translate-y-2 duration-300 ring-4 ring-tech-navy/5">
+                        <span style="font-family: monospace; font-size: 1.3rem;">1970</span>
                     </div>
-                    <div class="tl-dot-col-dark">
-                        <div class="tl-dot-dark"><i data-lucide="zap" class="w-5 h-5 text-tech-cyan transition-colors"></i></div>
+                    <h3 class="text-xl font-bold text-tech-navy mb-4">Création de Matal Ivoire</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Idrissa Sanankoua, ingénieur IFFI en collaboration avec Matal crée Matal Ivoire dont l'activité principale est le montage et la Maintenance d'Installations de Froid Industriel sur le Port d'Abidjan pour les entreprises exportatrices de thon.
+                    </p>
+                </div>
+
+                <!-- 1985 -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 rounded-full bg-tech-navy text-white flex items-center justify-center font-black text-xl tracking-[0.1em] shadow-lg mb-8 transition-transform hover:-translate-y-2 duration-300 ring-4 ring-tech-navy/5">
+                        <span style="font-family: monospace; font-size: 1.3rem;">1985</span>
                     </div>
-                    <div class="tl-year-dark">1996</div>
+                    <h3 class="text-xl font-bold text-tech-navy mb-4">Naissance de Rica</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Matal Ivoire devient Rica et se diversifie dans le conditionnement d'air et la Réfrigération commerciale. En 1993, Rica réalise les premiers supermarchés Hayat 2 Plateaux pour le compte de Prosuma.
+                    </p>
+                </div>
+
+                <!-- 1994 -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 rounded-full bg-tech-navy text-white flex items-center justify-center font-black text-xl tracking-[0.1em] shadow-lg mb-8 transition-transform hover:-translate-y-2 duration-300 ring-4 ring-tech-navy/5">
+                        <span style="font-family: monospace; font-size: 1.3rem;">1994</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-tech-navy mb-4">Expansion au Mali</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Rica réalise le siège de la BCEAO à Bamako. Rica-Services Mali est créé.
+                    </p>
+                </div>
+
+                <!-- 1998 -->
+                <div data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-20 h-20 rounded-full bg-tech-navy text-white flex items-center justify-center font-black text-xl tracking-[0.1em] shadow-lg mb-8 transition-transform hover:-translate-y-2 duration-300 ring-4 ring-tech-navy/5">
+                        <span style="font-family: monospace; font-size: 1.3rem;">1998</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-tech-navy mb-4">Entrée de SIFCOM</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Le groupe SIFCOM entre au capital de Rica. Rica réalise le bâtiment annexe du siège de la BCEAO à Dakar et la rénovation de l'hôtel Novotel à Abidjan.
+                    </p>
+                </div>
+
+                <!-- 2003 -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 rounded-full bg-tech-navy text-white flex items-center justify-center font-black text-xl tracking-[0.1em] shadow-lg mb-8 transition-transform hover:-translate-y-2 duration-300 ring-4 ring-tech-navy/5">
+                        <span style="font-family: monospace; font-size: 1.3rem;">2003</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-tech-navy mb-4">Gel des activités</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Suite au coup d'état en Côte d'Ivoire en 1999 et à la crise socio-politique qui s'ensuit, Rica gèle ses activités en Côte d'Ivoire.
+                    </p>
+                </div>
+
+                <!-- 2011 -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 rounded-full bg-tech-navy text-white flex items-center justify-center font-black text-xl tracking-[0.1em] shadow-lg mb-8 transition-transform hover:-translate-y-2 duration-300 ring-4 ring-tech-navy/5">
+                        <span style="font-family: monospace; font-size: 1.3rem;">2011</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-tech-navy mb-4">Création de Conergies-Group</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Création du holding Conergies-Group qui reprend une participation dans Rica-Services Mali et redémarre les activités en Côte d'Ivoire en 2012 à travers ARIC.
+                    </p>
                 </div>
 
                 <!-- 2012 -->
-                <div class="tl-item-dark" data-aos="fade-up">
-                    <div class="tl-year-dark">2012</div>
-                    <div class="tl-dot-col-dark">
-                        <div class="tl-dot-dark"><i data-lucide="network" class="w-5 h-5 text-tech-cyan transition-colors"></i></div>
+                <div data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-20 h-20 rounded-full bg-tech-navy text-white flex items-center justify-center font-black text-xl tracking-[0.1em] shadow-lg mb-8 transition-transform hover:-translate-y-2 duration-300 ring-4 ring-tech-navy/5">
+                        <span style="font-family: monospace; font-size: 1.3rem;">2012</span>
                     </div>
-                    <div class="tl-card-dark">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-tech-cyan/10 text-tech-cyan text-[10px] font-bold uppercase tracking-wider mb-4 border border-tech-cyan/20">
-                            <i data-lucide="handshake" class="w-3.5 h-3.5"></i> Synergie
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Intégration au Groupe Conergies</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Intégration au Groupe Conergies, renforçant notre présence en Afrique de l'Ouest et consolidant notre capacité à déployer des projets d'envergure régionale.</p>
-                    </div>
+                    <h3 class="text-xl font-bold text-tech-navy mb-4">Entrée de I&P</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        I&P (fonds d'investissement français spécialisé sur les PME) entre au capital de Conergies-Group.
+                    </p>
                 </div>
 
-                <!-- Aujourd'hui -->
-                <div class="tl-item-dark" data-aos="fade-up">
-                    <div class="tl-card-dark" style="border-color: rgba(54, 171, 255, 0.5); box-shadow: 0 0 20px rgba(54, 171, 255, 0.1);">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-tech-cyan text-tech-navy text-[10px] font-bold uppercase tracking-wider mb-4">
-                            <i data-lucide="award" class="w-3.5 h-3.5"></i> Leadership
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Leadership Régional</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Référence régionale avec plus de 100 experts au service de la performance industrielle et tertiaire. ARIC s'impose comme le partenaire de confiance des infrastructures critiques.</p>
+                <!-- 2015 -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 rounded-full bg-tech-navy text-white flex items-center justify-center font-black text-xl tracking-[0.1em] shadow-lg mb-8 transition-transform hover:-translate-y-2 duration-300 ring-4 ring-tech-navy/5">
+                        <span style="font-family: monospace; font-size: 1.3rem;">2015</span>
                     </div>
-                    <div class="tl-dot-col-dark">
-                        <div class="tl-dot-dark tl-dot-current-dark"><i data-lucide="star" class="w-5 h-5 text-tech-navy transition-colors"></i></div>
+                    <h3 class="text-xl font-bold text-tech-navy mb-4">Grands chantiers</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Réalisation par Rica-Services de l'aéroport international de Bamako (Climatisation et GTC), Réalisation par Aric de Cap sud 2 et Hyper Hayat (Climatisation et Réfrigération), Carrefour à Playce Marcory (Réfrigération).
+                    </p>
+                </div>
+
+                <!-- 2019 -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 rounded-full bg-tech-navy text-white flex items-center justify-center font-black text-xl tracking-[0.1em] shadow-lg mb-8 transition-transform hover:-translate-y-2 duration-300 ring-4 ring-tech-navy/5">
+                        <span style="font-family: monospace; font-size: 1.3rem;">2019</span>
                     </div>
-                    <div class="tl-year-dark" style="font-size: clamp(2rem, 4.5vw, 3.5rem);">Aujourd'hui</div>
+                    <h3 class="text-xl font-bold text-tech-navy mb-4">Alliance EDF</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Sortie du capital de I&P et entrée du groupe EDF (Electricité de France). Mise en place d'un partenariat stratégique avec Dalkia Froid Solutions (filiale de spécialité d'EDF).
+                    </p>
                 </div>
 
             </div>
         </div>
     </section>
+
     <!-- Values Section -->
     <section class="py-24 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
