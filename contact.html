@@ -146,7 +146,7 @@
     </div>
     <div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1] bg-repeat" style="background-image: url('bg-waves.svg'); background-size: 800px;"></div>
 
-    <!-- Top Bar -->
+        <!-- Top Bar -->
     <div class="hidden lg:block bg-[#0a192f] border-b border-white/5 py-2">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-semibold text-slate-400">
             <div class="flex items-center space-x-6">
@@ -166,9 +166,24 @@
         </div>
     </div>
 
-    <!-- Header / Navbar -->
-    <!-- Navigation -->
+        <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <!-- Global Responsive Fix -->
+        <style>
+            html, body {
+                overflow-x: hidden !important;
+                width: 100%;
+                position: relative;
+                -webkit-overflow-scrolling: touch;
+            }
+            /* Prevent AOS from creating horizontal scroll on mobile */
+            [data-aos] {
+                pointer-events: none;
+            }
+            [data-aos].aos-animate {
+                pointer-events: auto;
+            }
+        </style>
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <!-- Logo -->
             <a href="./" class="flex items-center shrink-0 transition-transform hover:scale-105">
@@ -232,7 +247,7 @@
                 <a href="services.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Services</a>
                 <a href="actualites.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors whitespace-nowrap">Références & Actus</a>
                 <a href="recrutement.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Recrutement</a>
-                <a href="contact.html" class="text-[#00a4bd] border-b-2 border-[#00a4bd] font-black transition-colors">Contact</a>
+                <a href="contact.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Contact</a>
             </div>
 
             <!-- Utilities -->
@@ -433,7 +448,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="relative bg-gradient-to-b from-white to-slate-50 text-slate-600 py-16 md:py-24 overflow-hidden border-t border-slate-100">
         <div class="absolute top-0 left-0 w-full h-1 bg-[#00a4bd]"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -490,7 +505,7 @@
         </div>
     </footer>
 
-    <!-- Assistance -->
+        <!-- Assistance -->
     <div class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100]" data-aos="fade-left" data-aos-delay="1000">
         <button id="assistance-btn" class="group flex items-center gap-4 px-6 py-4 rounded-full text-white transition-all hover:scale-105 active:scale-95 shadow-2xl bg-[#ef0032]">
             <div class="p-2 bg-white/10 rounded-full group-hover:rotate-12 transition-transform">
@@ -553,7 +568,6 @@
             </div>
         </div>
     </div>
-
 
 
     <script>

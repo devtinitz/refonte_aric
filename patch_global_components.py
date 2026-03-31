@@ -26,6 +26,22 @@ TOPBAR_HTML = """    <!-- Top Bar -->
 
 NAV_BAR_HTML = """    <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <!-- Global Responsive Fix -->
+        <style>
+            html, body {
+                overflow-x: hidden !important;
+                width: 100%;
+                position: relative;
+                -webkit-overflow-scrolling: touch;
+            }
+            /* Prevent AOS from creating horizontal scroll on mobile */
+            [data-aos] {
+                pointer-events: none;
+            }
+            [data-aos].aos-animate {
+                pointer-events: auto;
+            }
+        </style>
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <!-- Logo -->
             <a href="./" class="flex items-center shrink-0 transition-transform hover:scale-105">
@@ -301,7 +317,9 @@ SCRIPT_HTML = """    <script>
             menuOverlay.classList.add('opacity-100');
             menuDrawer.classList.remove('translate-x-full');
             menuDrawer.classList.add('translate-x-0');
+            // Lock scrolling on both body and html for reliability on mobile
             document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
         }
 
         function closeMenu() {
@@ -314,6 +332,7 @@ SCRIPT_HTML = """    <script>
             setTimeout(() => {
                 mobileMenu.classList.add('invisible', 'pointer-events-none');
                 document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
             }, 500);
         }
 
@@ -336,9 +355,11 @@ SCRIPT_HTML = """    <script>
             if (show) {
                 assistanceCard?.classList.add('active');
                 document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
             } else {
                 assistanceCard?.classList.remove('active');
                 document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
             }
         }
 
@@ -348,7 +369,11 @@ SCRIPT_HTML = """    <script>
 
         // INITIALIZE
         lucide.createIcons();
-        AOS.init({ once: true, duration: 800 });
+        AOS.init({ 
+            once: true, 
+            duration: 800,
+            disable: 'phone' // Optional: Disable AOS on mobile if it remains buggy
+        });
     </script>"""
 
 # --- PATCH LOGIC ---
@@ -367,10 +392,10 @@ def patch_file(filepath):
     # 1. Update Top Bar
     content = re.sub(r'<!-- Top Bar -->.*?<!-- Navigation -->', TOPBAR_HTML + '\\n\\n' + '    <!-- Navigation -->', content, flags=re.DOTALL)
     
-    # 2. Update Navigation
-    content = re.sub(r'<!-- Navigation -->.*?<!-- (Hero|ARIC Hero|Actualité|Expertise Section|Services Header|Recrutement Hero)', NAV_BAR_HTML + '\\n\\n' + '    <!-- \\1', content, flags=re.DOTALL)
-    if NAV_BAR_HTML not in content:
-         content = re.sub(r'<!-- Navigation -->.*?</nav>', NAV_BAR_HTML, content, flags=re.DOTALL)
+    # 2. Update Navigation (Improved Regex to prevent corruption)
+    content = re.sub(r'<!-- Navigation -->.*?<!-- (Hero|ARIC Hero|Actualité|Expertise Section|Services Header|Recrutement Hero|Secondary Hero Banner)', NAV_BAR_HTML + '\n\n' + '    <!-- \\1', content, flags=re.DOTALL)
+    if NAV_BAR_HTML[:50] not in content:
+         content = re.sub(r'<!-- Navigation -->.*?<\/nav>(\s*<\/nav>)*', NAV_BAR_HTML, content, flags=re.DOTALL)
 
     # 3. Inject Mobile Menu Drawer at the start of body (Safe Method)
     # Remove any existing versions first to avoid duplication
@@ -400,7 +425,5 @@ def patch_file(filepath):
 if __name__ == "__main__":
     html_files = glob.glob('*.html')
     for f in html_files:
-        if f == 'contact.html':
-            continue
         patch_file(f)
     print("Senior refactor + Bug fix complete.")

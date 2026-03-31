@@ -186,7 +186,7 @@
         </div>
     </div>
 
-                    <!-- Top Bar -->
+                            <!-- Top Bar -->
     <div class="hidden lg:block bg-[#0a192f] border-b border-white/5 py-2">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-semibold text-slate-400">
             <div class="flex items-center space-x-6">
@@ -208,6 +208,22 @@
 
         <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <!-- Global Responsive Fix -->
+        <style>
+            html, body {
+                overflow-x: hidden !important;
+                width: 100%;
+                position: relative;
+                -webkit-overflow-scrolling: touch;
+            }
+            /* Prevent AOS from creating horizontal scroll on mobile */
+            [data-aos] {
+                pointer-events: none;
+            }
+            [data-aos].aos-animate {
+                pointer-events: auto;
+            }
+        </style>
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <!-- Logo -->
             <a href="./" class="flex items-center shrink-0 transition-transform hover:scale-105">
@@ -386,7 +402,7 @@
                     <div class="aspect-square rounded-[60px] overflow-hidden glass p-4 rotate-3">
                         <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" alt="Tech" class="w-full h-full object-cover rounded-[50px]">
                     </div>
-                    <div class="absolute -bottom-10 -left-10 glass p-8 rounded-3xl -rotate-3 hover:rotate-0 transition-transform shadow-xl">
+                    <div class="absolute -bottom-6 -left-4 md:-bottom-10 md:-left-10 glass p-6 md:p-8 rounded-3xl -rotate-3 hover:rotate-0 transition-transform shadow-xl">
                         <div class="text-tech-cyan mb-2"><i data-lucide="zap" class="w-10 h-10 fill-tech-cyan/20"></i></div>
                         <div class="text-2xl font-black text-tech-navy">Efficacité Boostée</div>
                         <div class="text-sm text-slate-500">Réduction de la facture</div>
@@ -585,7 +601,7 @@
         </div>
     </section>
 
-                    <!-- Footer -->
+                            <!-- Footer -->
     <footer class="relative bg-gradient-to-b from-white to-slate-50 text-slate-600 py-16 md:py-24 overflow-hidden border-t border-slate-100">
         <div class="absolute top-0 left-0 w-full h-1 bg-[#00a4bd]"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
