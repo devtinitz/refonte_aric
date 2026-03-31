@@ -83,7 +83,7 @@
 <body class="bg-gray-50 font-['Plus_Jakarta_Sans'] text-slate-900 overflow-x-hidden relative">
     <div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1] bg-repeat" style="background-image: url('bg-waves.svg'); background-size: 800px;"></div>
 
-    <!-- Top Bar -->
+        <!-- Top Bar -->
     <div class="hidden lg:block bg-[#0a192f] border-b border-white/5 py-2">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-semibold text-slate-400">
             <div class="flex items-center space-x-6">
@@ -97,13 +97,13 @@
                 </a>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                <a href="https://www.facebook.com/ConergiesGroup" target="_blank" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                <a href="https://www.linkedin.com/company/groupe-conergies/" target="_blank" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
             </div>
         </div>
     </div>
 
-    <!-- Navigation -->
+        <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <!-- Logo -->
@@ -170,7 +170,7 @@
 
                 <a href="services.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Services</a>
                 <a href="actualites.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors whitespace-nowrap">Références & Actus</a>
-                <a href="recrutement.html" class="text-[#00a4bd] border-b-2 border-[#00a4bd] font-black transition-colors">Recrutement</a>
+                <a href="recrutement.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Recrutement</a>
                 <a href="contact.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Contact</a>
             </div>
 
@@ -201,6 +201,9 @@
                     <a href="recrutement.html" class="hover:text-[#00a4bd] transition-colors">Recrutement</a>
                     <a href="contact.html" class="hover:text-[#00a4bd] transition-colors">Contact</a>
                 </nav>
+            </div>
+        </div>
+    </nav>
             </div>
         </div>
     </nav>
@@ -459,7 +462,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="relative bg-gradient-to-b from-white to-slate-50 text-slate-600 py-16 md:py-24 overflow-hidden border-t border-slate-100">
         <!-- Brand Signature Line -->
         <div class="absolute top-0 left-0 w-full h-1 bg-[#00a4bd]"></div>
@@ -472,8 +475,8 @@
                         Leader multitechnique en Afrique de l'Ouest. Filiale du Groupe Conergies. Innovation, Performance & Durabilité.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center hover:text-[#00a4bd] hover:border-[#00a4bd] hover:shadow-lg transition-all shadow-sm"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center hover:text-[#00a4bd] hover:border-[#00a4bd] hover:shadow-lg transition-all shadow-sm"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="https://www.linkedin.com/company/groupe-conergies/" target="_blank" class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center hover:text-[#00a4bd] hover:border-[#00a4bd] hover:shadow-lg transition-all shadow-sm"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="https://www.facebook.com/ConergiesGroup" target="_blank" class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center hover:text-[#00a4bd] hover:border-[#00a4bd] hover:shadow-lg transition-all shadow-sm"><i data-lucide="facebook" class="w-5 h-5"></i></a>
                     </div>
                 </div>
                 <div>
@@ -511,22 +514,24 @@
             <div class="pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-400 font-bold uppercase tracking-widest">
                 <div>© 2026 ARIC Solutions. Tous droits réservés.</div>
                 <div class="flex space-x-8">
-                    <a href="#" class="hover:text-[#00a4bd] transition-colors">Mentions Légales</a>
-                    <a href="#" class="hover:text-[#00a4bd] transition-colors">Confidentialité</a>
+                    <a href="contact.html" class="hover:text-[#00a4bd] transition-colors">Mentions Légales</a>
+                    <a href="contact.html" class="hover:text-[#00a4bd] transition-colors">Confidentialité</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Assistance -->
-    <div class="fixed bottom-10 right-10 z-[100]">
-        <button id="assistance-btn" class="btn-assistance group flex items-center gap-4 px-6 py-4 rounded-full text-white transition-all hover:scale-105 shadow-2xl">
-            <i data-lucide="headset" class="w-6 h-6"></i>
-            <span class="font-bold tracking-widest text-sm uppercase">Assistance 24/7</span>
+        <!-- Assistance -->
+    <div class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100]" data-aos="fade-left" data-aos-delay="1000">
+        <button id="assistance-btn" class="btn-assistance group flex items-center gap-2 md:gap-4 px-4 py-3 md:px-6 md:py-4 rounded-full text-white transition-all hover:scale-105 active:scale-95 shadow-2xl">
+            <div class="p-2 bg-white/10 rounded-full group-hover:rotate-12 transition-transform">
+                <i data-lucide="headset" class="w-5 h-5 md:w-6 md:h-6"></i>
+            </div>
+            <span class="font-bold tracking-widest text-xs md:text-sm uppercase whitespace-nowrap hidden sm:inline">Assistance 24/7</span>
+            <span class="font-bold tracking-widest text-[10px] uppercase sm:hidden">SOS 24/7</span>
         </button>
     </div>
 
-    
     <!-- Assistance Card -->
     <div id="assistance-card" class="fixed inset-0 z-[110] flex items-center justify-center sm:items-end sm:justify-end pointer-events-none p-4 sm:p-10 opacity-0 invisible transition-all duration-300">
         <div id="assistance-overlay" class="absolute inset-0 bg-tech-navy/40 backdrop-blur-sm pointer-events-auto cursor-pointer"></div>
@@ -596,7 +601,7 @@
     </div>
 
 
-    <script>
+        <script>
         // Mobile Menu Toggle Logic
         const menuBtn = document.getElementById('mobile-menu-btn');
         const closeBtn = document.getElementById('close-menu-btn');
@@ -604,12 +609,12 @@
 
         function toggleMenu(show) {
             if (show) {
-                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
-                mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                mobileMenu?.classList.remove('opacity-0', 'pointer-events-none');
+                mobileMenu?.classList.add('opacity-100', 'pointer-events-auto');
                 document.body.style.overflow = 'hidden';
             } else {
-                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                mobileMenu?.classList.add('opacity-0', 'pointer-events-none');
+                mobileMenu?.classList.remove('opacity-100', 'pointer-events-auto');
                 document.body.style.overflow = '';
             }
         }
@@ -637,43 +642,20 @@
         closeAssistance?.addEventListener('click', () => toggleAssistance(false));
         assistanceOverlay?.addEventListener('click', () => toggleAssistance(false));
 
-        // Job Filtering Logic
-        const jobFilterBtns = document.querySelectorAll('.job-filter-btn');
-        const jobCards = document.querySelectorAll('.job-card');
-
-        jobFilterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const filter = btn.getAttribute('data-job-filter');
-                
-                // Update active state
-                jobFilterBtns.forEach(b => {
-                    b.classList.remove('bg-tech-navy', 'text-white');
-                    b.classList.add('hover:bg-slate-50', 'text-slate-500');
-                });
-                btn.classList.add('bg-tech-navy', 'text-white');
-                btn.classList.remove('hover:bg-slate-50', 'text-slate-500');
-
-                // Filter cards
-                jobCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-job-category') === filter) {
-                        card.classList.remove('hidden');
-                        setTimeout(() => {
-                            card.classList.remove('opacity-0', 'scale-95');
-                            card.classList.add('opacity-100', 'scale-100');
-                        }, 50);
-                    } else {
-                        card.classList.add('opacity-0', 'scale-95');
-                        card.classList.remove('opacity-100', 'scale-100');
-                        setTimeout(() => {
-                            card.classList.add('hidden');
-                        }, 500);
-                    }
-                });
-            });
+        // Close menu on link click
+        mobileMenu?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
         });
 
+        // Initialize Lucide Icons
         lucide.createIcons();
-        AOS.init({ once: true, duration: 800 });
+        
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            mirror: false,
+            duration: 800
+        });
     </script>
 </body>
 </html>

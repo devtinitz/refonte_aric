@@ -1,82 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milieu Santé | ARIC Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'tech-navy': '#0a192f',
-                        'tech-cyan': '#00a4bd',
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            background: #ffffff url('bg-waves.svg') repeat-y center top;
-            background-size: 100% auto;
-            background-attachment: fixed;
-            overflow-x: hidden;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+import os
+import glob
+import re
 
-        .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-        }
-
-        
-
-        .text-gradient-light {
-            background: linear-gradient(135deg, #00a4bd 0%, #ffffff 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .neon-glow {
-            box-shadow: 0 0 20px rgba(0, 164, 189, 0.3);
-        }
-
-        .video-overlay {
-            background: linear-gradient(to bottom, rgba(10, 25, 47, 0.8) 0%, rgba(10, 25, 47, 0.6) 100%);
-        }
-
-        .btn-assistance {
-            background: #ef0032;
-            box-shadow: 0 10px 25px -5px rgba(239, 0, 50, 0.4);
-        }
-    
-        #assistance-card.active {
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
-        #assistance-card.active > div:last-child {
-            transform: translateY(0) !important;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 font-['Plus_Jakarta_Sans'] text-slate-900 overflow-x-hidden relative">
-    <div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1] bg-repeat" style="background-image: url('bg-waves.svg'); background-size: 800px;"></div>
-
-        <!-- Top Bar -->
+# SOURCE OF TRUTH (Extracted from contact.html)
+TOPBAR_HTML = """    <!-- Top Bar -->
     <div class="hidden lg:block bg-[#0a192f] border-b border-white/5 py-2">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-semibold text-slate-400">
             <div class="flex items-center space-x-6">
@@ -94,9 +21,9 @@
                 <a href="https://www.linkedin.com/company/groupe-conergies/" target="_blank" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
             </div>
         </div>
-    </div>
+    </div>"""
 
-        <!-- Navigation -->
+NAV_HTML = """    <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <!-- Logo -->
@@ -196,84 +123,9 @@
                 </nav>
             </div>
         </div>
-    </nav>
-            </div>
-        </div>
-    </nav>
+    </nav>"""
 
-    <!-- Secondary Hero Banner -->
-    <header class="relative min-h-[60vh] md:min-h-[50vh] flex items-center overflow-hidden text-white">
-        <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
-            <source src="Vidéo_sur_la_Côte_d_Ivoire_Générée.mp4" type="video/mp4">
-        </video>
-        <div class="absolute inset-0 video-overlay backdrop-blur-[2px]"></div>
-        
-        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full pt-10">
-            <div data-aos="fade-up">
-                <div class="text-tech-cyan font-bold text-xs uppercase tracking-[0.3em] mb-4">Précision & Hygiène</div>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
-                    Milieu <span class="text-gradient-light">Santé</span>.
-                </h1>
-                <div class="flex items-center space-x-4 text-sm text-slate-300 font-medium">
-                    <a href="./" class="hover:text-tech-cyan transition-colors">Accueil</a>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
-                    <a href="expertise.html" class="hover:text-tech-cyan transition-colors">Expertise</a>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
-                    <span class="text-white">Santé</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
-            <svg class="relative block w-[calc(100%+1.3px)] h-[60px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#f9fafb"></path>
-            </svg>
-        </div>
-    </header>
-
-    <!-- Content -->
-    <section class="py-16 md:py-24 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div data-aos="fade-up" class="max-w-3xl mb-20">
-                <h2 class="text-4xl font-extrabold text-tech-navy mb-8 leading-tight">Milieu Hospitalier & <span class="text-tech-cyan italic">Salles Propres.</span></h2>
-                <p class="text-slate-600 text-lg leading-relaxed">
-                    Ingénierie de pointe pour blocs opératoires et salles blanches (ISO 5 à ISO 8). Maîtrise totale de la contamination et des flux d'air critiques.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass p-10 rounded-[40px] border border-white" data-aos="fade-right">
-                    <div class="w-12 h-12 bg-tech-navy/5 rounded-xl flex items-center justify-center mb-8">
-                        <i data-lucide="thermometer-snowflake" class="w-6 h-6 text-tech-cyan"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-tech-navy mb-4">Froid Médical</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-8 font-medium">
-                        Conservation de vaccins, produits sanguins et échantillons biologiques avec monitoring constant et alertes SMS/Email.
-                    </p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-xs font-bold text-slate-400 uppercase tracking-widest"><i data-lucide="check" class="w-4 h-4 mr-2 text-tech-cyan"></i> Enceintes Climatiques</li>
-                        <li class="flex items-center text-xs font-bold text-slate-400 uppercase tracking-widest"><i data-lucide="check" class="w-4 h-4 mr-2 text-tech-cyan"></i> Alarmes Températures</li>
-                    </ul>
-                </div>
-
-                <div class="glass p-10 rounded-[40px] border border-white" data-aos="fade-left">
-                    <div class="w-12 h-12 bg-tech-navy/5 rounded-xl flex items-center justify-center mb-8">
-                        <i data-lucide="shield" class="w-6 h-6 text-tech-cyan"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-tech-navy mb-4">Salles Blanches</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-8 font-medium">
-                        Conception et maintenance de zones à atmosphère contrôlée (ZAC) pour la production pharmaceutique.
-                    </p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-xs font-bold text-slate-400 uppercase tracking-widest"><i data-lucide="check" class="w-4 h-4 mr-2 text-tech-cyan"></i> Filtration HEPA & Décontamination</li>
-                        <li class="flex items-center text-xs font-bold text-slate-400 uppercase tracking-widest"><i data-lucide="check" class="w-4 h-4 mr-2 text-tech-cyan"></i> Cascade de Pressions</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- Footer -->
+FOOTER_HTML = """    <!-- Footer -->
     <footer class="relative bg-gradient-to-b from-white to-slate-50 text-slate-600 py-16 md:py-24 overflow-hidden border-t border-slate-100">
         <!-- Brand Signature Line -->
         <div class="absolute top-0 left-0 w-full h-1 bg-[#00a4bd]"></div>
@@ -330,9 +182,9 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>"""
 
-        <!-- Assistance -->
+ASSISTANCE_HTML = """    <!-- Assistance -->
     <div class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100]" data-aos="fade-left" data-aos-delay="1000">
         <button id="assistance-btn" class="btn-assistance group flex items-center gap-2 md:gap-4 px-4 py-3 md:px-6 md:py-4 rounded-full text-white transition-all hover:scale-105 active:scale-95 shadow-2xl">
             <div class="p-2 bg-white/10 rounded-full group-hover:rotate-12 transition-transform">
@@ -409,10 +261,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>"""
 
-
-        <script>
+SCRIPT_HTML = """    <script>
         // Mobile Menu Toggle Logic
         const menuBtn = document.getElementById('mobile-menu-btn');
         const closeBtn = document.getElementById('close-menu-btn');
@@ -467,6 +318,39 @@
             mirror: false,
             duration: 800
         });
-    </script>
-</body>
-</html>
+    </script>"""
+
+def patch_file(filepath):
+    print(f"Patching {filepath}...")
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # 1. Update Top Bar
+    content = re.sub(r'<!-- Top Bar -->.*?<!-- Navigation -->', TOPBAR_HTML + '\n\n' + '    <!-- Navigation -->', content, flags=re.DOTALL)
+    
+    # 2. Update Navigation
+    content = re.sub(r'<!-- Navigation -->.*?<!-- (Hero|ARIC Hero|Actualité|Expertise Section|Services Header|Recrutement Hero)', NAV_HTML + '\n\n' + '    <!-- \\1', content, flags=re.DOTALL)
+    # Fallback for pages where hero comment is different
+    if NAV_HTML not in content:
+        content = re.sub(r'<!-- Navigation -->.*?</nav>', NAV_HTML, content, flags=re.DOTALL)
+
+    # 3. Update Footer
+    content = re.sub(r'<!-- Footer -->.*?<!-- Assistance -->', FOOTER_HTML + '\n\n' + '    <!-- Assistance -->', content, flags=re.DOTALL)
+
+    # 4. Update Assistance
+    content = re.sub(r'<!-- Assistance -->.*?<script>', ASSISTANCE_HTML + '\n\n\n' + '    <script>', content, flags=re.DOTALL)
+
+    # 5. Update Scripts
+    content = re.sub(r'<script>\s*// Mobile Menu Toggle Logic.*?</script>', SCRIPT_HTML, content, flags=re.DOTALL)
+
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+if __name__ == "__main__":
+    # Get all html files except contact.html (our source)
+    html_files = glob.glob('*.html')
+    for f in html_files:
+        if f == 'contact.html':
+            continue
+        patch_file(f)
+    print("Patching complete.")
