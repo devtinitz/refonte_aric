@@ -15,7 +15,7 @@
                 extend: {
                     colors: {
                         'tech-navy': '#0a192f',
-                        'tech-cyan': '#00f0ff',
+                        'tech-cyan': '#00a4bd',
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
@@ -45,14 +45,14 @@
         
 
         .text-gradient-light {
-            background: linear-gradient(135deg, #00f0ff 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #00a4bd 0%, #ffffff 100%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .neon-glow {
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 164, 189, 0.3);
         }
 
         .video-overlay {
@@ -76,67 +76,87 @@
 <body class="bg-gray-50 font-['Plus_Jakarta_Sans'] text-slate-900 overflow-x-hidden relative">
     <div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1] bg-repeat" style="background-image: url('bg-waves.svg'); background-size: 800px;"></div>
 
-    <!-- Header / Navbar -->
+    <!-- Top Bar -->
+    <div class="hidden lg:block bg-[#0a192f] border-b border-white/5 py-2">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-semibold text-slate-400">
+            <div class="flex items-center space-x-6">
+                <a href="tel:+2252720000000" class="flex items-center hover:text-[#00a4bd] transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4 mr-2 text-[#00a4bd]"></i>
+                    +225 27 20 00 00 00
+                </a>
+                <a href="mailto:contact@conergies.ci" class="flex items-center hover:text-[#00a4bd] transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4 mr-2 text-[#00a4bd]"></i>
+                    contact@conergies.ci
+                </a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="./" class="flex items-center space-x-3 shrink-0">
-                <div class="w-10 h-10 bg-tech-cyan p-2 rounded-xl neon-glow">
-                    <svg viewBox="0 0 24 24" fill="none" class="text-white">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor" />
-                    </svg>
-                </div>
-                <span class="text-2xl font-extrabold tracking-tighter text-tech-navy">ARIC<span class="text-tech-cyan">.</span></span>
+            <!-- Logo -->
+            <a href="./" class="flex items-center shrink-0 transition-transform hover:scale-105">
+                <img src="logo.png" alt="ARIC Solutions Logo" class="h-16 w-auto drop-shadow-sm">
             </a>
 
+            <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center space-x-4 xl:space-x-8 font-bold text-[12px] uppercase tracking-wider">
-                <a href="about.html" class="text-slate-600 hover:text-tech-cyan transition-colors">Qui sommes-nous</a>
+                <a href="about.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Qui sommes-nous</a>
+                
+                <!-- Expertise Dropdown -->
                 <div class="relative group cursor-pointer flex items-center py-4">
-                    <span class="text-tech-cyan group-hover:text-tech-cyan transition-colors border-b-2 border-tech-cyan font-black">Notre Expertise</span>
+                    <span class="text-[#00a4bd] border-b-2 border-[#00a4bd] font-black transition-colors">Notre Expertise</span>
                     <i data-lucide="chevron-down" class="w-3.5 h-3.5 ml-1 text-slate-500 group-hover:rotate-180 transition-transform"></i>
                     <div class="absolute top-full -left-4 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
                         <div class="bg-white p-4 rounded-2xl w-72 border border-slate-100 space-y-2 shadow-2xl">
-                            <a href="expertise-industrie.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-tech-cyan transition-all text-slate-600 italic">Froid Commercial & Industriel</a>
-                            <a href="expertise-tertiaire.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-tech-cyan transition-all text-slate-600 italic">Génie Climatique (CVC)</a>
-                            <a href="expertise-efficacite.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-tech-cyan transition-all text-slate-600 italic">Efficacité Énergétique</a>
-                            <div class="h-px bg-white/10 my-2"></div>
-                            <a href="expertise.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 text-tech-cyan font-black text-center">Voir l'expertise complète</a>
+                            <a href="expertise-industrie.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-[#00a4bd] transition-all text-slate-600 italic">Froid Commercial & Industriel</a>
+                            <a href="expertise-tertiaire.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-[#00a4bd] transition-all text-slate-600 italic">Génie Climatique (CVC)</a>
+                            <a href="expertise-efficacite.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-[#00a4bd] transition-all text-slate-600 italic">Efficacité Énergétique</a>
+                            <a href="expertise-sante.html" class="block px-4 py-3 rounded-xl bg-[#00a4bd]/10 text-[#00a4bd] font-black italic">Milieu Santé</a>
+                            <a href="expertise-solaire.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-[#00a4bd] transition-all text-slate-600 italic">Énergie Solaire</a>
+                            <div class="h-px bg-slate-100 my-2"></div>
+                            <a href="expertise.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-[#00a4bd] transition-all text-slate-600 font-bold text-center italic">Voir l'expertise complète</a>
                         </div>
                     </div>
                 </div>
-                <a href="services.html" class="text-slate-600 hover:text-tech-cyan transition-colors">Services</a>
-                <a href="actualites.html" class="text-slate-600 hover:text-tech-cyan transition-colors whitespace-nowrap">Références & Actus</a>
-                <a href="recrutement.html" class="text-slate-600 hover:text-tech-cyan transition-colors">Recrutement</a>
-                <a href="contact.html" class="text-slate-600 hover:text-tech-cyan transition-colors">Contact</a>
+
+                <a href="services.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Services</a>
+                <a href="actualites.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors whitespace-nowrap">Références & Actus</a>
+                <a href="recrutement.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Recrutement</a>
+                <a href="contact.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Contact</a>
             </div>
-                <!-- Utilities -->
-                <div class="flex items-center space-x-6">
-                    <a href="#" class="text-slate-400 hover:text-tech-cyan transition-colors">
-                        <i data-lucide="user-round" class="w-5 h-5"></i>
-                    </a>
-                    <!-- Mobile Toggle -->
-                    <button id="mobile-menu-btn" class="lg:hidden text-tech-navy p-2 hover:bg-slate-100 rounded-xl transition-colors focus:ring-2 focus:ring-tech-cyan/50 focus:outline-none">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
+
+            <!-- Utilities -->
+            <div class="flex items-center space-x-6">
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="lg:hidden text-[#0a192f] p-2 hover:bg-slate-100 rounded-xl transition-colors focus:ring-2 focus:ring-[#00a4bd]/50 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white/95 backdrop-blur-xl shadow-2xl border-b border-slate-200 opacity-0 pointer-events-none transition-all duration-300 lg:hidden">
-            <div class="flex flex-col h-full p-8">
+        <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white/95 backdrop-blur-xl shadow-2xl border-b border-slate-200 opacity-0 pointer-events-none transition-all duration-300 lg:hidden text-center flex flex-col items-center justify-center">
+            <div class="flex flex-col h-full w-full p-8">
                 <div class="flex justify-between items-center mb-12">
-                    <img src="logo.png" alt="ARIC Solutions Logo" class="h-14 w-auto drop-shadow-sm">
-                    <button id="close-menu-btn" class="text-tech-navy p-2 hover:bg-slate-100 rounded-xl transition-colors focus:ring-2 focus:ring-tech-cyan/50 focus:outline-none">
+                    <img src="logo.png" alt="ARIC Solutions Logo" class="h-12 w-auto drop-shadow-sm">
+                    <button id="close-menu-btn" class="text-[#0a192f] p-2 hover:bg-slate-100 rounded-xl transition-colors focus:ring-2 focus:ring-[#00a4bd]/50 focus:outline-none">
                         <i data-lucide="x" class="w-6 h-6"></i>
                     </button>
                 </div>
-                <nav class="flex flex-col space-y-6 text-xl font-bold text-tech-navy uppercase tracking-widest">
-                    <a href="about.html" class="hover:text-tech-cyan transition-colors">Qui sommes-nous</a>
-                    <a href="expertise.html" class="hover:text-tech-cyan transition-colors">Nos Expertises</a>
-                    <a href="services.html" class="hover:text-tech-cyan transition-colors">Services</a>
-                    <a href="actualites.html" class="hover:text-tech-cyan transition-colors">Références</a>
-                    <a href="recrutement.html" class="hover:text-tech-cyan transition-colors">Recrutement</a>
-                    <a href="contact.html" class="hover:text-tech-cyan transition-colors">Contact</a>
+                <nav class="flex flex-col space-y-6 text-xl font-bold text-[#0a192f] uppercase tracking-widest overflow-y-auto">
+                    <a href="index.html" class="hover:text-[#00a4bd] transition-colors">Accueil</a>
+                    <a href="about.html" class="hover:text-[#00a4bd] transition-colors">Qui sommes-nous</a>
+                    <a href="expertise.html" class="hover:text-[#00a4bd] transition-colors">Nos Expertises</a>
+                    <a href="services.html" class="hover:text-[#00a4bd] transition-colors">Services</a>
+                    <a href="actualites.html" class="hover:text-[#00a4bd] transition-colors">Références</a>
+                    <a href="recrutement.html" class="hover:text-[#00a4bd] transition-colors">Recrutement</a>
+                    <a href="contact.html" class="hover:text-[#00a4bd] transition-colors">Contact</a>
                 </nav>
             </div>
         </div>
@@ -215,71 +235,74 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white/40 border-t border-black/5 py-20 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+    <footer class="relative bg-gradient-to-b from-white to-slate-50 text-slate-600 py-16 md:py-24 overflow-hidden border-t border-slate-100">
+        <!-- Brand Signature Line -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-[#00a4bd]"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 md:mb-20">
                 <div>
                     <img src="logo.png" alt="ARIC Solutions Logo" class="h-20 w-auto mb-8 drop-shadow-sm">
-                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8 font-medium">
                         Leader multitechnique en Afrique de l'Ouest. Filiale du Groupe Conergies. Innovation, Performance & Durabilité.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:text-tech-cyan transition-colors shadow-sm"><i data-lucide="linkedin" class="w-5 h-5 text-slate-600"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:text-tech-cyan transition-colors shadow-sm"><i data-lucide="facebook" class="w-5 h-5 text-slate-600"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center hover:text-[#00a4bd] hover:border-[#00a4bd] hover:shadow-lg transition-all shadow-sm"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center hover:text-[#00a4bd] hover:border-[#00a4bd] hover:shadow-lg transition-all shadow-sm"><i data-lucide="facebook" class="w-5 h-5"></i></a>
                     </div>
                 </div>
                 <div>
-                    <h5 class="font-bold mb-8 text-tech-navy uppercase text-xs tracking-widest">Nos Filiales</h5>
-                    <ul class="space-y-4 text-sm text-slate-500 font-semibold">
+                    <h5 class="font-bold mb-8 text-slate-900 uppercase text-xs tracking-widest border-l-4 border-[#00a4bd] pl-4">Nos Filiales</h5>
+                    <ul class="space-y-4 text-sm text-slate-600 font-semibold">
                         <li>
                             <a href="#" class="group block">
-                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Côte d'Ivoire</span>
+                                <span class="group-hover:text-[#00a4bd] transition-colors">ARIC Côte d'Ivoire</span>
                                 <span class="block text-[10px] text-slate-400 uppercase">Abidjan</span>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="group block">
-                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Mali</span>
+                                <span class="group-hover:text-[#00a4bd] transition-colors">ARIC Mali</span>
                                 <span class="block text-[10px] text-slate-400 uppercase">Bamako</span>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="group block">
-                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Cameroun</span>
+                                <span class="group-hover:text-[#00a4bd] transition-colors">ARIC Cameroun</span>
                                 <span class="block text-[10px] text-slate-400 uppercase">Yaoundé</span>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="group block">
-                                <span class="group-hover:text-tech-cyan transition-colors">ARIC Bénin</span>
+                                <span class="group-hover:text-[#00a4bd] transition-colors">ARIC Bénin</span>
                                 <span class="block text-[10px] text-slate-400 uppercase">Cotonou</span>
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-bold mb-8 text-tech-navy uppercase text-xs tracking-widest">Expertises</h5>
-                    <ul class="space-y-4 text-sm text-slate-500 font-semibold">
-                        <li><a href="expertise-tertiaire.html" class="hover:text-tech-cyan transition-colors">Génie Climatique</a></li>
-                        <li><a href="expertise-industrie.html" class="hover:text-tech-cyan transition-colors">Froid Industriel</a></li>
-                        <li><a href="expertise.html" class="hover:text-tech-cyan transition-colors">Smart Monitoring GTB</a></li>
-                        <li><a href="services.html" class="hover:text-tech-cyan transition-colors">Maintenance Multitechnique</a></li>
+                    <h5 class="font-bold mb-8 text-slate-900 uppercase text-xs tracking-widest border-l-4 border-[#00a4bd] pl-4">Expertises</h5>
+                    <ul class="space-y-4 text-sm text-slate-600 font-semibold">
+                        <li><a href="expertise-tertiaire.html" class="hover:text-[#00a4bd] transition-colors">Génie Climatique</a></li>
+                        <li><a href="expertise-industrie.html" class="hover:text-[#00a4bd] transition-colors">Froid Industriel</a></li>
+                        <li><a href="expertise.html" class="hover:text-[#00a4bd] transition-colors">Smart Monitoring GTB</a></li>
+                        <li><a href="services.html" class="hover:text-[#00a4bd] transition-colors">Maintenance Multitechnique</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-bold mb-8 text-tech-navy uppercase text-xs tracking-widest">Newsletter</h5>
+                    <h5 class="font-bold mb-8 text-slate-900 uppercase text-xs tracking-widest border-l-4 border-[#00a4bd] pl-4">Newsletter</h5>
                     <p class="text-xs text-slate-400 mb-6 font-semibold">Recevez nos dernières innovations et études de cas.</p>
-                    <div class="flex p-1 rounded-xl glass shadow-sm focus-within:ring-2 focus-within:ring-tech-cyan/50 transition-all">
+                    <div class="flex p-1 rounded-xl bg-slate-50 border border-slate-200 focus-within:ring-2 focus-within:ring-[#00a4bd]/50 transition-all shadow-inner">
                         <input type="email" placeholder="Email" class="bg-transparent px-4 py-2 text-sm focus:outline-none w-full placeholder-slate-400 font-semibold text-slate-800">
-                        <button class="bg-tech-cyan text-white p-2 rounded-lg font-bold hover:bg-tech-blue transition-colors focus:ring-2 focus:ring-offset-1 focus:ring-tech-cyan"><i data-lucide="send" class="w-4 h-4"></i></button>
+                        <button class="bg-[#d8a01a] text-white p-2 rounded-lg font-bold hover:scale-105 transition-all shadow-lg"><i data-lucide="send" class="w-4 h-4"></i></button>
                     </div>
                 </div>
             </div>
-            <div class="pt-10 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-400 font-bold uppercase tracking-widest">
+            <div class="pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-400 font-bold uppercase tracking-widest">
                 <div>© 2026 ARIC Solutions. Tous droits réservés.</div>
                 <div class="flex space-x-8">
-                    <a href="#" class="hover:text-tech-navy transition-colors">Mentions Légales</a>
-                    <a href="#" class="hover:text-white transition-colors">Confidentialité</a>
+                    <a href="#" class="hover:text-[#00a4bd] transition-colors">Mentions Légales</a>
+                    <a href="#" class="hover:text-[#00a4bd] transition-colors">Confidentialité</a>
                 </div>
             </div>
         </div>
