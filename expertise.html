@@ -65,6 +65,14 @@
             background: #ef0032;
             box-shadow: 0 10px 25px -5px rgba(239, 0, 50, 0.4);
         }
+    
+        #assistance-card.active {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        #assistance-card.active > div:last-child {
+            transform: translateY(0) !important;
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-['Plus_Jakarta_Sans'] text-slate-900 overflow-x-hidden relative">
@@ -333,7 +341,7 @@
 
     <!-- Assistance -->
     <div class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100]" data-aos="fade-left" data-aos-delay="1000">
-        <button class="btn-assistance group flex items-center gap-2 md:gap-4 px-4 py-3 md:px-6 md:py-4 rounded-full text-white transition-all hover:scale-105 active:scale-95 shadow-2xl">
+        <button id="assistance-btn" class="btn-assistance group flex items-center gap-2 md:gap-4 px-4 py-3 md:px-6 md:py-4 rounded-full text-white transition-all hover:scale-105 active:scale-95 shadow-2xl">
             <div class="p-2 bg-white/10 rounded-full group-hover:rotate-12 transition-transform">
                 <i data-lucide="headset" class="w-5 h-5 md:w-6 md:h-6"></i>
             </div>
@@ -341,6 +349,77 @@
             <span class="font-bold tracking-widest text-[10px] uppercase sm:hidden">SOS 24/7</span>
         </button>
     </div>
+
+    
+    <!-- Assistance Card -->
+    <div id="assistance-card" class="fixed inset-0 z-[110] flex items-center justify-center sm:items-end sm:justify-end pointer-events-none p-4 sm:p-10 opacity-0 invisible transition-all duration-300">
+        <div id="assistance-overlay" class="absolute inset-0 bg-tech-navy/40 backdrop-blur-sm pointer-events-auto cursor-pointer"></div>
+        <div class="relative w-full max-w-md bg-white rounded-[32px] md:rounded-[40px] shadow-2xl overflow-hidden pointer-events-auto transform translate-y-10 transition-transform duration-300">
+            <div class="p-8 md:p-10">
+                <div class="flex justify-between items-start mb-8">
+                    <div>
+                        <div class="text-xs font-black text-tech-cyan uppercase tracking-[0.2em] mb-2">Support Technique</div>
+                        <h3 class="text-2xl font-extrabold text-tech-navy">Assistance 24h/7</h3>
+                    </div>
+                    <button id="close-assistance" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="p-6 rounded-2xl bg-tech-cyan/5 border border-tech-cyan/10">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-10 h-10 bg-tech-cyan/10 rounded-xl flex items-center justify-center">
+                                <i data-lucide="phone-call" class="w-5 h-5 text-tech-cyan"></i>
+                            </div>
+                            <span class="font-bold text-tech-navy">Direct Hotlines</span>
+                        </div>
+                        <div class="space-y-3">
+                            <a href="tel:+2252721212121" class="flex justify-between items-center group">
+                                <span class="text-sm font-semibold text-slate-600">Côte d'Ivoire</span>
+                                <span class="text-sm font-bold text-tech-navy group-hover:text-tech-cyan">+225 27 21 21 21 21</span>
+                            </a>
+                            <a href="tel:+22320211515" class="flex justify-between items-center group">
+                                <span class="text-sm font-semibold text-slate-600">Mali</span>
+                                <span class="text-sm font-bold text-tech-navy group-hover:text-tech-cyan">+223 20 21 15 15</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Chat -->
+                    <a href="https://wa.me/2250707070707" target="_blank" class="flex items-center space-x-4 p-4 rounded-2xl bg-green-500/5 border border-green-500/10 hover:bg-green-500/10 transition-colors group">
+                        <div class="w-10 h-10 bg-green-500/10 rounded-xl flex items-center justify-center group-hover:bg-green-500/20 transition-colors text-green-600">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-[10px] font-black text-green-600 uppercase tracking-widest mb-1">Disponible sur WhatsApp</div>
+                            <div class="text-sm font-bold text-tech-navy">Chat en direct avec un expert</div>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-green-600 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+
+                    <a href="mailto:contact@conergies.ci" class="flex items-center space-x-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100 group">
+                        <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center group-hover:bg-tech-cyan/10 transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5 text-slate-500 group-hover:text-tech-cyan"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Email Support</div>
+                            <div class="text-sm font-bold text-tech-navy">contact@conergies.ci</div>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <div class="mt-10">
+                    <a href="contact.html" class="block w-full py-4 bg-tech-navy text-white text-center font-black rounded-2xl hover:scale-[1.02] transition-transform shadow-lg">
+                        Demande d'intervention
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script>
         // Mobile Menu Toggle Logic
@@ -364,6 +443,27 @@
         closeBtn?.addEventListener('click', () => toggleMenu(false));
 
         // Initialize Lucide Icons
+        
+        // Assistance Card Logic
+        const assistanceBtn = document.getElementById('assistance-btn');
+        const closeAssistance = document.getElementById('close-assistance');
+        const assistanceCard = document.getElementById('assistance-card');
+        const assistanceOverlay = document.getElementById('assistance-overlay');
+
+        function toggleAssistance(show) {
+            if (show) {
+                if (assistanceCard) assistanceCard.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else {
+                if (assistanceCard) assistanceCard.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        assistanceBtn?.addEventListener('click', () => toggleAssistance(true));
+        closeAssistance?.addEventListener('click', () => toggleAssistance(false));
+        assistanceOverlay?.addEventListener('click', () => toggleAssistance(false));
+
         lucide.createIcons();
         AOS.init({ once: true, duration: 800 });
     </script>
