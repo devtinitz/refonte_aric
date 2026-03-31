@@ -41,6 +41,40 @@ NAV_BAR_HTML = """    <!-- Navigation -->
             [data-aos].aos-animate {
                 pointer-events: auto;
             }
+            .senior-glass {
+                background: rgba(255, 255, 255, 0.7);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+            }
+            .shimmer {
+                position: relative;
+                overflow: hidden;
+            }
+            .shimmer::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -60%;
+                width: 20%;
+                height: 200%;
+                background: rgba(255, 255, 255, 0.2);
+                transform: rotate(30deg);
+                animation: shimmer 4s infinite;
+            }
+            @keyframes shimmer {
+                0% { left: -60%; }
+                20% { left: 120%; }
+                100% { left: 120%; }
+            }
+            @keyframes pulse-soft {
+                0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 0, 50, 0.4); }
+                70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(239, 0, 50, 0); }
+                100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 0, 50, 0); }
+            }
+            .assistance-pulse {
+                animation: pulse-soft 2s infinite;
+            }
         </style>
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <!-- Logo -->
@@ -238,7 +272,7 @@ FOOTER_HTML = """    <!-- Footer -->
 
 ASSISTANCE_HTML = """    <!-- Assistance -->
     <div class="fixed bottom-4 right-4 md:bottom-10 md:right-10 z-[100]" data-aos="fade-left" data-aos-delay="1000">
-        <button id="assistance-btn" class="group flex items-center gap-2 md:gap-4 p-3 md:px-6 md:py-4 rounded-full text-white transition-all hover:scale-105 active:scale-95 shadow-2xl bg-[#ef0032]">
+        <button id="assistance-btn" class="group flex items-center gap-2 md:gap-4 p-3 md:px-6 md:py-4 rounded-full text-white transition-all hover:scale-105 active:scale-95 shadow-2xl bg-[#ef0032] assistance-pulse">
             <div class="p-1 md:p-2 bg-white/10 rounded-full group-hover:rotate-12 transition-transform">
                 <i data-lucide="headset" class="w-5 h-5 md:w-6 md:h-6"></i>
             </div>
@@ -367,12 +401,43 @@ SCRIPT_HTML = """    <script>
         closeAssistance?.addEventListener('click', () => toggleAssistance(false));
         assistanceOverlay?.addEventListener('click', () => toggleAssistance(false));
 
+        // COUNTER LOGIC
+        const stats = document.querySelectorAll('[data-count]');
+        const observerOptions = { threshold: 0.5 };
+        
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-count'));
+                    const suffix = entry.target.getAttribute('data-suffix') || '';
+                    const prefix = entry.target.getAttribute('data-prefix') || '';
+                    animateValue(entry.target, 0, target, 2000, prefix, suffix);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        stats.forEach(s => counterObserver.observe(s));
+
+        function animateValue(obj, start, end, duration, prefix, suffix) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerText = prefix + Math.floor(progress * (end - start) + start) + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
         // INITIALIZE
         lucide.createIcons();
         AOS.init({ 
             once: true, 
             duration: 800,
-            disable: 'phone' // Optional: Disable AOS on mobile if it remains buggy
+            disable: 'phone'
         });
     </script>"""
 
