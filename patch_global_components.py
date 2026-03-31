@@ -76,14 +76,14 @@ NAV_BAR_HTML = """    <!-- Navigation -->
                 animation: pulse-soft 2s infinite;
             }
         </style>
-        <div class="max-w-7xl mx-auto px-6 h-16 lg:h-20 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 h-16 lg:h-16 flex justify-between items-center">
             <!-- Logo -->
             <a href="./" class="flex items-center shrink-0 transition-transform hover:scale-105">
-                <img src="logo.png" alt="ARIC Solutions Logo" class="h-8 lg:h-16 w-auto drop-shadow-sm">
+                <img src="logo.png" alt="ARIC Solutions Logo" class="h-8 lg:h-12 w-auto drop-shadow-sm">
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8 font-bold text-[12px] uppercase tracking-wider">
+            <div class="hidden lg:flex items-center space-x-6 xl:space-x-8 ml-auto mr-8 text-xs font-bold uppercase tracking-widest transition-all">
                 <a href="about.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Qui sommes-nous</a>
                 
                 <!-- Expertise Mega Menu -->
@@ -448,14 +448,18 @@ def patch_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # CRITICAL FIX: Restore corrupted body tag (\1) if found
+    # CRITICAL FIX: Restore corrupted body tag (\1) or literal \n if found
     # We'll assume the standard body tag for the site
     STANDARD_BODY = '<body class="bg-gray-50 font-[\'Plus_Jakarta_Sans\'] text-slate-900 overflow-x-hidden relative">'
     if '\\1' in content:
         content = content.replace('\\1', STANDARD_BODY)
+    
+    # Cleanup literal \n sequences
+    content = content.replace('\\\\n', '\n')
+    content = content.replace('\\n', '\n')
 
     # 1. Update Top Bar
-    content = re.sub(r'<!-- Top Bar -->.*?<!-- Navigation -->', TOPBAR_HTML + '\\n\\n' + '    <!-- Navigation -->', content, flags=re.DOTALL)
+    content = re.sub(r'<!-- Top Bar -->.*?<!-- Navigation -->', TOPBAR_HTML + '\n\n' + '    <!-- Navigation -->', content, flags=re.DOTALL)
     
     # 2. Update Navigation (Improved Regex to prevent corruption)
     content = re.sub(r'<!-- Navigation -->.*?<!-- (Hero|ARIC Hero|Actualité|Expertise Section|Services Header|Recrutement Hero|Secondary Hero Banner)', NAV_BAR_HTML + '\n\n' + '    <!-- \\1', content, flags=re.DOTALL)
@@ -472,13 +476,13 @@ def patch_file(filepath):
         pos = body_match.end()
         # Check if already injected
         if '<!-- Senior Mobile Side Drawer -->' not in content:
-            content = content[:pos] + '\\n' + MOBILE_MENU_HTML + content[pos:]
+            content = content[:pos] + '\n' + MOBILE_MENU_HTML + content[pos:]
 
     # 4. Update Footer
-    content = re.sub(r'<!-- Footer -->.*?<!-- Assistance -->', FOOTER_HTML + '\\n\\n' + '    <!-- Assistance -->', content, flags=re.DOTALL)
+    content = re.sub(r'<!-- Footer -->.*?<!-- Assistance -->', FOOTER_HTML + '\n\n' + '    <!-- Assistance -->', content, flags=re.DOTALL)
 
     # 5. Update Assistance
-    content = re.sub(r'<!-- Assistance -->.*?<script>', ASSISTANCE_HTML + '\\n\\n\\n' + '    <script>', content, flags=re.DOTALL)
+    content = re.sub(r'<!-- Assistance -->.*?<script>', ASSISTANCE_HTML + '\n\n\n' + '    <script>', content, flags=re.DOTALL)
 
     # 6. Update Scripts (Safe replacement)
     content = re.sub(r'<script>\\s*//.*?MOBILE MENU LOGIC.*?</script>', SCRIPT_HTML, content, flags=re.DOTALL | re.IGNORECASE)
