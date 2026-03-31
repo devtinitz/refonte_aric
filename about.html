@@ -122,19 +122,55 @@
             <div class="hidden lg:flex items-center space-x-4 xl:space-x-8 font-bold text-[12px] uppercase tracking-wider">
                 <a href="about.html" class="text-[#00a4bd] border-b-2 border-[#00a4bd] font-black transition-colors">Qui sommes-nous</a>
                 
-                <!-- Expertise Dropdown -->
+                <!-- Expertise Mega Menu -->
                 <div class="relative group cursor-pointer flex items-center py-4">
                     <span class="text-slate-600 group-hover:text-[#00a4bd] transition-colors">Notre Expertise</span>
                     <i data-lucide="chevron-down" class="w-3.5 h-3.5 ml-1 text-slate-500 group-hover:rotate-180 transition-transform"></i>
-                    <div class="absolute top-full -left-4 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
-                        <div class="bg-white p-4 rounded-2xl w-72 border border-slate-100 space-y-2 shadow-2xl">
-                            <a href="expertise-industrie.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-[#00a4bd] transition-all text-slate-600 italic">Froid Commercial & Industriel</a>
-                            <a href="expertise-tertiaire.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-[#00a4bd] transition-all text-slate-600 italic">Génie Climatique (CVC)</a>
-                            <a href="expertise-efficacite.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-[#00a4bd] transition-all text-slate-600 italic">Efficacité Énergétique</a>
-                            <a href="expertise-sante.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-[#00a4bd] transition-all text-slate-600 italic">Milieu Santé</a>
-                            <a href="expertise-solaire.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-[#00a4bd] transition-all text-slate-600 italic">Énergie Solaire</a>
-                            <div class="h-px bg-slate-100 my-2"></div>
-                            <a href="expertise.html" class="block px-4 py-3 rounded-xl bg-[#00a4bd]/10 text-[#00a4bd] font-black text-center">Voir l'expertise complète</a>
+                    
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50">
+                        <div class="bg-white rounded-[32px] w-[900px] border border-slate-100 shadow-2xl p-8 normal-case tracking-normal">
+                            <div class="grid grid-cols-3 gap-8">
+                                <!-- Card 1: Froid -->
+                                <a href="expertise-industrie.html" class="flex flex-col group/card transition-all duration-300">
+                                    <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6 border border-slate-50 shadow-sm transition-transform group-hover/card:scale-[1.02]">
+                                        <img src="https://images.unsplash.com/photo-1513221307088-71d14d73e32b?q=80&w=800&auto=format&fit=crop" alt="Froid Commercial & Industriel" class="w-full h-full object-cover">
+                                    </div>
+                                    <h4 class="text-lg font-bold text-[#0a192f] group-hover/card:text-[#00a4bd] transition-colors mb-2 leading-snug">Froid Commercial, Industriel & Solaire</h4>
+                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 italic font-medium">Conception et maintenance de systèmes frigorifiques pour la grande distribution et l'industrie.</p>
+                                    <span class="text-sm font-bold text-[#00a4bd] flex items-center group-hover/card:translate-x-2 transition-transform uppercase tracking-wider font-bold">
+                                        Découvrir <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                                    </span>
+                                </a>
+
+                                <!-- Card 2: Génie Climatique -->
+                                <a href="expertise-tertiaire.html" class="flex flex-col group/card transition-all duration-300">
+                                    <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6 border border-slate-50 shadow-sm transition-transform group-hover/card:scale-[1.02]">
+                                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Génie Climatique" class="w-full h-full object-cover">
+                                    </div>
+                                    <h4 class="text-lg font-bold text-[#0a192f] group-hover/card:text-[#00a4bd] transition-colors mb-2 leading-snug">Génie Climatique (CVC)</h4>
+                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 italic font-medium">Maîtrise de la température, de l'hygrométrie et de la qualité de l'air de vos bâtiments.</p>
+                                    <span class="text-sm font-bold text-[#00a4bd] flex items-center group-hover/card:translate-x-2 transition-transform uppercase tracking-wider font-bold">
+                                        Découvrir <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                                    </span>
+                                </a>
+
+                                <!-- Card 3: Efficacité Énergétique -->
+                                <a href="expertise-efficacite.html" class="flex flex-col group/card transition-all duration-300">
+                                    <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6 border border-slate-50 shadow-sm transition-transform group-hover/card:scale-[1.02]">
+                                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop" alt="Efficacité Énergétique" class="w-full h-full object-cover">
+                                    </div>
+                                    <h4 class="text-lg font-bold text-[#0a192f] group-hover/card:text-[#00a4bd] transition-colors mb-2 leading-snug">Efficacité Énergétique</h4>
+                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 italic font-medium">Audit, pilotage GTB et optimisation des consommations — accompagnement ISO 50001.</p>
+                                    <span class="text-sm font-bold text-[#00a4bd] flex items-center group-hover/card:translate-x-2 transition-transform uppercase tracking-wider font-bold">
+                                        Découvrir <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="mt-8 pt-6 border-t border-slate-100 flex justify-center">
+                                <a href="expertise.html" class="px-10 py-3 bg-slate-50 rounded-full text-slate-600 font-bold hover:bg-[#0a192f] hover:text-white transition-all flex items-center italic text-sm">
+                                    Voir toutes nos expertises <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
