@@ -76,10 +76,10 @@ NAV_BAR_HTML = """    <!-- Navigation -->
                 animation: pulse-soft 2s infinite;
             }
         </style>
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 h-16 lg:h-20 flex justify-between items-center">
             <!-- Logo -->
             <a href="./" class="flex items-center shrink-0 transition-transform hover:scale-105">
-                <img src="logo.png" alt="ARIC Solutions Logo" class="h-10 md:h-16 w-auto drop-shadow-sm">
+                <img src="logo.png" alt="ARIC Solutions Logo" class="h-8 lg:h-16 w-auto drop-shadow-sm">
             </a>
 
             <!-- Desktop Menu -->
@@ -160,41 +160,41 @@ MOBILE_MENU_HTML = """    <!-- Senior Mobile Side Drawer -->
         <!-- Drawer Content -->
         <div id="mobile-menu-drawer" class="absolute top-0 right-0 w-[85%] max-w-sm h-full bg-[#0a192f] shadow-2xl translate-x-full transition-transform duration-500 ease-in-out flex flex-col border-l border-white/5">
             <!-- Drawer Header -->
-            <div class="flex justify-between items-center p-6 border-b border-white/5">
-                <img src="logo.png" alt="Logo" class="h-10 w-auto brightness-0 invert">
-                <button id="close-menu-btn" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 text-white hover:bg-white/10 transition-colors">
+            <div class="flex justify-between items-center p-4 border-b border-white/5">
+                <img src="logo.png" alt="Logo" class="h-8 w-auto brightness-0 invert">
+                <button id="close-menu-btn" class="w-10 h-10 flex items-center justify-center rounded-2xl bg-white/5 text-white hover:bg-white/10 transition-colors">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
 
             <!-- Scrollable Links -->
-            <nav class="flex-1 overflow-y-auto px-8 py-10 flex flex-col space-y-1">
-                <div class="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] mb-6 pl-2">Navigation Principale</div>
-                <a href="index.html" class="group flex items-center justify-between py-3 pl-2 text-xl font-bold text-white hover:text-[#00a4bd] transition-colors">
+            <nav class="flex-1 overflow-y-auto px-6 py-8 flex flex-col space-y-1">
+                <div class="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] mb-4 pl-2">Navigation Principale</div>
+                <a href="index.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
                     <span>Accueil</span>
                     <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
                 </a>
-                <a href="about.html" class="group flex items-center justify-between py-3 pl-2 text-xl font-bold text-white hover:text-[#00a4bd] transition-colors">
+                <a href="about.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
                     <span>Qui sommes-nous</span>
                     <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
                 </a>
-                <a href="expertise.html" class="group flex items-center justify-between py-3 pl-2 text-xl font-bold text-white hover:text-[#00a4bd] transition-colors">
+                <a href="expertise.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
                     <span>Expertises</span>
                     <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
                 </a>
-                <a href="services.html" class="group flex items-center justify-between py-3 pl-2 text-xl font-bold text-white hover:text-[#00a4bd] transition-colors">
+                <a href="services.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
                     <span>Services</span>
                     <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
                 </a>
-                <a href="actualites.html" class="group flex items-center justify-between py-3 pl-2 text-xl font-bold text-white hover:text-[#00a4bd] transition-colors">
+                <a href="actualites.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
                     <span>Références</span>
                     <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
                 </a>
-                <a href="recrutement.html" class="group flex items-center justify-between py-3 pl-2 text-xl font-bold text-white hover:text-[#00a4bd] transition-colors">
+                <a href="recrutement.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
                     <span>Recrutement</span>
                     <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
                 </a>
-                <a href="contact.html" class="group flex items-center justify-between py-3 pl-2 text-xl font-bold text-[#00a4bd]">
+                <a href="contact.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-[#00a4bd]">
                     <span>Contact</span>
                     <i data-lucide="arrow-right" class="w-5 h-5 opacity-100"></i>
                 </a>
@@ -464,7 +464,7 @@ def patch_file(filepath):
 
     # 3. Inject Mobile Menu Drawer at the start of body (Safe Method)
     # Remove any existing versions first to avoid duplication
-    content = re.sub(r'<!-- Senior Mobile Side Drawer -->.*?</div>\\s*</div>', '', content, flags=re.DOTALL)
+    content = re.sub(r'<!-- Senior Mobile Side Drawer -->.*?</div>\s*</div>\s*</div>', '', content, flags=re.DOTALL)
     
     # Insert after body
     body_match = re.search(r'(<body.*?>)', content)
