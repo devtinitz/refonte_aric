@@ -45,7 +45,7 @@ NAV_BAR_HTML = """    <!-- Navigation -->
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <!-- Logo -->
             <a href="./" class="flex items-center shrink-0 transition-transform hover:scale-105">
-                <img src="logo.png" alt="ARIC Solutions Logo" class="h-16 w-auto drop-shadow-sm">
+                <img src="logo.png" alt="ARIC Solutions Logo" class="h-10 md:h-16 w-auto drop-shadow-sm">
             </a>
 
             <!-- Desktop Menu -->
@@ -237,13 +237,13 @@ FOOTER_HTML = """    <!-- Footer -->
     </footer>"""
 
 ASSISTANCE_HTML = """    <!-- Assistance -->
-    <div class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100]" data-aos="fade-left" data-aos-delay="1000">
-        <button id="assistance-btn" class="group flex items-center gap-4 px-6 py-4 rounded-full text-white transition-all hover:scale-105 active:scale-95 shadow-2xl bg-[#ef0032]">
-            <div class="p-2 bg-white/10 rounded-full group-hover:rotate-12 transition-transform">
+    <div class="fixed bottom-4 right-4 md:bottom-10 md:right-10 z-[100]" data-aos="fade-left" data-aos-delay="1000">
+        <button id="assistance-btn" class="group flex items-center gap-2 md:gap-4 p-3 md:px-6 md:py-4 rounded-full text-white transition-all hover:scale-105 active:scale-95 shadow-2xl bg-[#ef0032]">
+            <div class="p-1 md:p-2 bg-white/10 rounded-full group-hover:rotate-12 transition-transform">
                 <i data-lucide="headset" class="w-5 h-5 md:w-6 md:h-6"></i>
             </div>
             <span class="font-black tracking-widest text-xs md:text-sm uppercase hidden sm:inline">Assistance 24/7</span>
-            <span class="font-black tracking-widest text-[10px] uppercase sm:hidden">SOS 24/7</span>
+            <span class="font-black tracking-widest text-[10px] uppercase inline sm:hidden">SOS 24/7</span>
         </button>
     </div>
 
