@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Projet | ARIC Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-navy': '#0a192f',
+                        'tech-cyan': '#00a4bd',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background: #ffffff;
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .video-overlay {
+            background: linear-gradient(to bottom, rgba(10, 25, 47, 0.5) 0%, rgba(10, 25, 47, 0.8) 100%);
+        }
+
+        .btn-assistance {
+            background: #ef0032;
+            box-shadow: 0 10px 25px -5px rgba(239, 0, 50, 0.4);
+        }
+    
+        #assistance-card.active {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        #assistance-card.active > div:last-child {
+            transform: translateY(0) !important;
+        }
+
+        .prose-content {
+            color: #475569;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .prose-content h2 { color: #0a192f; font-weight: 800; font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-content p { margin-bottom: 1.5rem; }
+        .prose-content ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose-content li { margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="bg-gray-50 font-['Plus_Jakarta_Sans'] text-slate-900 overflow-x-hidden relative">
+    <!-- Senior Mobile Side Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-[999] invisible pointer-events-none transition-all duration-500 overflow-hidden lg:hidden">
+        <!-- Backdrop -->
+        <div id="mobile-menu-overlay" class="absolute inset-0 bg-[#0a192f]/60 backdrop-blur-sm opacity-0 transition-opacity duration-500 cursor-pointer"></div>
+        
+        <!-- Drawer Content -->
+        <div id="mobile-menu-drawer" class="absolute top-0 right-0 w-[85%] max-w-sm h-full bg-[#0a192f] shadow-2xl translate-x-full transition-transform duration-500 ease-in-out flex flex-col border-l border-white/5">
+            <!-- Drawer Header -->
+            <div class="flex justify-between items-center p-4 border-b border-white/5">
+                <img src="logo.png" alt="Logo" class="h-8 w-auto brightness-0 invert">
+                <button id="close-menu-btn" class="w-10 h-10 flex items-center justify-center rounded-2xl bg-white/5 text-white hover:bg-white/10 transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Scrollable Links -->
+            <nav class="flex-1 overflow-y-auto px-6 py-8 flex flex-col space-y-1">
+                <div class="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] mb-4 pl-2">Navigation Principale</div>
+                <a href="index.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
+                    <span>Accueil</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
+                </a>
+                <a href="about.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
+                    <span>Qui sommes-nous</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
+                </a>
+                <a href="expertise.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
+                    <span>Expertises</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
+                </a>
+                <a href="services.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
+                    <span>Services</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
+                </a>
+                <a href="actualites.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
+                    <span>Références</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
+                </a>
+                <a href="recrutement.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-white hover:text-[#00a4bd] transition-colors">
+                    <span>Recrutement</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0"></i>
+                </a>
+                <a href="contact.html" class="group flex items-center justify-between py-2 pl-2 text-base font-bold text-[#00a4bd]">
+                    <span>Contact</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 opacity-100"></i>
+                </a>
+            </nav>
+
+            <!-- Drawer Footer -->
+            <div class="p-8 border-t border-white/5 bg-white/[0.02]">
+                <div class="flex space-x-6 mb-8 pr-2">
+                    <a href="https://www.linkedin.com/company/groupe-conergies/" target="_blank" class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white hover:bg-[#00a4bd] transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/ConergiesGroup" target="_blank" class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white hover:bg-[#00a4bd] transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                </div>
+                <a href="contact.html" class="block w-full py-5 bg-[#00a4bd] text-[#0a192f] text-center font-black rounded-2xl shadow-xl shadow-[#00a4bd]/20 uppercase tracking-widest text-xs">
+                    Lancer un Projet
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1] bg-repeat" style="background-image: url('bg-waves.svg'); background-size: 800px;"></div>
+
+                                                                                        <!-- Top Bar -->
+    <div class="hidden lg:block bg-[#0a192f] border-b border-white/5 py-2">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-semibold text-slate-400">
+            <div class="flex items-center space-x-6">
+                <a href="tel:+2252720000000" class="flex items-center hover:text-[#00a4bd] transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4 mr-2 text-[#00a4bd]"></i>
+                    +225 27 20 00 00 00
+                </a>
+                <a href="mailto:contact@conergies.ci" class="flex items-center hover:text-[#00a4bd] transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4 mr-2 text-[#00a4bd]"></i>
+                    contact@conergies.ci
+                </a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://www.facebook.com/ConergiesGroup" target="_blank" class="hover:text-[#00a4bd] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                <a href="https://www.linkedin.com/company/groupe-conergies/" target="_blank" class="hover:text-[#00a4bd] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="./" class="flex items-center shrink-0 transition-transform hover:scale-105">
+                <img src="logo.png" alt="ARIC Solutions Logo" class="h-16 w-auto drop-shadow-sm">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8 font-bold text-[12px] uppercase tracking-wider">
+                <a href="about.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Qui sommes-nous</a>
+                
+                <!-- Expertise Mega Menu -->
+                <div class="relative group cursor-pointer flex items-center py-4">
+                    <span class="text-slate-600 group-hover:text-[#00a4bd] transition-colors">Notre Expertise</span>
+                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 ml-1 text-slate-500 group-hover:rotate-180 transition-transform"></i>
+                    
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50">
+                        <div class="bg-white rounded-[32px] w-[900px] border border-slate-100 shadow-2xl p-8 normal-case tracking-normal">
+                            <div class="grid grid-cols-3 gap-8">
+                                <a href="expertise-industrie.html" class="flex flex-col group/card transition-all duration-300">
+                                    <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6 border border-slate-50 shadow-sm transition-transform group-hover/card:scale-[1.02]">
+                                        <img src="froid-expertise.png" alt="Froid Commercial & Industriel" class="w-full h-full object-cover">
+                                    </div>
+                                    <h4 class="text-lg font-bold text-[#0a192f] group-hover/card:text-[#00a4bd] transition-colors mb-2 leading-snug">Froid Commercial, Industriel & Solaire</h4>
+                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 italic font-medium">Conception et maintenance de systèmes frigorifiques pour la grande distribution et l'industrie.</p>
+                                    <span class="text-sm font-bold text-[#00a4bd] flex items-center group-hover/card:translate-x-2 transition-transform uppercase tracking-wider">
+                                        Découvrir <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                                    </span>
+                                </a>
+
+                                <a href="expertise-tertiaire.html" class="flex flex-col group/card transition-all duration-300">
+                                    <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6 border border-slate-50 shadow-sm transition-transform group-hover/card:scale-[1.02]">
+                                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Génie Climatique" class="w-full h-full object-cover">
+                                    </div>
+                                    <h4 class="text-lg font-bold text-[#0a192f] group-hover/card:text-[#00a4bd] transition-colors mb-2 leading-snug">Génie Climatique (CVC)</h4>
+                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 italic font-medium">Maîtrise de la température, de l'hygrométrie et de la qualité de l'air de vos bâtiments.</p>
+                                    <span class="text-sm font-bold text-[#00a4bd] flex items-center group-hover/card:translate-x-2 transition-transform uppercase tracking-wider">
+                                        Découvrir <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                                    </span>
+                                </a>
+
+                                <a href="expertise-efficacite.html" class="flex flex-col group/card transition-all duration-300">
+                                    <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6 border border-slate-50 shadow-sm transition-transform group-hover/card:scale-[1.02]">
+                                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop" alt="Efficacité Énergétique" class="w-full h-full object-cover">
+                                    </div>
+                                    <h4 class="text-lg font-bold text-[#0a192f] group-hover/card:text-[#00a4bd] transition-colors mb-2 leading-snug">Efficacité Énergétique</h4>
+                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 italic font-medium">Audit, pilotage GTB et optimisation des consommations — accompagnement ISO 50001.</p>
+                                    <span class="text-sm font-bold text-[#00a4bd] flex items-center group-hover/card:translate-x-2 transition-transform uppercase tracking-wider">
+                                        Découvrir <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="mt-8 pt-6 border-t border-slate-100 flex justify-center">
+                                <a href="expertise.html" class="px-10 py-3 bg-slate-50 rounded-full text-slate-600 font-bold hover:bg-[#0a192f] hover:text-white transition-all flex items-center italic text-sm">
+                                    Voir toutes nos expertises <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="services.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Services</a>
+                <a href="actualites.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors whitespace-nowrap">Références & Actus</a>
+                <a href="recrutement.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Recrutement</a>
+                <a href="contact.html" class="text-slate-600 hover:text-[#00a4bd] transition-colors">Contact</a>
+            </div>
+
+            <!-- Utilities -->
+            <div class="flex items-center space-x-6">
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="lg:hidden text-[#0a192f] w-12 h-12 flex items-center justify-center hover:bg-slate-100 rounded-2xl transition-all active:scale-95">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+            <div class="p-10 border-t border-white/5 bg-white/5">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex space-x-6">
+                        <a href="https://www.linkedin.com/company/groupe-conergies/" target="_blank" class="text-white/60 hover:text-[#00a4bd] transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                        <a href="https://www.facebook.com/ConergiesGroup" target="_blank" class="text-white/60 hover:text-[#00a4bd] transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                    </div>
+                </div>
+                <a href="contact.html" class="block w-full py-5 bg-[#00a4bd] text-[#0a192f] text-center font-black rounded-2xl shadow-xl shadow-[#00a4bd]/20 uppercase tracking-widest text-xs">
+                    Démarrer un Projet
+                </a>
+            </div>
+        </div>
+    </nav>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Detail Content -->
+    <main id="main-content" class="min-h-screen">
+        <!-- Load state -->
+        <div class="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
+            <div class="w-12 h-12 border-4 border-tech-cyan border-t-transparent rounded-full animate-spin"></div>
+            <p class="text-slate-400 font-bold uppercase tracking-widest text-xs">Traitement des données...</p>
+        </div>
+    </main>
+
+    <!-- Template for JS injection -->
+    <template id="detail-template">
+        <header class="relative h-[65vh] flex items-end">
+            <img id="detail-hero-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 video-overlay backdrop-blur-[1px]"></div>
+            <div class="max-w-7xl mx-auto px-6 relative z-10 w-full pb-24">
+                <div data-aos="fade-up">
+                    <a href="actualites.html" class="inline-flex items-center text-white/70 hover:text-tech-cyan text-xs font-bold uppercase tracking-widest mb-8 transition-colors">
+                        <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Retour aux actualités
+                    </a>
+                    <div id="detail-meta" class="flex items-center space-x-4 mb-6">
+                        <span id="detail-type" class="px-4 py-1.5 bg-tech-cyan text-white text-[10px] font-black uppercase tracking-widest rounded-full">Projet</span>
+                        <span id="detail-year" class="text-white/80 font-bold text-sm">2026</span>
+                    </div>
+                    <h1 id="detail-title" class="text-4xl md:text-6xl font-extrabold text-white leading-tight max-w-5xl"></h1>
+                </div>
+            </div>
+        </header>
+
+        <section class="py-24 relative -mt-16">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <!-- Main Body -->
+                <div class="lg:col-span-8">
+                    <div class="glass p-10 md:p-16 rounded-[48px] border-white z-20 relative">
+                        <div id="detail-content" class="prose-content"></div>
+                        <div class="mt-16 pt-10 border-t border-slate-100 flex gap-4">
+                            <button class="px-6 py-3 border border-slate-200 rounded-2xl flex items-center text-xs font-bold text-slate-600 hover:bg-slate-50 transition-all">
+                                <i data-lucide="share-2" class="w-4 h-4 mr-2"></i> Partager
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="lg:col-span-4 space-y-8" data-aos="fade-left">
+                    <div class="glass p-8 rounded-[40px] border-white">
+                        <h4 class="text-lg font-black text-tech-navy mb-8 border-l-4 border-tech-cyan pl-4">Fiche Technique</h4>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-tech-cyan/10 rounded-xl flex items-center justify-center text-tech-cyan"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+                                <div>
+                                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Localisation</div>
+                                    <div id="sidebar-location" class="font-bold text-tech-navy italic"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-tech-cyan/10 rounded-xl flex items-center justify-center text-tech-cyan"><i data-lucide="tag" class="w-5 h-5"></i></div>
+                                v<div>
+                                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Expertises</div>
+                                    <div id="sidebar-expertise" class="font-bold text-tech-navy italic"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-tech-navy p-10 rounded-[40px] text-white shadow-2xl relative overflow-hidden">
+                        <h4 class="text-2xl font-black mb-4">Besoin d'un expert ?</h4>
+                        <p class="text-white/60 text-sm mb-8">Nos équipes techniques sont à votre écoute pour vos projets complexes.</p>
+                        <a href="contact.html" class="block w-full py-4 bg-tech-cyan text-white text-center font-black rounded-2xl hover:scale-[1.02] transition-transform">Audit & Devis</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </template>
+
+    <!-- Footer -->
+    <footer class="bg-tech-navy text-white/60 py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <img src="logo.png" alt="ARIC" class="h-12 w-auto mx-auto mb-8 opacity-40 grayscale invert">
+            <div class="flex justify-center space-x-8 text-[10px] font-black uppercase tracking-[0.3em]">
+                <a href="about.html" class="hover:text-tech-cyan transition-colors">Qui sommes-nous</a>
+                <a href="expertise.html" class="hover:text-tech-cyan transition-colors">Expertises</a>
+                <a href="contact.html" class="hover:text-tech-cyan transition-colors">Contact</a>
+            </div>
+            <div class="mt-12 text-[10px] opacity-30">© 2026 ARIC Solutions - Groupe Conergies. Tous droits réservés.</div>
+        </div>
+    </footer>
+
+    <!-- Assistance Widget -->
+    <div class="fixed bottom-10 right-10 z-[100]">
+        <button id="assistance-btn" class="btn-assistance flex items-center gap-4 px-6 py-4 rounded-full text-white hover:scale-105 transition-all shadow-2xl">
+            <div class="p-2 bg-white/10 rounded-full"><i data-lucide="headset" class="w-6 h-6"></i></div>
+            <span class="font-black text-xs uppercase tracking-widest">SOS 24/7</span>
+        </button>
+    </div>
+
+    <!-- Assistance Card Overlay -->
+    <div id="assistance-card" class="fixed inset-0 z-[110] flex items-center justify-center pointer-events-none p-10 opacity-0 invisible transition-all duration-300">
+        <div id="assistance-overlay" class="absolute inset-0 bg-tech-navy/50 backdrop-blur-md pointer-events-auto cursor-pointer"></div>
+        <div class="relative w-full max-w-md bg-white rounded-[48px] shadow-2xl overflow-hidden pointer-events-auto transform translate-y-10 transition-transform">
+            <div class="p-10">
+                <div class="flex justify-between items-start mb-8">
+                    <div>
+                        <div class="text-[10px] font-black text-tech-cyan uppercase tracking-widest mb-2">Assistance Technique</div>
+                        <h3 class="text-2xl font-black text-tech-navy">Support Prioritaire</h3>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <a href="tel:+2252721212121" class="flex flex-col p-4 rounded-3xl bg-slate-50 border border-slate-100 group">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase mb-1">Côte d'Ivoire</span>
+                        <span class="text-lg font-black text-tech-navy group-hover:text-tech-cyan transition-colors">+225 27 21 21 21 21</span>
+                    </a>
+                    <a href="mailto:contact@conergies.ci" class="flex items-center gap-4 p-4 rounded-3xl hover:bg-slate-50 transition-colors">
+                        <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center text-slate-500"><i data-lucide="mail" class="w-4 h-4"></i></div>
+                        <span class="font-bold text-tech-navy">contact@conergies.ci</span>
+                    </a>
+                </div>
+                <button id="close-assistance" class="mt-8 w-full py-4 bg-slate-100 text-slate-600 font-bold rounded-2xl">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const contentData = {
+            "cinema-pathe": {
+                type: "Référence Expertise",
+                title: "Cinéma Pathé Cap Sud : Un défi de traitement d'air et acoustique",
+                year: "2026",
+                location: "Abidjan, Côte d'Ivoire",
+                expertise: "CVC & Traitement d'air",
+                image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200",
+                fullContent: `
+                    <h2>Le Contexte</h2>
+                    <p>Pour l'inauguration du nouveau complexe Pathé à Cap Sud, ARIC a été mandaté pour la conception et la réalisation de l'intégralité du système de génie climatique. L'enjeu principal : assurer un confort thermique optimal tout en respectant des contraintes acoustiques extrêmes (normes NC-30) pour ne pas perturber l'expérience cinématographique.</p>
+                    <h2>Solutions Techniques</h2>
+                    <ul>
+                        <li>Installation de 3 groupes de production d'eau glacée de 450 kW chacun.</li>
+                        <li>8 Centrales de Traitement d'Air (CTA) à double flux avec récupération d'énergie.</li>
+                        <li>Réseau de gaines acoustiques à basse vitesse pour une circulation d'air silencieuse.</li>
+                        <li>Système de pilotage décentralisé via bacnet pour chaque salle.</li>
+                    </ul>
+                    <p>Ce projet démontre notre capacité à intégrer des solutions multitechniques dans des environnements de loisirs haut de gamme.</p>
+                `
+            },
+            "cocody-residence": {
+                type: "Référence Tertiaire",
+                title: "Complexe Résidentiel de Luxe : Smart VRV & Confort",
+                year: "2026",
+                location: "Cocody, Abidjan",
+                expertise: "Génie Climatique & Domotique",
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1200",
+                fullContent: `
+                    <h2>Confort Premium</h2>
+                    <p>Équiper l'une des résidences les plus prestigieuses de Cocody avec un système de climatisation invisible et hautement performant.</p>
+                    <h2>Innovations ARIC</h2>
+                    <ul>
+                        <li>Système VRV à récupération de chaleur permettant de chauffer l'eau des salles de bain via les calories extraites.</li>
+                        <li>Unités intérieures gainables ultra-fines pour s'intégrer dans les faux-plafonds architecturaux.</li>
+                        <li>Contrôle centralisé par smartphone pour chaque résident.</li>
+                    </ul>
+                `
+            },
+            "nsia-banque": {
+                type: "Rénovation Tertiaire",
+                title: "Siège Social NSIA Banque : Performance Énergétique",
+                year: "2024",
+                location: "Plateau, Abidjan",
+                expertise: "Audit & Rénovation CVC",
+                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200",
+                fullContent: `
+                    <h2>Modernisation Durable</h2>
+                    <p>Le projet consistait à remplacer les anciens systèmes énergivores par une solution respectant les engagements RSE de la banque.</p>
+                    <ul>
+                        <li>Audit énergétique complet avant travaux pour une projection de ROI à 3 ans.</li>
+                        <li>Remplacement des groupes frigorifiques par des modèles à faible GWP (Global Warming Potential).</li>
+                        <li>Mise en place d'une GTB (Gestion Technique du Bâtiment) pour optimiser les démarrages.</li>
+                    </ul>
+                `
+            },
+            "radisson-blu": {
+                type: "Hôtellerie de Luxe",
+                title: "Hôtel Radisson Blu : Excellence Thmique 24/7",
+                year: "2023",
+                location: "Dakar, Sénégal",
+                expertise: "Maintenance & CVC",
+                image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200",
+                fullContent: `
+                    <h2>Exigence de Service</h2>
+                    <p>Un hôtel 5 étoiles ne peut se permettre aucune faille dans son confort thermique. ARIC assure la maintenance multitechnique pour garantir un climat parfait aux clients.</p>
+                    <ul>
+                        <li>Logiciel de GMAO pour une traçabilité totale des interventions.</li>
+                        <li>Système de backup froid pour les zones critiques.</li>
+                        <li>Traitement de l'eau des circuits fermés pour optimiser les échanges thermiques.</li>
+                    </ul>
+                `
+            },
+            "site-minier": {
+                type: "Solaire & Industrie",
+                title: "Off-Grid Solaire pour Site Minier Isolé",
+                year: "2024",
+                location: "Conakry, Guinée",
+                expertise: "Solaire Photovoltaïque",
+                image: "solar-expertise.png",
+                fullContent: `
+                    <h2>Décarbonation Industrielle</h2>
+                    <p>Installation d'une centrale solaire de 500 kWc pour alimenter les bureaux et la base vie d'un site en zone isolée.</p>
+                    <ul>
+                        <li>Plus de 1000 panneaux solaires haute efficacité.</li>
+                        <li>Parc batterie de 1.2 MWh pour une autonomie nocturne.</li>
+                        <li>Couplage intelligent avec les groupes électrogènes existants.</li>
+                    </ul>
+                `
+            },
+            "cimenterie": {
+                type: "Expertise Industrielle",
+                title: "Audit Énergétique & Variateurs de Vitesse : Cimenterie",
+                year: "2023",
+                location: "Rufisque, Sénégal",
+                expertise: "Efficacité Énergétique",
+                image: "energy-expertise.png",
+                fullContent: `
+                    <h2>ROI Rapide</h2>
+                    <p>Analyse des moteurs de grande puissance et optimisation des flux d'air de refroidissement.</p>
+                    <ul>
+                        <li>Mise en place de 12 variateurs de fréquence sur les ventilateurs haute pression.</li>
+                        <li>Économie mesurée de 145 MWh par an après 6 mois d'exploitation.</li>
+                        <li>Accompagnement vers la certification ISO 50001.</li>
+                    </ul>
+                `
+            },
+            "clinique-madeleine": {
+                type: "Santé & Hygiène",
+                title: "Traitement d'Air Médicalisé : Clinique Madeleine",
+                year: "2023",
+                location: "Dakar, Sénégal",
+                expertise: "Salles Blanches & Santé",
+                image: "health-expertise.png",
+                fullContent: `
+                    <h2>Sécurité Sanitaire</h2>
+                    <p>La Clinique Madeleine a confié à ARIC la mise aux normes de ses blocs opératoires et de sa zone de réanimation.</p>
+                    <ul>
+                        <li>Filtration HEPA H13 pour une pureté d'air maximale.</li>
+                        <li>Gestion des flux laminaires pour éviter les contaminations croisées.</li>
+                        <li>Centrale d'air traitant spécifiquement l'hygrométrie en milieu tropical.</li>
+                    </ul>
+                `
+            },
+            "supermarche-casino": {
+                type: "Distribution",
+                title: "Réfrigération au CO2 : Supermarché Casino",
+                year: "2024",
+                location: "Abidjan, Côte d'Ivoire",
+                expertise: "Froid Commercial",
+                image: "froid-expertise.png",
+                fullContent: `
+                    <h2>Innovation Durable</h2>
+                    <p>Passage d'un fluide traditionnel vers une solution écologique au CO2 (R744) pour l'ensemble du magasin.</p>
+                    <ul>
+                        <li>Vitrine frigorifique avec éclairage LED intégré et portes double vitrage.</li>
+                        <li>Système de récupération de chaleur sur le froid pour chauffer l'eau sanitaire.</li>
+                        <li>Monitoring à distance pour prévenir tout risque de rupture de charge.</li>
+                    </ul>
+                `
+            },
+            "sedima": {
+                type: "Agroalimentaire",
+                title: "Tunnel de Surgélation Industrielle : Groupe SEDIMA",
+                year: "2022",
+                location: "Thiès, Sénégal",
+                expertise: "Froid Industriel",
+                image: "monitoring-expertise.png",
+                fullContent: `
+                    <h2>Performance de pointe</h2>
+                    <p>Déploiement d'un tunnel de surgélation rapide capable de traiter 2 tonnes de volaille par heure à -40°C.</p>
+                    <ul>
+                        <li>Compresseurs à vis bitzer avec variateurs.</li>
+                        <li>Évaporateurs inox pour une hygiène irréprochable.</li>
+                        <li>Automatisme SIEMENS pour un pilotage précis des cycles.</li>
+                    </ul>
+                `
+            },
+            "led-gtb": {
+                type: "Smart Building",
+                title: "Smart Tower : Éclairage Connecté & GTB Native",
+                year: "2023",
+                location: "Plateau, Sénégal",
+                expertise: "GTB & Électricité",
+                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200",
+                fullContent: `
+                    <h2>Immeuble Intelligent</h2>
+                    <p>Transformation d'un immeuble de bureaux classique en "Smart Building" via une plateforme de supervision centralisée.</p>
+                    <ul>
+                        <li>3 200 points lumineux LED reliés en DALI.</li>
+                        <li>Détecteurs de présence et de luminosité pour un éclairage adaptatif.</li>
+                        <li>Tableau de bord énergétique partagé avec les locataires.</li>
+                    </ul>
+                `
+            },
+            "pathe-news": {
+                type: "Event Insight",
+                title: "Grand Angle : Inauguration du Pathé Abidjan",
+                year: "2024",
+                location: "Abidjan",
+                expertise: "Événementiel & Tech",
+                image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200",
+                fullContent: `
+                    <h2>Un Succès Culturel</h2>
+                    <p>Retour sur les coulisses techniques de l'ouverture du premier complexe IMAX d'Afrique francophone.</p>
+                    <p>Au-delà de la climatisation, ARIC a assuré l'assistance technique continue durant les 48h de l'inauguration pour garantir une continuité de service sans faille.</p>
+                `
+            },
+            "batterie-fer": {
+                type: "Tech News",
+                title: "La Révolution Iron-Air : Quel avenir pour l'Afrique ?",
+                year: "2026",
+                location: "Global",
+                expertise: "Innovation Solaire",
+                image: "https://images.unsplash.com/photo-1544333346-64799cdbb99d?q=80&w=1200",
+                fullContent: `
+                    <h2>Le futur du stockage</h2>
+                    <p>Une nouvelle batterie à base de fer, développée par des ingénieurs de Stanford, promet de diviser par 10 le coût du stockage longue durée.</p>
+                    <p>Le Groupe Conergies évalue déjà les prototypes pour une intégration dans nos futurs mini-grids ruraux en Côte d'Ivoire et au Mali.</p>
+                `
+            },
+            "modelisation-evaluation": {
+                type: "Technical Whitepaper",
+                title: "Modélisation Numérique vs réalité terrain",
+                year: "2026",
+                location: "Sénégal / Mali",
+                expertise: "Ingénierie Fluide",
+                image: "bg-waves.svg",
+                fullContent: `
+                    <h2>Précision Chirurgicale</h2>
+                    <p>Comment l'utilisation des jumeaux numériques permet à ARIC de prédire le comportement thermique d'un bâtiment avant même sa construction.</p>
+                    <p>L'étude montre une corrélation de 98% entre nos modèles BIM et les consommations réelles constatées sur site.</p>
+                `
+            }
+        };
+
+        const fallbackData = {
+            type: "Documentation ARIC",
+            title: "Détails techniques en cours de déploiement",
+            year: "2026",
+            location: "Afrique de l'Ouest",
+            expertise: "Multitechnique & Innovation",
+            image: "logo.png",
+            fullContent: `<h2>Contenu en préparation</h2><p>Nos experts finalisent actuellement la documentation complète de ce projet emblématique. Revenez très bientôt pour découvrir l'intégralité de cette réalisation technique.</p>`
+        };
+
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            const data = contentData[id] || fallbackData;
+
+            const main = document.getElementById('main-content');
+            const template = document.getElementById('detail-template');
+            const clone = template.content.cloneNode(true);
+
+            clone.getElementById('detail-hero-image').src = data.image;
+            clone.getElementById('detail-hero-image').alt = data.title;
+            clone.getElementById('detail-type').textContent = data.type;
+            clone.getElementById('detail-year').textContent = data.year;
+            clone.getElementById('detail-title').textContent = data.title;
+            clone.getElementById('detail-content').innerHTML = data.fullContent;
+            clone.getElementById('sidebar-location').textContent = data.location;
+            clone.getElementById('sidebar-expertise').textContent = data.expertise;
+
+            document.title = data.title + " | ARIC Solutions";
+            main.innerHTML = '';
+            main.appendChild(clone);
+
+            lucide.createIcons();
+            AOS.init({ duration: 1000, once: true });
+
+            // Assistance Card Interface
+            const aBtn = document.getElementById('assistance-btn');
+            const cBtn = document.getElementById('close-assistance');
+            const aCard = document.getElementById('assistance-card');
+            const aOverlay = document.getElementById('assistance-overlay');
+
+            aBtn.onclick = () => { aCard.classList.add('active'); document.body.style.overflow = 'hidden'; };
+            cBtn.onclick = aOverlay.onclick = () => { aCard.classList.remove('active'); document.body.style.overflow = ''; };
+        };
+    </script>
+</body>
+</html>
