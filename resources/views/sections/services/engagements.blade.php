@@ -51,9 +51,11 @@
             <div class="relative" data-aos="fade-left">
                 <div class="bg-white rounded-[40px] p-6 shadow-2xl shadow-tech-navy/5 border border-white relative z-10">
                     <div class="p-6">
-                        <x-cms-editable key="services_eng_card_text"><p class="text-sm text-tech-navy font-bold leading-relaxed mb-6 italic">
-                            Nous vous garantissons le plus grand confort ainsi qu'une sérénité technique, réglementaire et budgétaire grâce à notre expérience.
-                        </p></x-cms-editable>
+                        <x-cms-editable key="services_eng_card_text">
+                            <p class="text-sm text-tech-navy font-bold leading-relaxed mb-6 italic">
+                                Nous vous garantissons le plus grand confort ainsi qu'une sérénité technique, réglementaire et budgétaire grâce à notre expérience.
+                            </p>
+                        </x-cms-editable>
                         <div class="rounded-3xl overflow-hidden shadow-inner border border-slate-100">
                             <x-cms-editable key="services_engagement_img" type="media">
                                 <img src="/engagement-card.png" alt="Processus complet ARIC" class="w-full h-auto">

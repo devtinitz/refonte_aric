@@ -28,17 +28,24 @@
         <div data-aos="fade-up" class="text-left">
             <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-8 border border-white/10">
                 <span class="w-2 h-2 bg-tech-cyan rounded-full animate-ping"></span>
+                <x-cms-editable key="contact_hero_badge"><span class="text-[10px] font-black uppercase tracking-[0.2em] text-white">Contact & Support</span></x-cms-editable>
             </div>
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-8">
                 <x-cms-editable key="contact_hero_title">
                     Experts à votre <br><span class="text-gradient-light">Écoute</span>.
+                </x-cms-editable>
             </h1>
-            <x-cms-editable key="contact_hero_desc"><p class="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed mb-10 font-medium italic">
-                Nous sommes disponibles pour toute demande d'audit, d'étude ou de devis. Nos équipes s'engagent à vous répondre sous 24h ouvrées.
+            <x-cms-editable key="contact_hero_desc">
+                <p class="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed mb-10 font-medium italic">
+                    Nous sommes disponibles pour toute demande d'audit, d'étude ou de devis. Nos équipes s'engagent à vous répondre sous 24h ouvrées.
+                </p>
+            </x-cms-editable>
             <div class="flex flex-wrap gap-6">
                 <a href="#formulaire" class="relative group">
+                    <x-cms-editable key="contact_hero_btn_project" buttonClass="-top-12 left-0"><span class="px-10 py-5 bg-tech-cyan text-tech-navy font-black rounded-2xl hover:scale-105 transition-all shadow-2xl flex items-center group">Démarrer un projet <i data-lucide="send" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"></i></span></x-cms-editable>
                 </a>
                 <a href="tel:+2252721210000" class="relative group">
+                    <x-cms-editable key="contact_hero_btn_call" buttonClass="-top-12 left-0"><span class="px-10 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-black rounded-2xl hover:bg-white/20 transition-all flex items-center">Nous appeler</span></x-cms-editable>
                 </a>
             </div>
         </div>

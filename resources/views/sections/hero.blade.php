@@ -22,6 +22,8 @@
             
             <div class="absolute inset-0 grid-pattern opacity-10"></div>
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-tech-cyan/5 blur-[150px] rounded-full opacity-20"></div>
+            <div class="absolute inset-0 video-overlay"></div>
+        </x-cms-editable>
         
         <div class="max-w-7xl mx-auto px-6 relative z-10 w-full mb-20">
             <div class="max-w-3xl" data-aos="fade-up" data-aos-duration="1000">
@@ -30,19 +32,24 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tech-cyan opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-tech-cyan"></span>
                     </span>
+                    <x-cms-editable key="hero_badge">SERVICE MAINTENANCE & PERFORMANCE</x-cms-editable>
                 </div>
                 <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-white text-shadow-lg">
                     <x-cms-editable key="hero_title">
                         Garantissez la <span class="text-gradient-light">continuité</span> de votre énergie.
+                    </x-cms-editable>
                 </h1>
                 <p class="text-xl text-slate-200 mb-10 leading-relaxed font-medium">
                     <x-cms-editable key="hero_description">
                         Expertise technique, réactivité immédiate et optimisation énergétique pour vos installations CVC et multitechniques.
+                    </x-cms-editable>
                 </p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="/services" class="px-6 py-4 bg-tech-cyan text-tech-navy font-black rounded-2xl hover:scale-105 transition-transform text-center shadow-lg text-sm relative">
+                        <x-cms-editable key="hero_cta_1" buttonClass="-top-6 right-0">Nos Solutions</x-cms-editable>
                     </a>
                     <a href="/contact" class="px-6 py-4 bg-white/95 backdrop-blur-md border-b border-slate-200 rounded-2xl font-bold hover:bg-tech-cyan/10 transition-all text-center text-tech-navy border border-white/10 text-sm relative">
+                        <x-cms-editable key="hero_cta_2" buttonClass="-top-6 right-0">Contacter un expert</x-cms-editable>
                     </a>
                 </div>
             </div>
@@ -71,6 +78,7 @@
                         </div>
                     </div>
                 </div>
+            </x-cms-editable>
         </div>
 
         <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">

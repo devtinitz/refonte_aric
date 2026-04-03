@@ -17,23 +17,23 @@
         <div class="grid lg:grid-cols-2 gap-20 items-center">
             <div data-aos="fade-right">
                 <x-cms-editable key="exp_tert_main_title"><h2 class="text-4xl font-extrabold text-tech-navy mb-8 leading-tight">Génie Climatique & <span class="text-tech-cyan">Ventilation</span>.</h2></x-cms-editable>
-                <x-cms-editable key="exp_tert_main_desc"><p class="text-slate-600 text-lg leading-relaxed mb-8">
-                    Nous maîtrisons l'ensemble de la chaîne CVC (Chauffage, Ventilation, Climatisation) pour les complexes tertiaires, les centres bancaires, les hôtels et les data centers.
+</x-cms-editable>                <x-cms-editable key="exp_tert_main_desc"><p class="text-slate-600 text-lg leading-relaxed mb-8">
+</x-cms-editable>                    Nous maîtrisons l'ensemble de la chaîne CVC (Chauffage, Ventilation, Climatisation) pour les complexes tertiaires, les centres bancaires, les hôtels et les data centers.
                 </p></x-cms-editable>
                 <div class="grid sm:grid-cols-2 gap-6">
                     <div class="p-6 glass rounded-3xl border border-tech-cyan/20">
                         <x-cms-editable key="exp_tert_card_1_title"><h4 class="font-bold text-tech-navy mb-2">Climatisation Centrale</h4></x-cms-editable>
-                        <x-cms-editable key="exp_tert_card_1_desc"><p class="text-xs text-slate-500">VRV/VRF, Groupes d’eau glacée pour grands volumes.</p></x-cms-editable>
-                    </div>
+</x-cms-editable>                        <x-cms-editable key="exp_tert_card_1_desc"><p class="text-xs text-slate-500">VRV/VRF, Groupes d’eau glacée pour grands volumes.</p></x-cms-editable>
+</x-cms-editable>                    </div>
                     <div class="p-6 glass rounded-3xl border border-tech-cyan/20">
                         <x-cms-editable key="exp_tert_card_2_title"><h4 class="font-bold text-tech-navy mb-2">Traitement d'Air</h4></x-cms-editable>
-                        <x-cms-editable key="exp_tert_card_2_desc"><p class="text-xs text-slate-500">CTA, Filtration et qualité de l'air intérieur.</p></x-cms-editable>
-                    </div>
+</x-cms-editable>                        <x-cms-editable key="exp_tert_card_2_desc"><p class="text-xs text-slate-500">CTA, Filtration et qualité de l'air intérieur.</p></x-cms-editable>
+</x-cms-editable>                    </div>
                 </div>
             </div>
             <div class="relative rounded-[48px] overflow-hidden shadow-2xl" data-aos="zoom-in">
                 <x-cms-editable key="exp_tertiaire_main_img" type="media">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800" alt="HVAC System" class="w-full h-auto">
+</x-cms-editable>                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800" alt="HVAC System" class="w-full h-auto">
                 </x-cms-editable>
             </div>
         </div>

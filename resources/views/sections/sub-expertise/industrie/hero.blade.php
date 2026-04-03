@@ -17,15 +17,19 @@
         <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
             <source src="/aric-hero.mp4" type="video/mp4">
         </video>
-    <div class="absolute inset-0 grid-pattern opacity-10"></div>
+        <div class="absolute inset-0 video-overlay"></div>
+        <div class="absolute inset-0 grid-pattern opacity-10"></div>
+    </x-cms-editable>
     
     <div class="max-w-7xl mx-auto px-6 relative z-10 w-full pt-10 flex flex-col justify-start items-start text-left">
         <div data-aos="fade-up" class="text-left">
             <div class="text-tech-cyan font-bold text-xs uppercase tracking-[0.3em] mb-4">
+                <x-cms-editable key="exp_ind_hero_badge">Génie Thermique</x-cms-editable>
             </div>
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
                 <x-cms-editable key="expertise_industrie_hero_title">
                     Froid <span class="text-gradient-light">Industriel</span>.
+                </x-cms-editable>
             </h1>
             <div class="flex items-center space-x-4 text-sm text-slate-300 font-medium uppercase tracking-widest">
                 <a href="/" class="hover:text-tech-cyan transition-colors">Accueil</a>

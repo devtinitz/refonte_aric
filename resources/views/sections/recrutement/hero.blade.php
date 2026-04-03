@@ -17,6 +17,8 @@
         <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
             <source src="/aric-hero.mp4" type="video/mp4">
         </video>
+        <div class="absolute inset-0 video-overlay"></div>
+    </x-cms-editable>
     
     <!-- Animated Background Elements -->
     <div class="absolute top-1/4 -right-20 w-96 h-96 bg-tech-cyan/20 rounded-full blur-[120px] animate-pulse-soft"></div>
@@ -26,18 +28,31 @@
         <div data-aos="fade-up" class="text-left">
             <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-8 border border-white/10">
                 <span class="w-2 h-2 bg-tech-cyan rounded-full animate-ping"></span>
+                <x-cms-editable key="rec_hero_badge"><span class="text-[10px] font-black uppercase tracking-[0.2em] text-white">Talents & Carrières</span></x-cms-editable>
             </div>
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-8">
                 <x-cms-editable key="recruitment_hero_title">
                     Bâtissons <br><span class="text-gradient-light">l'Avenir</span> de l'Énergie.
+                </x-cms-editable>
             </h1>
-            <x-cms-editable key="recruitment_hero_desc"><p class="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed mb-10 font-medium italic">
-                Rejoignez une équipe de passionnés du génie thermique et climatique. Nous recrutons des talents engagés, curieux et innovants à travers l'Afrique de l'Ouest.
-            <div class="flex flex-wrap gap-6">
-                <a href="#jobs" class="relative group">
-                </a>
-                <a href="#spontanee" class="relative group">
-                </a>
+            <div class="flex flex-col space-y-6">
+                <x-cms-editable key="recruitment_hero_desc">
+                    <p class="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed mb-10 font-medium italic">
+                        Rejoignez une équipe de passionnés du génie thermique et climatique. Nous recrutons des talents engagés, curieux et innovants à travers l'Afrique de l'Ouest.
+                    </p>
+                </x-cms-editable>
+                <div class="flex flex-wrap gap-6">
+                    <a href="#jobs" class="relative group">
+                        <x-cms-editable key="rec_hero_btn_jobs" buttonClass="-top-10 left-0">
+                            <span class="px-10 py-5 bg-tech-cyan text-tech-navy font-black rounded-2xl hover:scale-105 transition-all shadow-2xl flex items-center group">Voir les postes <i data-lucide="arrow-down" class="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform"></i></span>
+                        </x-cms-editable>
+                    </a>
+                    <a href="#spontanee" class="relative group">
+                        <x-cms-editable key="rec_hero_btn_spontaneous" buttonClass="-top-10 left-0">
+                            <span class="px-10 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-black rounded-2xl hover:bg-white/20 transition-all flex items-center">Candidature Spontanée</span>
+                        </x-cms-editable>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

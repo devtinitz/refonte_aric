@@ -16,8 +16,8 @@
     <div class="max-w-7xl mx-auto px-6">
         <div data-aos="fade-up" class="max-w-3xl mb-20">
             <x-cms-editable key="exp_eff_main_title"><h2 class="text-4xl font-extrabold text-tech-navy mb-8 leading-tight">Performance & <span class="text-tech-cyan italic">Audit Énergétique.</span></h2></x-cms-editable>
-            <x-cms-editable key="exp_eff_main_desc"><p class="text-slate-600 text-lg leading-relaxed">
-                Accompagné par nos experts certifiés, réduisez votre facture énergétique jusqu'à 30% grâce à nos audits stratégiques and monitoring intelligent.
+</x-cms-editable>            <x-cms-editable key="exp_eff_main_desc"><p class="text-slate-600 text-lg leading-relaxed">
+</x-cms-editable>                Accompagné par nos experts certifiés, réduisez votre facture énergétique jusqu'à 30% grâce à nos audits stratégiques and monitoring intelligent.
             </p></x-cms-editable>
         </div>
 
@@ -25,21 +25,21 @@
             <div class="glass p-10 rounded-[40px] border border-white shadow-sm" data-aos="fade-right">
                 <div class="w-12 h-12 bg-tech-navy/5 rounded-xl flex items-center justify-center mb-8">
                     <x-cms-editable key="exp_eff_card_1_icon" type="icon">
-                        <i data-lucide="leaf" class="w-6 h-6 text-tech-cyan"></i>
+</x-cms-editable>                        <i data-lucide="leaf" class="w-6 h-6 text-tech-cyan"></i>
                     </x-cms-editable>
                 </div>
                 <x-cms-editable key="exp_eff_card_1_title"><h3 class="text-2xl font-black text-tech-navy mb-4">Audits Certifiés</h3></x-cms-editable>
-                <x-cms-editable key="exp_eff_card_1_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Réduction prouvée de la consommation jusqu'à 30%.</p></x-cms-editable>
-            </div>
+</x-cms-editable>                <x-cms-editable key="exp_eff_card_1_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Réduction prouvée de la consommation jusqu'à 30%.</p></x-cms-editable>
+</x-cms-editable>            </div>
             <div class="glass p-10 rounded-[40px] border border-white shadow-sm" data-aos="fade-left">
                 <div class="w-12 h-12 bg-tech-navy/5 rounded-xl flex items-center justify-center mb-8">
                     <x-cms-editable key="exp_eff_card_2_icon" type="icon">
-                        <i data-lucide="gauge" class="w-6 h-6 text-tech-cyan"></i>
+</x-cms-editable>                        <i data-lucide="gauge" class="w-6 h-6 text-tech-cyan"></i>
                     </x-cms-editable>
                 </div>
                 <x-cms-editable key="exp_eff_card_2_title"><h3 class="text-2xl font-black text-tech-navy mb-4">Monitoring IoT</h3></x-cms-editable>
-                <x-cms-editable key="exp_eff_card_2_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Installation de capteurs et tableaux de bord temps réel.</p></x-cms-editable>
-            </div>
+</x-cms-editable>                <x-cms-editable key="exp_eff_card_2_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Installation de capteurs et tableaux de bord temps réel.</p></x-cms-editable>
+</x-cms-editable>            </div>
         </div>
     </div>
 </section>

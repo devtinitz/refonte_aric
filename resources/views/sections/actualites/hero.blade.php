@@ -19,7 +19,9 @@
         <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover opacity-60">
             <source src="/aric-hero.mp4" type="video/mp4">
         </video>
+        <div class="absolute inset-0 video-overlay"></div>
     </x-cms-editable>
+    
     <div class="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col justify-start items-start text-left">
         <div data-aos="fade-up" class="text-left">
             <div class="text-tech-cyan font-bold text-xs uppercase tracking-[0.3em] mb-4">

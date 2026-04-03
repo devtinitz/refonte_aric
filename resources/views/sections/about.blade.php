@@ -24,7 +24,7 @@
                 </h3>
                 <p class="text-lg text-slate-500 mb-8 leading-relaxed font-medium">
                     <x-cms-editable key="about_description">
-                        Depuis sa création en 1996, ARIC est un acteur majeur du génie climatique et de la réfrigération industrielle en Afrique de l'Ouest. Filiale du Groupe Conergies.
+                        Depuis sa création in 1996, ARIC est un acteur majeur du génie climatique et de la réfrigération industrielle en Afrique de l'Ouest. Filiale du Groupe Conergies.
                     </x-cms-editable>
                 </p>
                 <ul class="space-y-4 font-semibold text-slate-700">

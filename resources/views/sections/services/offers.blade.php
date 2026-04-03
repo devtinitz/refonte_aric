@@ -32,9 +32,11 @@
             </div>
             <div data-aos="fade-left">
                 <x-cms-editable key="service_1_full_title"><h3 class="text-3xl font-black text-tech-navy mb-6">Installation & Études</h3></x-cms-editable>
-                <x-cms-editable key="service_1_full_desc"><p class="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
-                    Conception, dimensionnement et mise en service d'équipements de réfrigération, climatisation et traitement d'air. De l'étude technique à la livraison clé en main.
-                </p></x-cms-editable>
+                <x-cms-editable key="service_1_full_desc">
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
+                        Conception, dimensionnement et mise en service d'équipements de réfrigération, climatisation et traitement d'air. De l'étude technique à la livraison clé en main.
+                    </p>
+                </x-cms-editable>
                 <ul class="space-y-5">
                     <li class="flex items-start group text-sm">
                         <div class="w-6 h-6 bg-tech-cyan/10 rounded-full flex items-center justify-center mt-1 mr-4 group-hover:bg-tech-cyan transition-colors shadow-sm">
@@ -76,9 +78,11 @@
             </div>
             <div class="lg:order-1" data-aos="fade-right">
                 <x-cms-editable key="service_2_full_title"><h3 class="text-3xl font-black text-tech-navy mb-6">Maintenance & SAV 24/7</h3></x-cms-editable>
-                <x-cms-editable key="service_2_full_desc"><p class="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
-                    Astreinte permanente, maintenance préventive planifiée et interventions curatives rapides. Nos techniciens assurent la continuité de service 7j/7.
-                </p></x-cms-editable>
+                <x-cms-editable key="service_2_full_desc">
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
+                        Astreinte permanente, maintenance préventive planifiée et interventions curatives rapides. Nos techniciens assurent la continuité de service 7j/7.
+                    </p>
+                </x-cms-editable>
                 <ul class="space-y-5">
                     <li class="flex items-start group">
                         <div class="w-6 h-6 bg-tech-cyan/10 rounded-full flex items-center justify-center mt-1 mr-4 group-hover:bg-tech-cyan transition-colors shadow-sm">
@@ -108,7 +112,7 @@
             </div>
         </div>
 
-        <!-- Service 03: Conseil & Financement ... etc ... I'll stop here to avoid too large file if possible, but I'll finish this section -->
+        <!-- Service 03: Conseil & Financement -->
         <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-32">
             <div class="relative" data-aos="fade-right">
                 <div class="absolute -top-6 -left-6 w-16 h-16 bg-tech-cyan rounded-full flex items-center justify-center text-white text-xl font-black shadow-xl z-20">03</div>
@@ -120,9 +124,11 @@
             </div>
             <div data-aos="fade-left">
                 <x-cms-editable key="service_3_full_title"><h3 class="text-3xl font-black text-tech-navy mb-6">Conseil & Financement</h3></x-cms-editable>
-                <x-cms-editable key="service_3_full_desc"><p class="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
-                    Audit énergétique, conseil réglementaire et accompagnement financier. Nous vous guidons vers les solutions les plus rentables et durables.
-                </p></x-cms-editable>
+                <x-cms-editable key="service_3_full_desc">
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
+                        Audit énergétique, conseil réglementaire et accompagnement financier. Nous vous guidons vers les solutions les plus rentables et durables.
+                    </p>
+                </x-cms-editable>
                 <ul class="space-y-5">
                     <li class="flex items-start group">
                         <div class="w-6 h-6 bg-tech-cyan/10 rounded-full flex items-center justify-center mt-1 mr-4 group-hover:bg-tech-cyan transition-colors shadow-sm">
@@ -156,9 +162,11 @@
             </div>
             <div class="lg:order-1" data-aos="fade-right">
                 <x-cms-editable key="service_4_full_title"><h3 class="text-3xl font-black text-tech-navy mb-6">Conduite d'Exploitation</h3></x-cms-editable>
-                <x-cms-editable key="service_4_full_desc"><p class="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
-                    Supervision quotidienne et pilotage de vos installations : télésurveillance en temps réel, reporting de performance et optimisation continue.
-                </p></x-cms-editable>
+                <x-cms-editable key="service_4_full_desc">
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
+                        Supervision quotidienne et pilotage de vos installations : télésurveillance en temps réel, reporting de performance et optimisation continue.
+                    </p>
+                </x-cms-editable>
                 <ul class="space-y-5">
                     <li class="flex items-start group">
                         <div class="w-6 h-6 bg-tech-cyan/10 rounded-full flex items-center justify-center mt-1 mr-4 group-hover:bg-tech-cyan transition-colors shadow-sm">

@@ -28,12 +28,16 @@
                         </span>
                         <span class="text-[10px] font-black text-tech-cyan uppercase tracking-widest">Newsletter ARIC</span>
                     </div>
-                    <x-cms-editable key="newsletter_title"><h2 class="text-3xl md:text-5xl font-black text-tech-navy leading-tight mb-6">
-                        Restez à la pointe de <br><span class="text-tech-cyan italic">l'innovation.</span>
-                    </h2></x-cms-editable>
-                    <x-cms-editable key="newsletter_desc"><p class="text-slate-500 text-lg font-medium leading-relaxed max-w-md italic">
-                        Recevez nos dernières études de cas et les actualités exclusives du Groupe directement par mail.
-                    </p></x-cms-editable>
+                    <x-cms-editable key="newsletter_title">
+                        <h2 class="text-3xl md:text-5xl font-black text-tech-navy leading-tight mb-6">
+                            Restez à la pointe de <br><span class="text-tech-cyan italic">l'innovation.</span>
+                        </h2>
+                    </x-cms-editable>
+                    <x-cms-editable key="newsletter_desc">
+                        <p class="text-slate-500 text-lg font-medium leading-relaxed max-w-md italic">
+                            Recevez nos dernières études de cas et les actualités exclusives du Groupe directement par mail.
+                        </p>
+                    </x-cms-editable>
                 </div>
                 <div>
                     <form action="{{ route('contact.submit') }}" method="POST" class="space-y-4 max-w-md ml-auto">
@@ -42,12 +46,16 @@
                         <div class="relative">
                             <input type="email" name="email" required placeholder="votre@email.com" class="w-full px-8 py-5 rounded-3xl bg-white border border-slate-100 focus:ring-4 focus:ring-tech-cyan/10 focus:border-tech-cyan outline-none transition-all font-bold text-slate-800 placeholder:text-slate-400 shadow-inner">
                             <div class="absolute right-3 top-3 group">
-                                <x-cms-editable key="news_subscribe_btn_label" buttonClass="-top-12 right-0"><button type="submit" class="px-8 py-3 bg-tech-navy text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-[1.03] transition-all hover:bg-tech-cyan shadow-xl">S'abonner</button></x-cms-editable>
+                                <x-cms-editable key="news_subscribe_btn_label" buttonClass="-top-12 right-0">
+                                    <button type="submit" class="px-8 py-3 bg-tech-navy text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-[1.03] transition-all hover:bg-tech-cyan shadow-xl">S'abonner</button>
+                                </x-cms-editable>
                             </div>
                         </div>
-                        <x-cms-editable key="news_newsletter_trust"><p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest text-center px-4">
-                            <i data-lucide="shield-check" class="w-3 h-3 inline-block mr-1"></i> Données sécurisées • Désinscription en un clic
-                        </p></x-cms-editable>
+                        <x-cms-editable key="news_newsletter_trust">
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest text-center px-4">
+                                <i data-lucide="shield-check" class="w-3 h-3 inline-block mr-1"></i> Données sécurisées • Désinscription en un clic
+                            </p>
+                        </x-cms-editable>
                     </form>
                 </div>
             </div>

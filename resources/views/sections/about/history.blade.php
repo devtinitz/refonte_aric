@@ -30,9 +30,11 @@
                     <span style="font-family: monospace; font-size: 1.3rem;">1970</span>
                 </div>
                 <x-cms-editable key="hist_1970_title"><h3 class="text-xl font-bold text-tech-navy mb-4">Création de Matal Ivoire</h3></x-cms-editable>
-                <x-cms-editable key="hist_1970_desc"><p class="text-slate-500 text-[15px] leading-relaxed">
-                    Idrissa Sanankoua, ingénieur IFFI en collaboration avec Matal crée Matal Ivoire dont l'activité principale est le montage et la Maintenance d'Installations de Froid Industriel sur le Port d'Abidjan.
-                </p></x-cms-editable>
+                <x-cms-editable key="hist_1970_desc">
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Idrissa Sanankoua, ingénieur IFFI en collaboration avec Matal crée Matal Ivoire dont l'activité principale est le montage et la Maintenance d'Installations de Froid Industriel sur le Port d'Abidjan.
+                    </p>
+                </x-cms-editable>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="100">
@@ -40,9 +42,11 @@
                     <span style="font-family: monospace; font-size: 1.3rem;">1985</span>
                 </div>
                 <x-cms-editable key="hist_1985_title"><h3 class="text-xl font-bold text-tech-navy mb-4">Naissance de Rica</h3></x-cms-editable>
-                <x-cms-editable key="hist_1985_desc"><p class="text-slate-500 text-[15px] leading-relaxed">
-                    Matal Ivoire devient Rica et se diversifie dans le conditionnement d'air et la Réfrigération commerciale. Premiers supermarchés Hayat réalisés en 1993.
-                </p></x-cms-editable>
+                <x-cms-editable key="hist_1985_desc">
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Matal Ivoire devient Rica et se diversifie dans le conditionnement d'air et la Réfrigération commerciale. Premiers supermarchés Hayat réalisés en 1993.
+                    </p>
+                </x-cms-editable>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="200">
@@ -50,9 +54,11 @@
                     <span style="font-family: monospace; font-size: 1.3rem;">1994</span>
                 </div>
                 <x-cms-editable key="hist_1994_title"><h3 class="text-xl font-bold text-tech-navy mb-4">Expansion au Mali</h3></x-cms-editable>
-                <x-cms-editable key="hist_1994_desc"><p class="text-slate-500 text-[15px] leading-relaxed">
-                    Rica réalise le siège de la BCEAO à Bamako. Rica-Services Mali est créé pour accompagner le développement régional.
-                </p></x-cms-editable>
+                <x-cms-editable key="hist_1994_desc">
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Rica réalise le siège de la BCEAO à Bamako. Rica-Services Mali est créé pour accompagner le développement régional.
+                    </p>
+                </x-cms-editable>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="0">
@@ -60,9 +66,11 @@
                     <span style="font-family: monospace; font-size: 1.3rem;">1998</span>
                 </div>
                 <x-cms-editable key="hist_1998_title"><h3 class="text-xl font-bold text-tech-navy mb-4">Entrée de SIFCOM</h3></x-cms-editable>
-                <x-cms-editable key="hist_1998_desc"><p class="text-slate-500 text-[15px] leading-relaxed">
-                    Le groupe SIFCOM entre au capital. Réalisation du bâtiment annexe de la BCEAO à Dakar et rénovation du Novotel Abidjan.
-                </p></x-cms-editable>
+                <x-cms-editable key="hist_1998_desc">
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Le groupe SIFCOM entre au capital. Réalisation du bâtiment annexe de la BCEAO à Dakar et rénovation du Novotel Abidjan.
+                    </p>
+                </x-cms-editable>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="100">
@@ -70,9 +78,11 @@
                     <span style="font-family: monospace; font-size: 1.3rem;">2003</span>
                 </div>
                 <x-cms-editable key="hist_2003_title"><h3 class="text-xl font-bold text-tech-navy mb-4">Gel des activités</h3></x-cms-editable>
-                <x-cms-editable key="hist_2003_desc"><p class="text-slate-500 text-[15px] leading-relaxed">
-                    Rica gèle ses activités en Côte d'Ivoire suite à la crise socio-politique, tout en maintenant sa présence régionale.
-                </p></x-cms-editable>
+                <x-cms-editable key="hist_2003_desc">
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Rica gèle ses activités en Côte d'Ivoire suite à la crise socio-politique, tout en maintenant sa présence régionale.
+                    </p>
+                </x-cms-editable>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="200">
@@ -80,9 +90,11 @@
                     <span style="font-family: monospace; font-size: 1.3rem;">2011</span>
                 </div>
                 <x-cms-editable key="hist_2011_title"><h3 class="text-xl font-bold text-tech-navy mb-4">Conergies-Group</h3></x-cms-editable>
-                <x-cms-editable key="hist_2011_desc"><p class="text-slate-500 text-[15px] leading-relaxed">
-                    Création du holding Conergies-Group qui reprend Rica-Services Mali et redémarre en Côte d'Ivoire via ARIC en 2012.
-                </p></x-cms-editable>
+                <x-cms-editable key="hist_2011_desc">
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Création du holding Conergies-Group qui reprend Rica-Services Mali et redémarre en Côte d'Ivoire via ARIC en 2012.
+                    </p>
+                </x-cms-editable>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="0">
@@ -90,9 +102,11 @@
                     <span style="font-family: monospace; font-size: 1.3rem;">2012</span>
                 </div>
                 <x-cms-editable key="hist_2012_title"><h3 class="text-xl font-bold text-tech-navy mb-4">Entrée de I&P</h3></x-cms-editable>
-                <x-cms-editable key="hist_2012_desc"><p class="text-slate-500 text-[15px] leading-relaxed">
-                    I&P, fonds d'investissement français spécialisé sur les PME africaines, entre au capital du groupe pour soutenir sa croissance.
-                </p></x-cms-editable>
+                <x-cms-editable key="hist_2012_desc">
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        I&P, fonds d'investissement français spécialisé sur les PME africaines, entre au capital du groupe pour soutenir sa croissance.
+                    </p>
+                </x-cms-editable>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="100">
@@ -100,9 +114,11 @@
                     <span style="font-family: monospace; font-size: 1.3rem;">2015</span>
                 </div>
                 <x-cms-editable key="hist_2015_title"><h3 class="text-xl font-bold text-tech-navy mb-4">Grands chantiers</h3></x-cms-editable>
-                <x-cms-editable key="hist_2015_desc"><p class="text-slate-500 text-[15px] leading-relaxed">
-                    Aéroport de Bamako, Cap Sud 2, Hyper Hayat et Carrefour Marcory : réalisation de projets majeurs en CVC et froid.
-                </p></x-cms-editable>
+                <x-cms-editable key="hist_2015_desc">
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Aéroport de Bamako, Cap Sud 2, Hyper Hayat et Carrefour Marcory : réalisation de projets majeurs en CVC et froid.
+                    </p>
+                </x-cms-editable>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="200">
@@ -110,9 +126,11 @@
                     <span style="font-family: monospace; font-size: 1.3rem;">2019</span>
                 </div>
                 <x-cms-editable key="hist_2019_title"><h3 class="text-xl font-bold text-tech-navy mb-4">Alliance EDF</h3></x-cms-editable>
-                <x-cms-editable key="hist_2019_desc"><p class="text-slate-500 text-[15px] leading-relaxed">
-                    Le groupe EDF entre au capital. Partenariat stratégique avec Dalkia Froid Solutions pour l'excellence énergétique.
-                </p></x-cms-editable>
+                <x-cms-editable key="hist_2019_desc">
+                    <p class="text-slate-500 text-[15px] leading-relaxed">
+                        Le groupe EDF entre au capital. Partenariat stratégique avec Dalkia Froid Solutions pour l'excellence énergétique.
+                    </p>
+                </x-cms-editable>
             </div>
 
         </div>

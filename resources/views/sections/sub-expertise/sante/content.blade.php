@@ -16,8 +16,8 @@
     <div class="max-w-7xl mx-auto px-6">
         <div data-aos="fade-up" class="max-w-3xl mb-20">
             <x-cms-editable key="exp_san_main_title"><h2 class="text-4xl font-extrabold text-tech-navy mb-8 leading-tight">Milieu Hospitalier & <span class="text-tech-cyan italic">Salles Propres.</span></h2></x-cms-editable>
-            <x-cms-editable key="exp_san_main_desc"><p class="text-slate-600 text-lg leading-relaxed">
-                Ingénierie de pointe pour blocs opératoires and salles blanches (ISO 5 à ISO 8). Maîtrise totale de la contamination.
+</x-cms-editable>            <x-cms-editable key="exp_san_main_desc"><p class="text-slate-600 text-lg leading-relaxed">
+</x-cms-editable>                Ingénierie de pointe pour blocs opératoires and salles blanches (ISO 5 à ISO 8). Maîtrise totale de la contamination.
             </p></x-cms-editable>
         </div>
 
@@ -25,21 +25,21 @@
             <div class="glass p-10 rounded-[40px] border border-white shadow-sm" data-aos="fade-right">
                 <div class="w-12 h-12 bg-tech-navy/5 rounded-xl flex items-center justify-center mb-8">
                     <x-cms-editable key="exp_san_card_1_icon" type="icon">
-                        <i data-lucide="thermometer-snowflake" class="w-6 h-6 text-tech-cyan"></i>
+</x-cms-editable>                        <i data-lucide="thermometer-snowflake" class="w-6 h-6 text-tech-cyan"></i>
                     </x-cms-editable>
                 </div>
                 <x-cms-editable key="exp_san_card_1_title"><h3 class="text-2xl font-black text-tech-navy mb-4">Froid Médical</h3></x-cms-editable>
-                <x-cms-editable key="exp_san_card_1_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Conservation de vaccins and produits sanguins.</p></x-cms-editable>
-            </div>
+</x-cms-editable>                <x-cms-editable key="exp_san_card_1_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Conservation de vaccins and produits sanguins.</p></x-cms-editable>
+</x-cms-editable>            </div>
             <div class="glass p-10 rounded-[40px] border border-white shadow-sm" data-aos="fade-left">
                 <div class="w-12 h-12 bg-tech-navy/5 rounded-xl flex items-center justify-center mb-8">
                     <x-cms-editable key="exp_san_card_2_icon" type="icon">
-                        <i data-lucide="shield" class="w-6 h-6 text-tech-cyan"></i>
+</x-cms-editable>                        <i data-lucide="shield" class="w-6 h-6 text-tech-cyan"></i>
                     </x-cms-editable>
                 </div>
                 <x-cms-editable key="exp_san_card_2_title"><h3 class="text-2xl font-black text-tech-navy mb-4">Salles Blanches</h3></x-cms-editable>
-                <x-cms-editable key="exp_san_card_2_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Zones à atmosphère contrôlée pour la pharma.</p></x-cms-editable>
-            </div>
+</x-cms-editable>                <x-cms-editable key="exp_san_card_2_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Zones à atmosphère contrôlée pour la pharma.</p></x-cms-editable>
+</x-cms-editable>            </div>
         </div>
     </div>
 </section>

@@ -19,9 +19,11 @@
             <div data-aos="fade-up">
                 <div class="text-tech-cyan font-bold text-xs uppercase tracking-[0.3em] mb-4">Notre Mission</div>
                 <x-cms-editable key="about_mission_title"><h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-8">L'énergie au service de la <span class="text-tech-cyan">performance durable</span>.</h2></x-cms-editable>
-                <x-cms-editable key="about_mission_quote"><p class="text-slate-600 text-lg leading-relaxed italic border-l-4 border-tech-cyan pl-6">
-                    "Apporter des solutions innovantes de maîtrise de l'énergie et de confort thermique, tout en réduisant l'empreinte environnementale de nos partenaires industriels et tertiaires."
-                </p></x-cms-editable>
+                <x-cms-editable key="about_mission_quote">
+                    <p class="text-slate-600 text-lg leading-relaxed italic border-l-4 border-tech-cyan pl-6">
+                        "Apporter des solutions innovantes de maîtrise de l'énergie et de confort thermique, tout en réduisant l'empreinte environnementale de nos partenaires industriels et tertiaires."
+                    </p>
+                </x-cms-editable>
             </div>
             <div class="grid grid-cols-2 gap-6 md:gap-8" data-aos="fade-left">
                 <div class="glass border-slate-100 p-8 rounded-3xl text-center shadow-2xl shadow-blue-900/5">

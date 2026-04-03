@@ -16,8 +16,8 @@
     <div class="max-w-7xl mx-auto px-6">
         <div data-aos="fade-up" class="max-w-3xl mb-20">
             <x-cms-editable key="exp_sol_main_title"><h2 class="text-4xl font-extrabold text-tech-navy mb-8 leading-tight">Solaire & <span class="text-tech-cyan italic">Autoconsommation.</span></h2></x-cms-editable>
-            <x-cms-editable key="exp_sol_main_desc"><p class="text-slate-600 text-lg leading-relaxed">
-                Solutions hybrides et stockage d’énergie pour une autonomie totale.
+</x-cms-editable>            <x-cms-editable key="exp_sol_main_desc"><p class="text-slate-600 text-lg leading-relaxed">
+</x-cms-editable>                Solutions hybrides et stockage d’énergie pour une autonomie totale.
             </p></x-cms-editable>
         </div>
 
@@ -25,21 +25,21 @@
             <div class="glass p-10 rounded-[40px] border border-white shadow-sm" data-aos="fade-right">
                 <div class="w-12 h-12 bg-tech-navy/5 rounded-xl flex items-center justify-center mb-8">
                     <x-cms-editable key="exp_sol_card_1_icon" type="icon">
-                        <i data-lucide="sun" class="w-6 h-6 text-tech-cyan"></i>
+</x-cms-editable>                        <i data-lucide="sun" class="w-6 h-6 text-tech-cyan"></i>
                     </x-cms-editable>
                 </div>
                 <x-cms-editable key="exp_sol_card_1_title"><h3 class="text-2xl font-black text-tech-navy mb-4">Autoconsommation</h3></x-cms-editable>
-                <x-cms-editable key="exp_sol_card_1_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Installation de panneaux PV de dernière génération.</p></x-cms-editable>
-            </div>
+</x-cms-editable>                <x-cms-editable key="exp_sol_card_1_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Installation de panneaux PV de dernière génération.</p></x-cms-editable>
+</x-cms-editable>            </div>
             <div class="glass p-10 rounded-[40px] border border-white shadow-sm" data-aos="fade-left">
                 <div class="w-12 h-12 bg-tech-navy/5 rounded-xl flex items-center justify-center mb-8">
                     <x-cms-editable key="exp_sol_card_2_icon" type="icon">
-                        <i data-lucide="battery" class="w-6 h-6 text-tech-cyan"></i>
+</x-cms-editable>                        <i data-lucide="battery" class="w-6 h-6 text-tech-cyan"></i>
                     </x-cms-editable>
                 </div>
                 <x-cms-editable key="exp_sol_card_2_title"><h3 class="text-2xl font-black text-tech-navy mb-4">Stockage</h3></x-cms-editable>
-                <x-cms-editable key="exp_sol_card_2_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Batteries intelligents pour garantir la continuité.</p></x-cms-editable>
-            </div>
+</x-cms-editable>                <x-cms-editable key="exp_sol_card_2_desc"><p class="text-slate-500 text-sm leading-relaxed mb-8 italic">Batteries intelligents pour garantir la continuité.</p></x-cms-editable>
+</x-cms-editable>            </div>
         </div>
     </div>
 </section>

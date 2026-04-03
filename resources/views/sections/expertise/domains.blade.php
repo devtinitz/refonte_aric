@@ -36,9 +36,11 @@
                 </div>
                 <div class="p-8 md:p-10 flex-grow flex flex-col">
                     <x-cms-editable key="exp_card_1_title"><h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Froid Commercial & Industriel</h3></x-cms-editable>
-                    <x-cms-editable key="exp_card_1_desc"><p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
-                        Solutions de réfrigération pour l'agroalimentaire, la logistique et l'industrie. Performance durable & respect de la chaîne du froid.
-                    </p></x-cms-editable>
+                    <x-cms-editable key="exp_card_1_desc">
+                        <p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
+                            Solutions de réfrigération pour l'agroalimentaire, la logistique et l'industrie. Performance durable & respect de la chaîne du froid.
+                        </p>
+                    </x-cms-editable>
                     <span class="inline-flex items-center text-tech-cyan font-bold text-xs tracking-[0.2em] uppercase group-hover:translate-x-2 transition-transform">
                         Expertise Complète <i data-lucide="arrow-right" class="w-4 h-4 ml-3"></i>
                     </span>
@@ -60,9 +62,11 @@
                 </div>
                 <div class="p-8 md:p-10 flex-grow flex flex-col">
                     <x-cms-editable key="exp_card_2_title"><h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Génie Climatique (CVC)</h3></x-cms-editable>
-                    <x-cms-editable key="exp_card_2_desc"><p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
-                        Maîtrise thermique et gestion de la qualité de l'air pour environnements tertiaires et industriels de haute exigence.
-                    </p></x-cms-editable>
+                    <x-cms-editable key="exp_card_2_desc">
+                        <p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
+                            Maîtrise thermique et gestion de la qualité de l'air pour environnements tertiaires et industriels de haute exigence.
+                        </p>
+                    </x-cms-editable>
                     <span class="inline-flex items-center text-tech-cyan font-bold text-xs tracking-[0.2em] uppercase group-hover:translate-x-2 transition-transform">
                         Expertise Complète <i data-lucide="arrow-right" class="w-4 h-4 ml-3"></i>
                     </span>
@@ -84,9 +88,11 @@
                 </div>
                 <div class="p-8 md:p-10 flex-grow flex flex-col">
                     <x-cms-editable key="exp_card_3_title"><h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Efficacité Énergétique</h3></x-cms-editable>
-                    <x-cms-editable key="exp_card_3_desc"><p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
-                        Audits, pilotage GTB intelligent et optimisation des consommations. Solutions certifiées pour une transition énergétique.
-                    </p></x-cms-editable>
+                    <x-cms-editable key="exp_card_3_desc">
+                        <p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
+                            Audits, pilotage GTB intelligent et optimisation des consommations. Solutions certifiées pour une transition énergétique.
+                        </p>
+                    </x-cms-editable>
                     <span class="inline-flex items-center text-tech-cyan font-bold text-xs tracking-[0.2em] uppercase group-hover:translate-x-2 transition-transform">
                         Expertise Complète <i data-lucide="arrow-right" class="w-4 h-4 ml-3"></i>
                     </span>
@@ -108,9 +114,11 @@
                 </div>
                 <div class="p-8 md:p-10 flex-grow flex flex-col">
                     <x-cms-editable key="exp_card_4_title"><h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Milieu Santé</h3></x-cms-editable>
-                    <x-cms-editable key="exp_card_4_desc"><p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
-                        Environnements critiques et salles blanches à paramètres contrôlés. Solutions sur-mesure pour les exigences hospitalières.
-                    </p></x-cms-editable>
+                    <x-cms-editable key="exp_card_4_desc">
+                        <p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
+                            Environnements critiques et salles blanches à paramètres contrôlés. Solutions sur-mesure pour les exigences hospitalières.
+                        </p>
+                    </x-cms-editable>
                     <span class="inline-flex items-center text-tech-cyan font-bold text-xs tracking-[0.2em] uppercase group-hover:translate-x-2 transition-transform">
                         Expertise Complète <i data-lucide="arrow-right" class="w-4 h-4 ml-3"></i>
                     </span>
@@ -132,9 +140,11 @@
                 </div>
                 <div class="p-8 md:p-10 flex-grow flex flex-col">
                     <x-cms-editable key="exp_card_5_title"><h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Énergie Solaire</h3></x-cms-editable>
-                    <x-cms-editable key="exp_card_5_desc"><p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
-                        Autoconsommation, hybridation et maintenance préventive. Libérez le potentiel énergétique de vos installations.
-                    </p></x-cms-editable>
+                    <x-cms-editable key="exp_card_5_desc">
+                        <p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
+                            Autoconsommation, hybridation et maintenance préventive. Libérez le potentiel énergétique de vos installations.
+                        </p>
+                    </x-cms-editable>
                     <span class="inline-flex items-center text-tech-cyan font-bold text-xs tracking-[0.2em] uppercase group-hover:translate-x-2 transition-transform">
                         Expertise Complète <i data-lucide="arrow-right" class="w-4 h-4 ml-3"></i>
                     </span>
@@ -156,9 +166,11 @@
                 </div>
                 <div class="p-8 md:p-10 flex-grow flex flex-col">
                     <x-cms-editable key="exp_card_6_title"><h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Smart Monitoring</h3></x-cms-editable>
-                    <x-cms-editable key="exp_card_6_desc"><p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
-                        Écosystème digital pour le suivi temps réel de vos installations. Intelligence opérationnelle & maintenance prédictive.
-                    </p></x-cms-editable>
+                    <x-cms-editable key="exp_card_6_desc">
+                        <p class="text-slate-500 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic font-medium">
+                            Écosystème digital pour le suivi temps réel de vos installations. Intelligence opérationnelle & maintenance prédictive.
+                        </p>
+                    </x-cms-editable>
                     <span class="inline-flex items-center text-tech-cyan font-bold text-xs tracking-[0.2em] uppercase group-hover:translate-x-2 transition-transform">
                         Expertise Complète <i data-lucide="arrow-right" class="w-4 h-4 ml-3"></i>
                     </span>

@@ -138,6 +138,12 @@
             <a href="/contact" class="text-slate-600 hover:text-[#00a4bd] transition-colors whitespace-nowrap">
                 <x-cms-editable key="nav_contact" buttonClass="-top-6 right-0">Contact</x-cms-editable>
             </a>
+
+            @if(auth()->check())
+            <button onclick="window.cmsSettings.toggle()" class="w-10 h-10 bg-tech-navy text-tech-cyan rounded-xl shadow-lg hover:scale-110 transition-transform flex items-center justify-center group ml-4">
+                <i data-lucide="settings" class="w-5 h-5 animate-spin-slow"></i>
+            </button>
+            @endif
         </div>
 
         <!-- Mobile Toggle -->

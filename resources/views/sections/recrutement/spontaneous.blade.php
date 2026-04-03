@@ -25,12 +25,16 @@
                         <i data-lucide="send" class="w-3 h-3 text-tech-cyan"></i>
                         <span class="text-[10px] font-black text-tech-cyan uppercase tracking-widest">Candidature Spontanée</span>
                     </div>
-                    <x-cms-editable key="recruitment_spontaneous_title"><h2 class="text-4xl md:text-5xl font-black text-tech-navy leading-tight mb-8">
-                        Envie de nous <span class="text-tech-cyan">épater ?</span>
-                    </h2></x-cms-editable>
-                    <x-cms-editable key="recruitment_spontaneous_desc"><p class="text-slate-500 text-lg font-medium leading-relaxed mb-10 max-w-md italic">
-                        Vous ne trouvez pas de poste correspondant à votre profil ? Envoyez-nous votre candidature spontanée. Nous sommes toujours à la recherche de passionnés.
-                    </p></x-cms-editable>
+                    <x-cms-editable key="recruitment_spontaneous_title">
+                        <h2 class="text-4xl md:text-5xl font-black text-tech-navy leading-tight mb-8">
+                            Envie de nous <span class="text-tech-cyan">épater ?</span>
+                        </h2>
+                    </x-cms-editable>
+                    <x-cms-editable key="recruitment_spontaneous_desc">
+                        <p class="text-slate-500 text-lg font-medium leading-relaxed mb-10 max-w-md italic">
+                            Vous ne trouvez pas de poste correspondant à votre profil ? Envoyez-nous votre candidature spontanée. Nous sommes toujours à la recherche de passionnés.
+                        </p>
+                    </x-cms-editable>
                     
                     <!-- Trust Badges -->
                     <div class="space-y-4">
@@ -73,7 +77,7 @@
                             <input type="file" name="cv" class="hidden">
                         </div>
                          <button type="submit" class="w-full py-5 bg-tech-navy text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-tech-cyan shadow-xl transition-all hover:scale-[1.02] relative group">
-                            <x-cms-editable key="rec_form_submit_btn" buttonClass="-top-12 left-0">Envoyer ma candidature</x-cms-editable>
+                            <x-cms-editable key="rec_form_submit_btn" buttonClass="-top-12 left-0 text-white">Envoyer ma candidature</x-cms-editable>
                          </button>
                     </form>
                 </div>

@@ -18,9 +18,11 @@
             <div data-aos="fade-right">
                 <div class="text-tech-cyan font-bold text-xs uppercase tracking-[0.3em] mb-4">Réseau Ouest-Africain</div>
                 <x-cms-editable key="about_presence_title"><h2 class="text-3xl md:text-5xl font-extrabold text-tech-navy mb-8 leading-tight">Une présence forte au <span class="text-tech-cyan italic">Bénin</span> et au <span class="text-tech-cyan italic">Cameroun</span>.</h2></x-cms-editable>
-                <x-cms-editable key="about_presence_desc"><p class="text-slate-600 text-lg leading-relaxed mb-10 font-medium">
-                    Au-delà de nos sièges historiques en Côte d'Ivoire et au Mali, nous déployons notre expertise multitechnique sur des marchés exigeants.
-                </p></x-cms-editable>
+                <x-cms-editable key="about_presence_desc">
+                    <p class="text-slate-600 text-lg leading-relaxed mb-10 font-medium">
+                        Au-delà de nos sièges historiques en Côte d'Ivoire et au Mali, nous déployons notre expertise multitechnique sur des marchés exigeants.
+                    </p>
+                </x-cms-editable>
                 <div class="space-y-6">
                     <div class="glass border-white/50 p-6 rounded-2xl flex items-start space-x-4">
                         <div class="w-10 h-10 bg-tech-navy text-white rounded-lg flex items-center justify-center shrink-0">BJ</div>
