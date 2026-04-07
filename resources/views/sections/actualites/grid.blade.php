@@ -20,49 +20,44 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- News 1 -->
-            <article class="group" data-aos="fade-up">
-                <div class="aspect-[16/10] rounded-[32px] overflow-hidden mb-8 shadow-sm group-hover:shadow-xl transition-all duration-500 relative">
-                    <x-cms-editable key="news_card_1_img" type="media">
-                        <img src="/froid-expertise.png" alt="Actualité 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </x-cms-editable>
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f]/60 to-transparent pointer-events-none"></div>
-                    <div class="absolute bottom-6 left-6 text-white font-bold text-xs uppercase tracking-widest">Décembre 2024</div>
+            @forelse($articles as $article)
+                <!-- Dynamic Article Card -->
+                <article class="group" data-aos="fade-up">
+                    <a href="{{ route('news.detail', $article->slug) }}" class="block">
+                        <div class="aspect-[16/10] rounded-[32px] overflow-hidden mb-8 shadow-sm group-hover:shadow-xl transition-all duration-500 relative">
+                            @if($article->image)
+                                <img src="{{ $article->image }}" alt="{{ $article->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            @else
+                                <div class="w-full h-full bg-slate-100 flex items-center justify-center text-slate-300">
+                                    <i data-lucide="image" class="w-12 h-12"></i>
+                                </div>
+                            @endif
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f]/60 to-transparent pointer-events-none"></div>
+                            <div class="absolute bottom-6 left-6 text-white font-bold text-xs uppercase tracking-widest">
+                                {{ $article->published_at ? $article->published_at->translatedFormat('F Y') : $article->created_at->translatedFormat('F Y') }}
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-black text-tech-navy mb-6 group-hover:text-[#00a4bd] transition-colors leading-tight line-clamp-2">
+                            {{ $article->title }}
+                        </h3>
+                        <p class="text-slate-500 text-sm mb-8 leading-relaxed italic font-medium line-clamp-3">
+                            {{ $article->summary }}
+                        </p>
+                        <div class="inline-flex items-center text-tech-navy font-bold text-xs uppercase tracking-widest group/link">
+                            Lire l'article <i data-lucide="chevron-right" class="w-4 h-4 ml-2 text-[#00a4bd] group-hover/link:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+                </article>
+            @empty
+                <!-- Empty State -->
+                <div class="col-span-full py-20 text-center bg-slate-50 rounded-[40px] border border-slate-100 shadow-sm" data-aos="fade-up">
+                    <div class="w-20 h-20 rounded-[32px] bg-white flex items-center justify-center text-slate-200 mx-auto mb-6">
+                        <i data-lucide="newspaper" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-tech-navy uppercase tracking-tight mb-2">Aucune actualité pour le moment</h3>
+                    <p class="text-slate-400 font-bold uppercase text-[10px] tracking-widest italic">Restez connectés pour ne rien manquer de nos prochains projets.</p>
                 </div>
-                <x-cms-editable key="news_1_title"><h3 class="text-2xl font-black text-tech-navy mb-6 group-hover:text-[#00a4bd] transition-colors leading-tight">Cinema Pathé Abidjan 2024</h3></x-cms-editable>
-                <x-cms-editable key="news_1_desc"><p class="text-slate-500 text-sm mb-8 leading-relaxed italic font-medium">Retour sur l'inauguration et les défis techniques de ce complexe cinématographique de référence.</p></x-cms-editable>
-                <a href="/actualites/pathe-abidjan-2024" class="inline-flex items-center text-tech-navy font-bold text-xs uppercase tracking-widest group/link">
-                    Lire l'article <i data-lucide="chevron-right" class="w-4 h-4 ml-2 text-[#00a4bd] group-hover/link:translate-x-1 transition-transform"></i>
-                </a>
-            </article>
-
-            <!-- News 2 -->
-            <article class="group" data-aos="fade-up" data-aos-delay="100">
-                <div class="aspect-[16/10] rounded-[32px] overflow-hidden mb-8 shadow-sm group-hover:shadow-xl transition-all duration-500 relative bg-tech-navy flex items-center justify-center p-8 text-center bg-[url('/bg-waves.svg')] bg-[length:400px]">
-                    <x-cms-editable key="news_2_img" type="media" class="flex flex-col items-center">
-                        <i data-lucide="zap" class="w-12 h-12 text-[#00a4bd] mb-4"></i>
-                    </x-cms-editable>
-                </div>
-                <x-cms-editable key="news_2_title"><h3 class="text-2xl font-black text-tech-navy mb-6 group-hover:text-[#00a4bd] transition-colors leading-tight">Innovation : Stockage d'énergie au Fer</h3></x-cms-editable>
-                <x-cms-editable key="news_2_desc"><p class="text-slate-500 text-sm mb-8 leading-relaxed italic font-medium">Une nouvelle technologie de batterie au fer-air capable de stocker l'énergie de manière durable.</p></x-cms-editable>
-                <a href="/actualites/batterie-fer" class="inline-flex items-center text-tech-navy font-bold text-xs uppercase tracking-widest group/link">
-                    Lire l'article <i data-lucide="chevron-right" class="w-4 h-4 ml-2 text-[#00a4bd] group-hover/link:translate-x-1 transition-transform"></i>
-                </a>
-            </article>
-
-            <!-- News 3 -->
-            <article class="group" data-aos="fade-up" data-aos-delay="200">
-                <div class="aspect-[16/10] rounded-[32px] overflow-hidden mb-8 shadow-sm group-hover:shadow-xl transition-all duration-500 relative bg-slate-100 flex items-center justify-center p-8">
-                    <x-cms-editable key="news_3_img" type="media">
-                        <i data-lucide="trending-up" class="w-12 h-12 text-slate-300"></i>
-                    </x-cms-editable>
-                </div>
-                <x-cms-editable key="news_3_title"><h3 class="text-2xl font-black text-tech-navy mb-6 group-hover:text-[#00a4bd] transition-colors leading-tight">Modélisation & Évaluation Énergétique</h3></x-cms-editable>
-                <x-cms-editable key="news_3_desc"><p class="text-slate-500 text-sm mb-8 leading-relaxed italic font-medium">Analyse des performances et modélisation des flux énergétiques pour les bâtiments connectés.</p></x-cms-editable>
-                <a href="/actualites/modelisation-evaluation" class="inline-flex items-center text-tech-navy font-bold text-xs uppercase tracking-widest group/link">
-                    Lire l'article <i data-lucide="chevron-right" class="w-4 h-4 ml-2 text-[#00a4bd] group-hover/link:translate-x-1 transition-transform"></i>
-                </a>
-            </article>
+            @endforelse
         </div>
     </div>
 </section>

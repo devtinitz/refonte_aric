@@ -1,5 +1,5 @@
 <!-- Secondary Hero Banner -->
-<header id="recrutement-section-hero" data-cms-section="hero" class="relative min-h-[70vh] flex flex-col justify-center items-start overflow-hidden text-white group/section">
+<header id="hero" data-cms-section="hero" class="relative min-h-[70vh] flex flex-col justify-center items-start overflow-hidden text-white group/section">
     <!-- Section Controls -->
     @if(auth()->check())
     <div class="absolute top-4 left-1/2 -translate-x-1/2 z-[1000] opacity-0 group-hover/section:opacity-100 transition-all flex items-center bg-tech-navy/90 backdrop-blur-md rounded-2xl p-1 border border-white/10 shadow-2xl">

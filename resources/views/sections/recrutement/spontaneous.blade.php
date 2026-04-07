@@ -1,5 +1,5 @@
 <!-- Spontaneous Application Section -->
-<section id="recrutement-section-spontaneous" data-cms-section="spontaneous" class="py-24 bg-white relative overflow-hidden group/section">
+<section id="spontanee" data-cms-section="spontaneous" class="py-24 bg-white relative overflow-hidden group/section">
     <!-- Section Controls -->
     @if(auth()->check())
     <div class="absolute top-4 left-1/2 -translate-x-1/2 z-[1000] opacity-0 group-hover/section:opacity-100 transition-all flex items-center bg-tech-navy/90 backdrop-blur-md rounded-2xl p-1 border border-white/10 shadow-2xl">

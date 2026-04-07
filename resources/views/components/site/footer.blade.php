@@ -11,16 +11,23 @@
                         Leader multitechnique en Afrique de l'Ouest. Filiale du Groupe Conergies. Innovation, Performance & Durabilité.
                     </p>
                 </x-cms-editable>
-                <x-cms-editable key="footer_socials" buttonClass="-top-10 left-0">
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/company/groupe-conergies/" target="_blank" class="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-[#00a4bd] hover:border-[#00a4bd] hover:scale-110 transition-all shadow-sm group/social">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-slate-500 group-hover/social:text-[#00a4bd] transition-colors"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        </a>
-                        <a href="https://www.facebook.com/ConergiesGroup" target="_blank" class="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-[#00a4bd] hover:border-[#00a4bd] hover:scale-110 transition-all shadow-sm group/social">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-slate-500 group-hover/social:text-[#00a4bd] transition-colors"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                        </a>
-                    </div>
-                </x-cms-editable>
+                <div class="flex space-x-4">
+                    @if(cms_setting('site.social.linkedin'))
+                    <a href="{{ cms_setting('site.social.linkedin') }}" target="_blank" class="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-[#00a4bd] hover:border-[#00a4bd] hover:scale-110 transition-all shadow-sm group/social">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    @endif
+                    @if(cms_setting('site.social.facebook'))
+                    <a href="{{ cms_setting('site.social.facebook') }}" target="_blank" class="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-[#00a4bd] hover:border-[#00a4bd] hover:scale-110 transition-all shadow-sm group/social">
+                        <i data-lucide="facebook" class="w-6 h-6"></i>
+                    </a>
+                    @endif
+                    @if(cms_setting('site.social.instagram'))
+                    <a href="{{ cms_setting('site.social.instagram') }}" target="_blank" class="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-[#00a4bd] hover:border-[#00a4bd] hover:scale-110 transition-all shadow-sm group/social">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </a>
+                    @endif
+                </div>
             </div>
             <div>
                 <x-cms-editable key="footer_col_1_title"><h5 class="font-bold mb-8 text-slate-900 uppercase text-xs tracking-widest border-l-4 border-[#00a4bd] pl-4">Filiales & Accès</h5></x-cms-editable>
@@ -45,15 +52,13 @@
                 <ul class="space-y-6">
                     <li class="flex items-start space-x-3 text-sm font-semibold max-w-[200px]">
                         <i data-lucide="map-pin" class="w-5 h-5 text-tech-cyan shrink-0"></i>
-                        <x-cms-editable key="footer_address">
-                            <span>Zone 4C, Rue des Majorettes, Abidjan, CI</span>
-                        </x-cms-editable>
+                        <span>{{ cms_setting('site.address', 'Zone 4C, Rue des Majorettes, Abidjan, CI') }}</span>
                     </li>
                     <li class="flex items-center space-x-3 text-sm font-semibold">
                         <i data-lucide="phone" class="w-5 h-5 text-tech-cyan shrink-0"></i>
-                        <x-cms-editable key="footer_phone">
-                            <a href="tel:+2252721210000" class="hover:text-tech-cyan transition-colors">+225 27 21 21 00 00</a>
-                        </x-cms-editable>
+                        <a href="tel:{{ cms_setting('site.phone', '+225 27 21 21 00 00') }}" class="hover:text-tech-cyan transition-colors">
+                            {{ cms_setting('site.phone', '+225 27 21 21 00 00') }}
+                        </a>
                     </li>
                 </ul>
             </div>

@@ -25,36 +25,20 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-black/5 rounded-[40px] overflow-hidden border border-black/5">
-            <!-- Expertise Item 1 -->
-            <div class="bg-white/40 p-12 hover:bg-white/60 transition-colors group">
-                <div class="text-tech-cyan mb-8 opacity-70 group-hover:opacity-100 transition-opacity">
-                    <x-cms-editable key="exp_item_1_icon" type="icon">
-                        <i data-lucide="snowflake" class="w-12 h-12"></i>
-                    </x-cms-editable>
+            @forelse($expertises as $expertise)
+                <!-- Dynamic Expertise Item -->
+                <div class="bg-white/40 p-12 hover:bg-white/60 transition-colors group" data-aos="fade-up">
+                    <div class="text-tech-cyan mb-8 opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="{{ $expertise->icon }}" class="w-12 h-12"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 text-tech-navy group-hover:text-tech-cyan transition-colors">{{ $expertise->title }}</h4>
+                    <p class="text-slate-600 leading-relaxed italic">{{ $expertise->description }}</p>
                 </div>
-                <x-cms-editable key="exp_item_1_title"><h4 class="text-2xl font-bold mb-4 text-tech-navy">Froid Commercial & Industriel</h4></x-cms-editable>
-                <x-cms-editable key="exp_item_1_desc"><p class="text-slate-600">Conception et maintenance de systèmes frigorifiques pour la grande distribution et l'industrie agroalimentaire.</p></x-cms-editable>
-            </div>
-            <!-- Expertise Item 2 -->
-            <div class="bg-white/40 p-12 hover:bg-white/60 transition-colors group">
-                <div class="text-tech-cyan mb-8 opacity-70 group-hover:opacity-100 transition-opacity">
-                    <x-cms-editable key="exp_item_2_icon" type="icon">
-                        <i data-lucide="wind" class="w-12 h-12"></i>
-                    </x-cms-editable>
+            @empty
+                <div class="col-span-full p-20 text-center bg-white/20">
+                    <p class="text-slate-400 font-bold uppercase text-[10px] tracking-widest italic">Nos domaines d'expertise seront bientôt listés ici.</p>
                 </div>
-                <x-cms-editable key="exp_item_2_title"><h4 class="text-2xl font-bold mb-4 text-tech-navy">Génie Climatique (CVC)</h4></x-cms-editable>
-                <x-cms-editable key="exp_item_2_desc"><p class="text-slate-600">Maîtrise de la température et de la qualité de l'air — de l'hôtellerie de luxe aux salles blanches industrielles.</p></x-cms-editable>
-            </div>
-            <!-- Expertise Item 3 -->
-            <div class="bg-white/40 p-12 hover:bg-white/60 transition-colors group">
-                <div class="text-tech-cyan mb-8 opacity-70 group-hover:opacity-100 transition-opacity">
-                    <x-cms-editable key="exp_item_3_icon" type="icon">
-                        <i data-lucide="activity" class="w-12 h-12"></i>
-                    </x-cms-editable>
-                </div>
-                <x-cms-editable key="exp_item_3_title"><h4 class="text-2xl font-bold mb-4 text-tech-navy">Efficacité Énergétique</h4></x-cms-editable>
-                <x-cms-editable key="exp_item_3_desc"><p class="text-slate-600">Audit, pilotage GTB et optimisation temps réel des consommations — accompagnement certification ISO 50001.</p></x-cms-editable>
-            </div>
+            @endforelse
         </div>
     </div>
 </section>

@@ -2,26 +2,31 @@
 <div class="hidden lg:block bg-[#0a192f] border-b border-white/5 py-2">
     <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-semibold text-slate-400">
         <div class="flex items-center space-x-6">
-            <x-cms-editable key="topbar_phone">
-                <a href="tel:+2252720000000" class="flex items-center hover:text-[#00a4bd] transition-colors">
-                    <i data-lucide="phone" class="w-4 h-4 mr-2 text-[#00a4bd]"></i>
-                    +225 27 20 00 00 00
-                </a>
-            </x-cms-editable>
-            <x-cms-editable key="topbar_email">
-                <a href="mailto:contact@conergies.ci" class="flex items-center hover:text-[#00a4bd] transition-colors">
-                    <i data-lucide="mail" class="w-4 h-4 mr-2 text-[#00a4bd]"></i>
-                    contact@conergies.ci
-                </a>
-            </x-cms-editable>
+            <a href="tel:{{ cms_setting('site.phone', '+225 27 20 00 00 00') }}" class="flex items-center hover:text-[#00a4bd] transition-colors">
+                <i data-lucide="phone" class="w-4 h-4 mr-2 text-[#00a4bd]"></i>
+                {{ cms_setting('site.phone', '+225 27 20 00 00 00') }}
+            </a>
+            <a href="mailto:{{ cms_setting('site.email.contact', 'contact@aric.ci') }}" class="flex items-center hover:text-[#00a4bd] transition-colors">
+                <i data-lucide="mail" class="w-4 h-4 mr-2 text-[#00a4bd]"></i>
+                {{ cms_setting('site.email.contact', 'contact@aric.ci') }}
+            </a>
         </div>
         <div class="flex items-center space-x-4">
-            <a href="https://www.facebook.com/ConergiesGroup" target="_blank" class="hover:text-[#00a4bd] transition-colors">
+            @if(cms_setting('site.social.facebook'))
+            <a href="{{ cms_setting('site.social.facebook') }}" target="_blank" class="hover:text-[#00a4bd] transition-colors">
                 <i data-lucide="facebook" class="w-4 h-4"></i>
             </a>
-            <a href="https://www.linkedin.com/company/groupe-conergies/" target="_blank" class="hover:text-[#00a4bd] transition-colors">
+            @endif
+            @if(cms_setting('site.social.linkedin'))
+            <a href="{{ cms_setting('site.social.linkedin') }}" target="_blank" class="hover:text-[#00a4bd] transition-colors">
                 <i data-lucide="linkedin" class="w-4 h-4"></i>
             </a>
+            @endif
+            @if(cms_setting('site.social.instagram'))
+            <a href="{{ cms_setting('site.social.instagram') }}" target="_blank" class="hover:text-[#00a4bd] transition-colors">
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            @endif
         </div>
     </div>
 </div>

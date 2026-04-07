@@ -49,8 +49,12 @@ class ContentService
             $drafts = ContentValue::where('status', 'draft')->get();
 
             foreach ($drafts as $draft) {
-                // Archive previous published version for this content if you want 
-                // but for now let's just mark it as published.
+                // Archive the current published version for this specific content
+                ContentValue::where('content_id', $draft->content_id)
+                    ->where('status', 'published')
+                    ->update(['status' => 'archived']);
+                
+                // Promote the draft to published
                 $draft->update(['status' => 'published']);
             }
 
@@ -66,7 +70,7 @@ class ContentService
         return DB::transaction(function () use ($versionId) {
             $valueToRestore = ContentValue::findOrFail($versionId);
             
-            // Create a new draft from this version
+            // Create a new draft from this version, preserving the audit trail
             return $this->updateDraft($valueToRestore->content->key, $valueToRestore->value);
         });
     }
@@ -77,10 +81,23 @@ class ContentService
     public function getRecentHistory(int $limit = 20)
     {
         return ContentValue::with(['content', 'user'])
-            ->where('status', '!=', 'draft')
-            ->latest()
+            ->whereIn('status', ['published', 'archived'])
+            ->latest('created_at')
             ->limit($limit)
             ->get();
+    }
+
+    /**
+     * Get a set of settings by their keys.
+     */
+    public function getSettings(array $keys)
+    {
+        $settings = [];
+        foreach ($keys as $key) {
+            $content = Content::where('key', $key)->first();
+            $settings[$key] = $content ? $content->current_display_value?->value : null;
+        }
+        return $settings;
     }
 
     /**

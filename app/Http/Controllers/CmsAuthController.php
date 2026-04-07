@@ -24,11 +24,19 @@ class CmsAuthController extends Controller
      */
     public function login(Request $request)
     {
-        // Simplistic login for evaluation. 
-        // In production, this would use proper credentials.
-        Auth::loginUsingId(1);
-        
-        return redirect('/')->with('success', 'Bienvenue dans le CMS ARIC !');
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt($request->only('email', 'password'), $request->filled('remember'))) {
+            $request->session()->regenerate();
+            return redirect('/')->with('success', 'Bienvenue dans le CMS ARIC !');
+        }
+
+        return back()->withErrors([
+            'email' => 'Les identifiants fournis ne correspondent pas à nos enregistrements.',
+        ])->onlyInput('email');
     }
 
     /**

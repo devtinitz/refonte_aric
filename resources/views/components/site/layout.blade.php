@@ -7,6 +7,37 @@
     <meta name="description" content="{{ $description ?? 'Expert en Solutions Multitechniques : Froid Commercial, Industriel & Solaire, Génie Climatique et Efficacité Énergétique.' }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
+    <!-- SEO & Social Media (OpenGraph / Twitter) -->
+    <meta property="og:title" content="{{ $title ?? 'ARIC | Expert en Solutions Multitechniques' }}">
+    <meta property="og:description" content="{{ $description ?? 'Expert en Solutions Multitechniques : Froid Commercial, Industriel & Solaire, Génie Climatique et Efficacité Énergétique.' }}">
+    <meta property="og:image" content="{{ url('/logo.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title ?? 'ARIC | Expert en Solutions Multitechniques' }}">
+    <meta name="twitter:description" content="{{ $description ?? 'Expert en Solutions Multitechniques : Froid Commercial, Industriel & Solaire, Génie Climatique et Efficacité Énergétique.' }}">
+    <meta name="twitter:image" content="{{ url('/logo.png') }}">
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0a192f">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ARIC",
+      "url": "{{ url('/') }}",
+      "logo": "{{ url('/logo.png') }}",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+221 33 000 00 00",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -204,9 +235,24 @@
         .animate-fade-in-up {
             animation: fade-in-up 0.5s ease-out forwards;
         }
+
+        /* Live Preview Mode */
+        body.cms-preview-mode [onclick*="moveSection"],
+        body.cms-preview-mode .cms-edit-button,
+        body.cms-preview-mode .cms-section-label,
+        body.cms-preview-mode div[class*="absolute"][class*="z-[1000]"][class*="group-hover/section"] {
+            display: none !important;
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-['Plus_Jakarta_Sans'] text-slate-900 overflow-x-hidden relative">
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-tech-cyan z-[9999] transition-all duration-150" style="width: 0%"></div>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-[150] w-14 h-14 bg-tech-navy/90 backdrop-blur-xl border border-tech-cyan/30 text-tech-cyan rounded-2xl shadow-2xl flex items-center justify-center opacity-0 translate-y-10 pointer-events-none transition-all duration-500 hover:bg-tech-cyan hover:text-tech-navy group">
+        <i data-lucide="chevron-up" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+    </button>
     
     <x-site.header />
     
@@ -236,10 +282,92 @@
                 <i data-lucide="shield-check" class="w-3 h-3"></i>
                 <span>Mode Édition Actif</span>
             </div>
-            <a href="{{ route('cms.logout') }}" class="bg-white/90 hover:bg-white text-slate-500 hover:text-red-600 px-4 py-2 rounded-full shadow-md border border-slate-100 flex items-center space-x-2 font-bold text-[9px] uppercase tracking-widest transition-all hover:scale-105 active:scale-95 group">
-                <i data-lucide="log-out" class="w-3 h-3"></i>
-                <span>Déconnexion CMS</span>
-            </a>
+
+            <button onclick="window.toggleCmsPreview(this)" 
+                    class="bg-tech-navy text-white px-4 py-2 rounded-full shadow-lg border border-white/10 flex items-center space-x-2 font-bold text-[9px] uppercase tracking-widest hover:bg-tech-cobalt transition-all">
+                <i id="cms-preview-icon" data-lucide="eye" class="w-3 h-3"></i>
+                <span id="cms-preview-text">Voir le Rendu Final</span>
+            </button>
+            
+            <div class="flex flex-col items-end space-y-1 group/actions">
+                @if(auth()->user()->is_super_admin)
+                <a href="{{ route('cms.users.index') }}" class="bg-white/95 hover:bg-white text-slate-600 hover:text-tech-navy px-4 py-2 rounded-full shadow-md border border-slate-100 flex items-center space-x-2 font-bold text-[9px] uppercase tracking-widest transition-all hover:translate-x-[-4px] active:scale-95">
+                    <i data-lucide="users" class="w-3 h-3"></i>
+                    <span>Gestion des Utilisateurs</span>
+                </a>
+                @endif
+
+                <a href="{{ route('cms.history.index') }}" class="bg-white/95 hover:bg-white text-slate-600 hover:text-tech-navy px-4 py-2 rounded-full shadow-md border border-slate-100 flex items-center space-x-2 font-bold text-[9px] uppercase tracking-widest transition-all hover:translate-x-[-4px] active:scale-95">
+                    <i data-lucide="history" class="w-3 h-3"></i>
+                    <span>Historique</span>
+                </a>
+
+                <a href="{{ route('cms.jobs.index') }}" class="bg-white/95 hover:bg-white text-slate-600 hover:text-tech-navy px-4 py-2 rounded-full shadow-md border border-slate-100 flex items-center space-x-2 font-bold text-[9px] uppercase tracking-widest transition-all hover:translate-x-[-4px] active:scale-95">
+                    <i data-lucide="briefcase" class="w-3 h-3"></i>
+                    <span>Offres d'Emploi</span>
+                </a>
+
+                <a href="{{ route('cms.news.index') }}" class="bg-white/95 hover:bg-white text-slate-600 hover:text-tech-navy px-4 py-2 rounded-full shadow-md border border-slate-100 flex items-center space-x-2 font-bold text-[9px] uppercase tracking-widest transition-all hover:translate-x-[-4px] active:scale-95">
+                    <i data-lucide="newspaper" class="w-3 h-3"></i>
+                    <span>Actualités</span>
+                </a>
+
+                <a href="{{ route('cms.expertises.index') }}" class="bg-white/95 hover:bg-white text-slate-600 hover:text-tech-navy px-4 py-2 rounded-full shadow-md border border-slate-100 flex items-center space-x-2 font-bold text-[9px] uppercase tracking-widest transition-all hover:translate-x-[-4px] active:scale-95">
+                    <i data-lucide="medal" class="w-3 h-3"></i>
+                    <span>Notre Expertise</span>
+                </a>
+
+                <a href="{{ route('cms.settings.index') }}" class="bg-white/95 hover:bg-white text-slate-600 hover:text-tech-navy px-4 py-2 rounded-full shadow-md border border-slate-100 flex items-center space-x-2 font-bold text-[9px] uppercase tracking-widest transition-all hover:translate-x-[-4px] active:scale-95">
+                    <i data-lucide="settings" class="w-3 h-3"></i>
+                    <span>Paramètres</span>
+                </a>
+                
+                <button onclick="document.getElementById('change-password-modal').classList.remove('hidden')" class="bg-white/95 hover:bg-white text-slate-600 hover:text-tech-navy px-4 py-2 rounded-full shadow-md border border-slate-100 flex items-center space-x-2 font-bold text-[9px] uppercase tracking-widest transition-all hover:translate-x-[-4px] active:scale-95">
+                    <i data-lucide="user-cog" class="w-3 h-3"></i>
+                    <span>Mon Profil</span>
+                </button>
+
+                <a href="{{ route('cms.logout') }}" class="bg-white/95 hover:bg-white text-slate-500 hover:text-red-600 px-4 py-2 rounded-full shadow-md border border-slate-100 flex items-center space-x-2 font-bold text-[10px] uppercase tracking-widest transition-all hover:translate-x-[-4px] active:scale-95 group">
+                    <i data-lucide="log-out" class="w-3 h-3 group-hover:rotate-12 transition-transform"></i>
+                    <span>Déconnexion</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Change Password Modal -->
+        <div id="change-password-modal" class="hidden fixed inset-0 z-[5000] flex items-center justify-center p-4">
+            <div class="absolute inset-0 bg-tech-navy/40 backdrop-blur-md" onclick="document.getElementById('change-password-modal').classList.add('hidden')"></div>
+            <div class="relative bg-white w-full max-w-md rounded-[40px] shadow-2xl overflow-hidden animate-zoom-in">
+                <div class="bg-tech-navy p-8 text-white relative">
+                    <h2 class="text-2xl font-black tracking-tight mb-1">Sécurité du Compte</h2>
+                    <p class="text-white/60 text-xs uppercase tracking-widest font-bold">Changer mon mot de passe</p>
+                    <button onclick="document.getElementById('change-password-modal').classList.add('hidden')" class="absolute top-8 right-8 text-white/50 hover:text-white transition-colors">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <form action="{{ route('cms.profile.password.update') }}" method="POST" class="p-8 space-y-5">
+                    @csrf
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Mot de passe actuel</label>
+                        <input type="password" name="current_password" required
+                               class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:border-tech-navy/20 transition-all font-bold text-slate-700">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Nouveau mot de passe</label>
+                        <input type="password" name="password" required
+                               class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:border-tech-navy/20 transition-all font-bold text-slate-700">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Confirmer le mot de passe</label>
+                        <input type="password" name="password_confirmation" required
+                               class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:border-tech-navy/20 transition-all font-bold text-slate-700">
+                    </div>
+                    
+                    <button type="submit" class="w-full py-5 bg-tech-navy text-white font-black text-xs uppercase tracking-[0.2em] rounded-2xl shadow-xl shadow-tech-navy/20 transition-all active:scale-95">
+                        Mettre à jour
+                    </button>
+                </form>
+            </div>
         </div>
     @endif
 
@@ -398,6 +526,51 @@
         };
 
         window.cmsSettings.init();
+
+        // Scroll Progress & Back to Top Logic
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + "%";
+
+            const backToTop = document.getElementById('back-to-top');
+            if (winScroll > 500) {
+                backToTop.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            } else {
+                backToTop.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Toggle CMS Preview Mode
+        window.toggleCmsPreview = function(btn) {
+            const isPreview = document.body.classList.toggle('cms-preview-mode');
+            const icon = document.getElementById('cms-preview-icon');
+            const text = document.getElementById('cms-preview-text');
+            
+            if (text) text.textContent = isPreview ? 'Retour à l\'édition' : 'Voir le Rendu Final';
+            
+            // Handle Lucide icon replacement (target the container/placeholder)
+            if (icon) {
+                // Lucide might have replaced 'i' with 'svg', so we need to be careful
+                btn.innerHTML = `<i id="cms-preview-icon" data-lucide="${isPreview ? 'eye-off' : 'eye'}" class="w-3 h-3"></i> 
+                                 <span id="cms-preview-text">${isPreview ? 'Retour à l\'édition' : 'Voir le Rendu Final'}</span>`;
+                lucide.createIcons();
+            }
+        };
+
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('SW Registered'))
+                    .catch(err => console.log('SW Error: ', err));
+            });
+        }
     </script>
     @stack('scripts')
 </body>

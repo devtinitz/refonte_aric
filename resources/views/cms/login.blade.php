@@ -62,20 +62,52 @@
 
             <form action="{{ route('cms.login.submit') }}" method="POST" class="space-y-6">
                 @csrf
-                <div class="space-y-2">
-                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Accès Administrateur</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500">
-                            <i data-lucide="user" class="w-4 h-4"></i>
-                        </div>
-                        <input type="text" readonly value="Administrateur Système" 
-                               class="w-full pl-11 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl text-slate-300 font-bold text-sm outline-none cursor-not-allowed">
+                
+                @if($errors->any())
+                <div class="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-400 text-[11px] font-bold leading-relaxed">
+                    <div class="flex items-center gap-2 mb-1">
+                        <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                        <span>Erreur d'authentification</span>
                     </div>
+                    {{ $errors->first() }}
+                </div>
+                @endif
+
+                <div class="space-y-2">
+                    <label for="email" class="block text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Email Administrateur</label>
+                    <div class="relative group/input">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500 group-focus-within/input:text-tech-cyan transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </div>
+                        <input type="email" name="email" id="email" required placeholder="admin@aric.ci" value="{{ old('email') }}"
+                               class="w-full pl-11 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl text-slate-100 font-bold text-sm outline-none focus:border-tech-cyan/50 focus:ring-4 focus:ring-tech-cyan/10 transition-all placeholder:text-slate-600">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label for="password" class="block text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Mot de passe</label>
+                    <div class="relative group/input">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500 group-focus-within/input:text-tech-cyan transition-colors">
+                            <i data-lucide="lock" class="w-4 h-4"></i>
+                        </div>
+                        <input type="password" name="password" id="password" required placeholder="••••••••"
+                               class="w-full pl-11 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl text-slate-100 font-bold text-sm outline-none focus:border-tech-cyan/50 focus:ring-4 focus:ring-tech-cyan/10 transition-all placeholder:text-slate-600">
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between px-1">
+                    <label class="flex items-center group cursor-pointer">
+                        <input type="checkbox" name="remember" class="sr-only peer">
+                        <div class="w-4 h-4 rounded border border-white/10 bg-white/5 peer-checked:bg-tech-cyan peer-checked:border-tech-cyan transition-all flex items-center justify-center">
+                            <i data-lucide="check" class="w-3 h-3 text-tech-navy opacity-0 peer-checked:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span class="ml-2 text-[10px] font-bold text-slate-500 group-hover:text-slate-300 transition-colors uppercase tracking-widest">Rester connecté</span>
+                    </label>
                 </div>
 
                 <div class="pt-4">
                     <button type="submit" class="w-full py-5 bg-tech-cyan hover:bg-cyan-500 text-tech-navy font-black text-xs uppercase tracking-[0.2em] rounded-2xl shadow-xl shadow-tech-cyan/20 transition-all active:scale-95 flex items-center justify-center space-x-3">
-                        <span>Entrer dans le CMS</span>
+                        <span>Se connecter</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>

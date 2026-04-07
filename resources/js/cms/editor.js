@@ -515,32 +515,43 @@ class CmsEditor {
         if (!modal || !list) return;
         
         modal.classList.add('active');
-        list.innerHTML = '<div class="py-12 text-center text-slate-300 italic uppercase tracking-widest text-[10px]">Chargement...</div>';
+        list.innerHTML = '<div class="py-12 text-center text-slate-300 italic uppercase tracking-widest text-[10px] animate-pulse">Chargement de l\'historique...</div>';
 
         try {
             const response = await fetch('/api/cms/history');
             const result = await response.json();
             if (result.success && result.data.length > 0) {
-                list.innerHTML = result.data.map(item => `
-                    <div class="history-item flex justify-between items-center p-4 border-b border-slate-50 hover:bg-slate-50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-tech-cyan/10 flex items-center justify-center text-tech-cyan font-bold text-xs">
-                                JS
+                list.innerHTML = result.data.map(item => {
+                    const userName = item.user ? item.user.name : 'Inconnu';
+                    const initials = userName.substring(0, 2).toUpperCase();
+                    const date = new Date(item.created_at).toLocaleString('fr-FR', { 
+                        day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' 
+                    });
+                    
+                    return `
+                        <div class="history-item flex justify-between items-center p-4 border-b border-slate-50 hover:bg-slate-50/80 transition-all rounded-2xl group">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-tech-navy/5 flex items-center justify-center text-tech-navy font-black text-[10px]">
+                                    ${initials}
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-black text-tech-navy uppercase leading-none tracking-tight">${item.content?.key || 'Élément'}</p>
+                                    <p class="text-[9px] text-slate-400 font-bold uppercase mt-1 tracking-widest">${date} • Par ${userName}</p>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-xs font-black text-tech-navy uppercase">${item.content?.key || 'clé inconnue'}</p>
-                                <p class="text-[9px] text-slate-400 font-bold uppercase mt-0.5">v.${item.version_number} • ${new Date(item.created_at).toLocaleDateString()}</p>
-                            </div>
+                            <button onclick="window.cmsEditor.rollback(${item.id})" class="px-4 py-2 bg-tech-navy text-white text-[8px] font-black uppercase tracking-widest rounded-lg hover:bg-tech-cyan transition-all opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 shadow-lg shadow-tech-navy/10">
+                                Restaurer
+                            </button>
                         </div>
-                        <button onclick="window.cmsEditor.rollback(${item.id})" class="px-4 py-2 bg-tech-navy text-white text-[9px] font-black uppercase tracking-widest rounded-lg hover:bg-tech-cyan transition-all">
-                            Restaurer
-                        </button>
-                    </div>
-                `).join('');
+                    `;
+                }).join('');
             } else {
-                list.innerHTML = '<div class="py-12 text-center text-slate-300 italic text-[10px] uppercase">Aucun historique</div>';
+                list.innerHTML = '<div class="py-12 text-center text-slate-300 italic text-[10px] uppercase tracking-widest">Aucune modification récente</div>';
             }
-        } catch (e) { list.innerHTML = '<div class="py-12 text-center text-red-400 italic">Erreur</div>'; }
+        } catch (e) { 
+            console.error('CMS History Error:', e);
+            list.innerHTML = '<div class="py-12 text-center text-red-400 italic text-[10px] uppercase font-bold">Erreur de chargement</div>'; 
+        }
     }
 
     closeHistoryModal() {
@@ -549,8 +560,10 @@ class CmsEditor {
     }
 
     async rollback(id) {
-        if (!confirm('Restaurer cette version ?')) return;
+        if (!confirm('Voulez-vous vraiment restaurer cette version ? Cette action créera un nouveau brouillon.')) return;
         this.showLoading();
+        this.notify('info', 'Restauration en cours...');
+        
         try {
             const res = await fetch('/api/cms/rollback', {
                 method: 'POST',
@@ -561,8 +574,16 @@ class CmsEditor {
                 body: JSON.stringify({ version_id: id })
             });
             const result = await res.json();
-            if (result.success) window.location.reload();
-        } catch (e) { this.notify('error', 'Erreur rollback'); }
+            if (result.success) {
+                this.notify('success', 'Version restaurée avec succès');
+                setTimeout(() => window.location.reload(), 1000);
+            } else {
+                throw new Error(result.message);
+            }
+        } catch (e) { 
+            this.notify('error', 'Erreur lors de la restauration'); 
+            console.error('Rollback failed:', e);
+        }
         finally { this.hideLoading(); }
     }
 
